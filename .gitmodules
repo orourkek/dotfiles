@@ -1,0 +1,6 @@
+[submodule "lib/powerline-shell"]
+	path = lib/powerline-shell
+	url = https://github.com/milkbikis/powerline-shell
+[submodule "lib/dircolors-solarized"]
+	path = lib/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized
