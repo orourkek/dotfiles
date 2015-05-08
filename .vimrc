@@ -50,6 +50,9 @@ nnoremap <a-left> <home>
 " enable syntax highlighting
 syntax on
 
+" customize highlighting
+"hi javascriptIdentifier ctermfg=DarkMagenta
+
 " Solarized color scheme
 set background=dark
 colorscheme solarized
@@ -302,7 +305,6 @@ call unite#custom#profile('default', 'context', {
   \ })
 
 
-" B
 " delimitMate
 " -------------------------------
 
