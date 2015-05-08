@@ -244,3 +244,21 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+#function mezz() {
+#  echo 'mezz!';
+#  if ('config' -eq $1) {
+#    printf('\nMezzanine Config\n================\n\n')
+#    if [$2 -eq 'single']; then
+#      printf('Applying SINGLE screen configuration...\n')
+#      set -x
+#      sudo rm -f /etc/oblong/screen.protein
+#      sudo rm -f /etc/oblong/feld.protein
+#      sudo ln -s ~/etc/proteins/dell-u3011/feld-single.protein /etc/oblong/feld.protein
+#      sudo ln -s ~/etc/proteins/dell-u3011/screen-single.protein /etc/oblong/screen.protein
+#      set +x
+#      printf '\ndone!\n\n';
+#    }
+#  }
+#}
+

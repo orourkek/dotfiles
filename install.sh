@@ -25,6 +25,7 @@ function symlinkEVERYTHING() {
     ".gitconfig"
     ".gitignore"
     ".gitmodules"
+    ".git-completion"
     ".inputrc"
     ".path"
     ".profile"

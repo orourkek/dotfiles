@@ -10,7 +10,7 @@ tab-reset() {
     echo -ne "\033]6;1;bg;*;default\a"
 }
 
-alias gl='git lga -20'
+alias gl='git lga -25'
 
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend

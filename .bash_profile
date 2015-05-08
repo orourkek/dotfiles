@@ -2,8 +2,8 @@
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{aliases,bash_logout,bash_prompt,exports,functions,path}; do
-  [ -r "$file" ] && [ -f "$file" ] && source "$file";
+for file in ~/.{aliases,bash_logout,bash_prompt,exports,functions,git-completion,path}; do
+  [ -r "$file" ] && [ -f "$file" ] && printf "   ⌁ Sourcing $file\n" && source "$file";
 done;
 unset file;
 
@@ -29,25 +29,19 @@ if which xhost >/dev/null; then
   xhost + > /dev/null
 fi
 
-function echoi() {
-  echo -e "  $1" | sed ':a;N;$!ba;s/\n/\n  /g'
-  echo $2
-}
-
 function greeting() {
   declare -a greetings=(
-    "──────────██▄▄───────\n──────────██▀▀───────\n────────▄███▄────────\n──────▄█████─────────\n─▀▄▄▀▀──█▄─█▄────────"
+    #"  ──────────██▄▄───────\n  ──────────██▀▀───────\n  ────────▄███▄────────\n  ──────▄█████─────────\n  ─▀▄▄▀▀──█▄─█▄────────"
+    "                   ____==========_______ \n        _--____   |    | \"\"  \" \"|       \n       /  )8}  ^^^| 0  |  =     |  o  0  | \n     </_ +-==B vvv|''  |  =     | '  '' '| \n        \_____/   |____|________|________| \n                 (_(  )\________/___(  )__) \n                   |\  \            /  /\ \n                   | \  \          /  /\ \ \n                   | |\  \        /  /  \ \ \n                   (  )(  )       (  \   (  ) \n                    \  / /        \  \   \  \ \n                     \|  |\        \  \  |  | \n                      |  | )____    \  \ \  )___ \n                      (  )  /  /    (  )  (/  / \n                     /___\ /__/     /___\ /__/"
+    "               |||      |||\n               | |  __  | |\n|-|_____-----/   |_|  |_|   \-----_____|-|\n|_|_________{   }|  (^) |{  }__________|_|\n ||          |_| |   ^  | |_|          ||\n |              \|  /\  |/              |\n |               \ |--| /               |\n =               \ |__| /               =\n +               \      /               +\n                  \    /\n                  \    /\n                   \  /\n                   \  /\n                   \  /\n                   \  /\n                   \  /\n                   \  /\n                    \/"
+    "                c==o\n              _/____\_\n       _.,--'\" ||^ || \"\`z._\n      /_/^ ___\||  || _/o\ \"\`-._\n    _/  ]. L_| || .||  \_/_  . _\`--._\n   /_~7  _ . \" ||. || /] \ ]. (_)  . \"\`--.\n  |__7~.(_)_ []|+--+|/____T_____________L|\n  |__|  _^(_) /^   __\____ _   _|\n  |__| (_){_) J ]K{__ L___ _   _]\n  |__| . _(_) \\\\v     /__________|________\n  l__l_ (_). []|+-+-<\^   L  . _   - ---L|\n   \__\    __. ||^l  \Y] /_]  (_) .  _,--'\n     \~_]  L_| || .\ .\\/~.    _,--'\"\n      \_\ . __/||  |\  \\\`-+-<'\"\n        \"\`---._|J__L|X o~~|[\\\\\\ \n               \____/ \___|[//\n                \`--'   \`--+-'"
   )
-
-  echoi ${greetings[$RANDOM % ${#greetings[@]} ]}
+  message="\n${greetings[$RANDOM % ${#greetings[@]} ]}"
+  if which fortune >/dev/null; then
+    message="$message\n\n$(fortune)"
+  fi
+  #echo message
+  echo -e "  $message\n" | sed ':a;N;$!ba;s/\n/\n  /g'
 }
 
-echo
-echoi "Welcome to the matrix!"
-echo
-greeting;
-
-if which fortune >/dev/null; then
-  echoi "$(fortune)"
-fi
-
+greeting
