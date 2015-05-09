@@ -29,6 +29,7 @@ function symlinkEVERYTHING() {
     ".inputrc"
     ".path"
     ".profile"
+    ".vim"
     ".vimrc"
     ".wgetrc"
   );
