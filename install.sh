@@ -44,7 +44,7 @@ SEGMENTS = [
   'jobs',
   'root',
 ]
-THEME='../../../themes/solarized-$THEME"
+THEME='../../../themes/solarized-$THEME'"
 
 cd $POWERLINE_DIR
 printf "Writing powerline config.py:\n"
@@ -69,7 +69,6 @@ declare -a files=(
   ".inputrc"
   ".path"
   ".profile"
-  ".vim"
   ".wgetrc"
 )
 
@@ -78,6 +77,9 @@ for file in "${files[@]}"; do
   printf "↝ $file\n"
   ln -sf "$SCRIPT_DIR/$file" "$HOME/$file"
 done
+printf "↝ .vim/\n"
+rm -rf "$HOME/.vim"
+ln -s "$SCRIPT_DIR/.vim" "$HOME/.vim"
 printf "↝ .vimrc ($THEME)\n"
 ln -sf "$SCRIPT_DIR/.vimrc" "$HOME/.vimrc-main"
 ln -sf "$SCRIPT_DIR/.vimrc-$THEME" "$HOME/.vimrc"
