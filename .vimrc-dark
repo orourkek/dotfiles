@@ -1,0 +1,10 @@
+
+" settings for a dark themed vim
+set background=dark
+
+" highlight group for "nbsp", "tab", and "trail"
+hi SpecialKey ctermfg=Red ctermbg=DarkRed
+
+" highlight group for "eol", "extends", and "precedes"
+hi NonText ctermfg=DarkGrey
+

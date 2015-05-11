@@ -54,7 +54,6 @@ syntax on
 "hi javascriptIdentifier ctermfg=DarkMagenta
 
 " Solarized color scheme
-set background=dark
 colorscheme solarized
 set t_Co=16
 let g:solarized_termcolors=16
@@ -64,7 +63,7 @@ set number
 
 " highlight current line
 set cursorline
-hi CursorLine ctermbg=Black
+"hi CursorLine ctermbg=Black
 nnoremap <kPlus> :set cursorline<cr>
 inoremap <kPlus> :set cursorline<cr>
 
@@ -88,12 +87,8 @@ set nowrap
 set listchars=eol:↵,tab:⇥\ ,extends:⤵,precedes:⤷,trail:•
 set list
 
-" highlight group for "nbsp", "tab", and "trail"
-hi SpecialKey ctermfg=White ctermbg=DarkRed
-
-" highlight group for "eol", "extends", and "precedes"
-hi NonText cterm=none ctermfg=DarkGrey
-
+" NOTE: relevant highlight groups are found
+" in either .vimrc-dark or .vimrc-light
 
 " --------------------------------
 " indentation
@@ -207,10 +202,10 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " git-gutter
 " --------------------------------
 
-highlight GitGutterAdd guifg=#22dd22 guibg=NONE ctermfg=2 ctermbg=0
-highlight GitGutterChange guifg=#dddd22 guibg=NONE ctermfg=3 ctermbg=0
-highlight GitGutterDelete guifg=#dd2222 guibg=NONE ctermfg=1 ctermbg=0
-highlight GitGutterChangeDelete guifg=#dd2222 guibg=NONE ctermfg=1 ctermbg=0
+highlight GitGutterAdd ctermfg=DarkGreen
+highlight GitGutterChange ctermfg=DarkYellow
+highlight GitGutterDelete ctermfg=DarkRed
+highlight GitGutterChangeDelete ctermfg=Red
 
 let g:gitgutter_sign_added =                '⊕'
 let g:gitgutter_sign_modified =             '⁂' "'✳'

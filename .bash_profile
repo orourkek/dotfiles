@@ -3,7 +3,7 @@
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
 for file in ~/.{aliases,bash_logout,bash_prompt,exports,functions,git-completion,path}; do
-  [ -r "$file" ] && [ -f "$file" ] && printf "   ⌁ Sourcing $file\n" && source "$file";
+  [ -r "$file" ] && [ -f "$file" ] && printf "Sourcing $file...\n" && source "$file";
 done;
 unset file;
 
