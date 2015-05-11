@@ -1,4 +1,6 @@
 
+source ~/.vimrc-main
+
 " settings for a dark themed vim
 set background=light
 
@@ -6,5 +8,5 @@ set background=light
 hi SpecialKey ctermfg=DarkRed
 
 " highlight group for "eol", "extends", and "precedes"
-hi NonText cterm=none ctermfg=LightGrey
+hi NonText cterm=none ctermfg=White
 
