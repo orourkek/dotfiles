@@ -20,8 +20,8 @@ class Color(DefaultColor):
     USERNAME_BG = BLUE
     USERNAME_ROOT_BG = RED
 
-    HOSTNAME_FG = WHITE
-    HOSTNAME_BG = GREY_2
+    HOSTNAME_FG = 15
+    HOSTNAME_BG = CYAN
 
     HOME_SPECIAL_DISPLAY = True
     HOME_FG = WHITE

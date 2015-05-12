@@ -30,10 +30,10 @@ fi
 # setup powerline-shell
 CONFIG="
 SEGMENTS = [
-  #'set_term_title',
+  'set_term_title',
   'virtual_env',
   'username',
-  #'hostname',
+  'hostname',
   'ssh',
   'cwd',
   'read_only',
