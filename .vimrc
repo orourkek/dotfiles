@@ -292,6 +292,10 @@ function! s:unite_settings()
   imap <buffer><expr> <tab> unite#do_action('tabopen')
   nmap <buffer><expr> <tab> unite#do_action('tabopen')
   "nmap <buffer> <ESC> <Plug>(unite_exit)
+  imap <buffer><expr> <c-right> unite#do_action('right')
+  nmap <buffer><expr> <c-right> unite#do_action('right')
+  imap <buffer><expr> <c-left> unite#do_action('left')
+  nmap <buffer><expr> <c-left> unite#do_action('left')
 endfunction
 
 call unite#custom#profile('default', 'context', {
