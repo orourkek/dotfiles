@@ -67,6 +67,9 @@ set cursorline
 nnoremap <kPlus> :set cursorline<cr>
 inoremap <kPlus> :set cursorline<cr>
 
+" show column highlight @ 80
+set colorcolumn=80
+
 " this is required after I compiled vim 7.4 from source, otherwise the
 " backspace key doesn't work
 set backspace=2
@@ -292,11 +295,10 @@ function! s:unite_settings()
 endfunction
 
 call unite#custom#profile('default', 'context', {
-  \ 'winheight' : 20,
+  \ 'winheight' : 10,
   \ 'start_insert' : 1,
   \ 'prompt_visible': 1,
   \ 'marked_icon': '✓',
-  \ 'default_action': 'tabopen',
   \ })
 
 

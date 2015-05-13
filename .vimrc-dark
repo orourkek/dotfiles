@@ -8,5 +8,5 @@ set background=dark
 hi SpecialKey ctermfg=Red ctermbg=DarkRed
 
 " highlight group for "eol", "extends", and "precedes"
-hi NonText ctermfg=2
+hi NonText ctermfg=Black
 
