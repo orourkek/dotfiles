@@ -36,12 +36,17 @@ execute pathogen#infect()
 "augroup end
 
 " alt + right arrow : go to end of line
-inoremap <a-right> <end>
-nnoremap <a-right> <end>
+inoremap <A-right> <end>
+nnoremap <A-right> <end>
 " alt + left arrow : go to start of line
-inoremap <a-left> <home>
-nnoremap <a-left> <home>
-
+inoremap <A-left> <home>
+nnoremap <A-left> <home>
+" move line up
+nnoremap <C-S-k> :m -2<CR>
+inoremap <C-S-k> :m -2<CR>
+" move line down
+nnoremap <C-S-j> :m +1<CR>
+inoremap <C-S-j> :m +1<CR>
 
 " --------------------------------
 " general display options
