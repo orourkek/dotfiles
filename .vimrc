@@ -31,6 +31,18 @@ set encoding=utf-8
 " activate pathogen
 execute pathogen#infect()
 
+function OpenUniteIfNoFile()
+  if argc() == 0
+    :Unite file file_rec -no-split
+  elseif isdirectory(argv(0))
+    :UniteWithCurrentDir file file_rec -no-split
+  endif
+endfunction
+
+augroup EnterVimNoFile
+  au VimEnter * call OpenUniteIfNoFile()
+augroup end
+
 "augroup CursorLineFix
   "autocmd VimEnter,BufEnter,WinEnter * setlocal cursorline
 "augroup end
@@ -259,7 +271,7 @@ call unite#filters#sorter_default#use(['sorter_rank'])
 " use ack in unite grep source.
 if executable('ack-grep')
   let g:unite_source_grep_command = 'ack-grep'
-  let g:unite_source_grep_default_opts = '-i --nogroup --no-color -H --ignore-dir=node_modules --ignore-dir=vendor'
+  let g:unite_source_grep_default_opts = '-i --nogroup --no-color -H --ignore-dir=node_modules --ignore-dir=vendor --ignore-dir=user-docs'
   let g:unite_source_grep_recursive_opt = ''
 endif
 
