@@ -22,7 +22,7 @@ class Color(DefaultColor):
     USERNAME_ROOT_BG = RED
 
     HOSTNAME_FG = WHITE
-    HOSTNAME_BG = GREEN
+    HOSTNAME_BG = PURPLE
 
     HOME_SPECIAL_DISPLAY = True
     HOME_FG = WHITE

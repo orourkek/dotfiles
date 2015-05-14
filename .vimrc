@@ -104,7 +104,7 @@ set nowrap
 " --------------------------------
 
 "set listchars=eol:↵,tab:⇥,trail:~,extends:⤵,precedes:⤷,nbsp:․
-set listchars=eol:↵,tab:⇥\ ,extends:⤵,precedes:⤷,trail:•
+set listchars=eol:↵,tab:⇥\ ,extends:⤵,precedes:⤷,trail:⚫  " •
 set list
 
 " NOTE: relevant highlight groups are found
@@ -227,11 +227,11 @@ highlight GitGutterChange ctermfg=DarkYellow
 highlight GitGutterDelete ctermfg=DarkRed
 highlight GitGutterChangeDelete ctermfg=Red
 
-let g:gitgutter_sign_added =                '⊕'
-let g:gitgutter_sign_modified =             '⁂' "'✳'
-let g:gitgutter_sign_removed =              '_'
-let g:gitgutter_sign_removed_first_line =   '‾'
-let g:gitgutter_sign_modified_removed =     '✳_'
+let g:gitgutter_sign_added =                '✚' " ☑
+let g:gitgutter_sign_modified =             '✱' " ⁕ ⁂ ✳ ⋇ ✸ ✱ ✰ ✪ ❋ ❊ ⚫
+let g:gitgutter_sign_removed =              '✂' " ✖ ✘ ✗ ✕ ⚑ ⚊ ☒
+let g:gitgutter_sign_removed_first_line =   '▔'
+let g:gitgutter_sign_modified_removed =     '✱▁'
 
 
 " ctrl-p
