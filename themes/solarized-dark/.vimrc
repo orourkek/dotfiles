@@ -1,8 +1,10 @@
 
 source ~/.vimrc-main
 
-" settings for a dark themed vim
+colorscheme solarized
 set background=dark
+set t_Co=16
+let g:solarized_termcolors=16
 
 " highlight group for "nbsp", "tab", and "trail"
 hi SpecialKey ctermfg=Red ctermbg=DarkRed

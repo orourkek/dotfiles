@@ -70,11 +70,6 @@ syntax on
 " customize highlighting
 "hi javascriptIdentifier ctermfg=DarkMagenta
 
-" Solarized color scheme
-colorscheme solarized
-set t_Co=16
-let g:solarized_termcolors=16
-
 " show line numbers
 set number
 

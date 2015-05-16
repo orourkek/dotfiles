@@ -1,8 +1,10 @@
 
 source ~/.vimrc-main
 
-" settings for a dark themed vim
 set background=light
+"set t_Co=16
+let base16colorspace=256
+colorscheme base16-flat
 
 " highlight group for "nbsp", "tab", and "trail"
 hi SpecialKey ctermfg=DarkRed
