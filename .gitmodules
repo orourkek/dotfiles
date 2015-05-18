@@ -4,60 +4,60 @@
 [submodule "lib/dircolors-solarized"]
 	path = lib/dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized
-[submodule ".vim/bundle/delimitMate"]
-	path = .vim/bundle/delimitMate
+[submodule "config/vim/bundle/delimitMate"]
+	path = config/vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate
-[submodule ".vim/bundle/supertab"]
-	path = .vim/bundle/supertab
+[submodule "config/vim/bundle/supertab"]
+	path = config/vim/bundle/supertab
 	url = https://github.com/ervandew/supertab
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
+[submodule "config/vim/bundle/syntastic"]
+	path = config/vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic
-[submodule ".vim/bundle/tagbar"]
-	path = .vim/bundle/tagbar
+[submodule "config/vim/bundle/tagbar"]
+	path = config/vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
-[submodule ".vim/bundle/tlib-vim"]
-	path = .vim/bundle/tlib-vim
+[submodule "config/vim/bundle/tlib-vim"]
+	path = config/vim/bundle/tlib-vim
 	url = https://github.com/tomtom/tlib_vim
-[submodule ".vim/bundle/unite"]
-	path = .vim/bundle/unite
+[submodule "config/vim/bundle/unite"]
+	path = config/vim/bundle/unite
 	url = https://github.com/Shougo/unite.vim
-[submodule ".vim/bundle/vim-addon-mw-utils"]
-	path = .vim/bundle/vim-addon-mw-utils
+[submodule "config/vim/bundle/vim-addon-mw-utils"]
+	path = config/vim/bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils
-[submodule ".vim/bundle/vim-airline"]
-	path = .vim/bundle/vim-airline
+[submodule "config/vim/bundle/vim-airline"]
+	path = config/vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
+[submodule "config/vim/bundle/vim-colors-solarized"]
+	path = config/vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
+[submodule "config/vim/bundle/vim-fugitive"]
+	path = config/vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule ".vim/bundle/vim-gitgutter"]
-	path = .vim/bundle/vim-gitgutter
+[submodule "config/vim/bundle/vim-gitgutter"]
+	path = config/vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
-[submodule ".vim/bundle/vim-javascript-syntax"]
-	path = .vim/bundle/vim-javascript-syntax
+[submodule "config/vim/bundle/vim-javascript-syntax"]
+	path = config/vim/bundle/vim-javascript-syntax
 	url = https://github.com/rylnd/vim-javascript-syntax
-[submodule ".vim/bundle/L9"]
-	path = .vim/bundle/L9
+[submodule "config/vim/bundle/L9"]
+	path = config/vim/bundle/L9
 	url = https://github.com/vim-scripts/L9
-[submodule ".vim/bundle/vim-react-snippets"]
-	path = .vim/bundle/vim-react-snippets
+[submodule "config/vim/bundle/vim-react-snippets"]
+	path = config/vim/bundle/vim-react-snippets
 	url = https://github.com/justinj/vim-react-snippets
-[submodule ".vim/bundle/vim-snipmate"]
-	path = .vim/bundle/vim-snipmate
+[submodule "config/vim/bundle/vim-snipmate"]
+	path = config/vim/bundle/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate
-[submodule ".vim/bundle/vim-yankstack"]
-	path = .vim/bundle/vim-yankstack
+[submodule "config/vim/bundle/vim-yankstack"]
+	path = config/vim/bundle/vim-yankstack
 	url = https://github.com/maxbrunsfeld/vim-yankstack
-[submodule ".vim/bundle/vimproc.vim"]
-	path = .vim/bundle/vimproc.vim
+[submodule "config/vim/bundle/vimproc.vim"]
+	path = config/vim/bundle/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim
-[submodule ".vim/bundle/base16-vim"]
-	path = .vim/bundle/base16-vim
+[submodule "config/vim/bundle/base16-vim"]
+	path = config/vim/bundle/base16-vim
 	url = https://github.com/chriskempson/base16-vim
-[submodule ".vim/bundle/colorizer"]
-	path = .vim/bundle/colorizer
+[submodule "config/vim/bundle/colorizer"]
+	path = config/vim/bundle/colorizer
 	url = https://github.com/chrisbra/Colorizer
