@@ -12,10 +12,9 @@ if [ "$#" -eq 0 ]; then
   printf "Which theme would you like?\n"
   printf "  1. Solarized (dark)\n"
   printf "  2. Solarized (light)\n"
-  printf "  3. Base16: Default (dark)\n"
-  printf "  4. Base16: Ocean (dark)\n"
-  printf "  5. Base16: Ocean (light)\n"
-  printf "  6. Base16: Flat (light)\n"
+  printf "  3. Base16: Ocean (dark)\n"
+  printf "  4. Base16: Ocean (light)\n"
+  printf "  5. Base16: Flat (light)\n"
   read -p "> " -n 1;
 
   if [[ $REPLY == 1 ]]; then
@@ -23,12 +22,10 @@ if [ "$#" -eq 0 ]; then
   elif [[ $REPLY == 2 ]]; then
     THEME="solarized-light"
   elif [[ $REPLY == 3 ]]; then
-    THEME="base16-default-dark"
-  elif [[ $REPLY == 4 ]]; then
     THEME="base16-ocean-dark"
-  elif [[ $REPLY == 5 ]]; then
+  elif [[ $REPLY == 4 ]]; then
     THEME="base16-ocean-light"
-  elif [[ $REPLY == 6 ]]; then
+  elif [[ $REPLY == 5 ]]; then
     THEME="base16-flat-light"
   fi
 else
