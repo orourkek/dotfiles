@@ -1,21 +1,32 @@
 
 source ~/.vimrc-main
 
-let g:airline_theme='sol'
+let g:airline_theme='base16_ocean_light'
 
 set background=light
 set t_Co=256
 "let base16colorspace=256
 colorscheme base16-ocean
 
-hi Normal                             ctermbg=7
-hi ColorColumn                        ctermbg=15
+hi Normal                 ctermfg=3   ctermbg=15
+hi Special                ctermfg=14
+hi ColorColumn                        ctermbg=7
 hi SpecialKey             ctermfg=6
 hi NonText                ctermfg=6               term=none
-hi CursorLine                         ctermbg=6
+hi CursorLine                         ctermbg=7
 hi CursorLineNr           ctermfg=10
-hi LineNr                 ctermfg=12  ctermbg=6   term=none
-hi GitGutterAdd           ctermfg=10  ctermbg=6
-hi GitGutterChange        ctermfg=11  ctermbg=6
-hi GitGutterDelete        ctermfg=1   ctermbg=6
-hi GitGutterChangeDelete  ctermfg=9   ctermbg=6
+hi LineNr                 ctermfg=4   ctermbg=7   term=none
+hi GitGutterAdd           ctermfg=10  ctermbg=7
+hi GitGutterChange        ctermfg=11  ctermbg=7
+hi GitGutterDelete        ctermfg=1   ctermbg=7
+hi GitGutterChangeDelete  ctermfg=9   ctermbg=7
+
+hi Comment                ctermfg=4
+hi String                 ctermfg=10
+hi ErrorMsg               ctermfg=7 ctermbg=1
+hi Todo                   ctermfg=7 ctermbg=5
+hi Operator               ctermfg=3
+hi javaScriptBraces       ctermfg=3
+hi javaScriptIdentifier   ctermfg=12              cterm=bold
+hi javaScriptFuncKeyword  ctermfg=1
+hi javaScriptConditional  ctermfg=1
