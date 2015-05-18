@@ -3,6 +3,7 @@
 # get into the right directory
 SCRIPT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 POWERLINE_DIR="$SCRIPT_DIR/lib/powerline-shell"
+CONFIG_DIR="$SCRIPT_DIR/config"
 
 printf "\nkorourke's dotfiles"
 printf "\n⌁⌁⌁⌁⌁⌁⌁⌁⌁⌁⌁⌁⌁⌁⌁⌁⌁⌁⌁\n"
@@ -60,31 +61,34 @@ python install.py > /dev/null
 cd -
 
 declare -a files=(
-  ".aliases"
-  ".bash_logout"
-  ".bash_profile"
-  ".bash_prompt"
-  ".bashrc"
-  ".exports"
-  ".functions"
-  ".gitconfig"
-  ".gitignore"
-  ".gitmodules"
-  ".git-completion"
-  ".inputrc"
-  ".path"
-  ".profile"
-  ".wgetrc"
+  "aliases"
+  "bash_logout"
+  "bash_profile"
+  "bash_prompt"
+  "bashrc"
+  "exports"
+  "functions"
+  "gitconfig"
+  "gitignore"
+  "gitmodules"
+  "git-completion"
+  "inputrc"
+  "path"
+  "profile"
+  "wgetrc"
 )
 
 for file in "${files[@]}"; do
-  ln -sf "$SCRIPT_DIR/$file" "$HOME/$file"
+  ln -sf "$CONFIG_DIR/$file" "$HOME/.$file"
 done
-rm -rf "$HOME/.vim"
-ln -s "$SCRIPT_DIR/.vim" "$HOME/.vim"
-ln -sf "$SCRIPT_DIR/.vimrc" "$HOME/.vimrc-main"
-ln -sf "$SCRIPT_DIR/themes/$THEME/.vimrc" "$HOME/.vimrc"
-ln -sf "$POWERLINE_DIR/powerline-shell.py" "$HOME/powerline-shell.py"
+
+rm -rf  "$HOME/.vim"
+ln -s   "$CONFIG_DIR/vim"                     "$HOME/.vim"
+ln -sf  "$CONFIG_DIR/vimrc"                   "$HOME/.vimrc-main"
+ln -sf  "$SCRIPT_DIR/themes/$THEME/vimrc"     "$HOME/.vimrc"
+ln -sf  "$POWERLINE_DIR/powerline-shell.py"   "$HOME/powerline-shell.py"
+ln -sf  "$CONFIG_DIR/terminator/config"       "$HOME/.config/terminator/config"
+
 unset files
 unset file
 
