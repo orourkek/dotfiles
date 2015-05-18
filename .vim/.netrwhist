@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/korourke/src/mezzanine-web/static/js'
-let g:netrw_dirhist_2='/home/korourke/src/mezzanine-web/static/js/views'
-let g:netrw_dirhist_3='/home/korourke/src/mezzanine-web/static/js'
