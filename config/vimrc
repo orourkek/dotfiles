@@ -217,9 +217,9 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " git-gutter
 " --------------------------------
 
-highlight GitGutterAdd ctermfg=DarkGreen
-highlight GitGutterChange ctermfg=DarkYellow
-highlight GitGutterDelete ctermfg=DarkRed
+highlight GitGutterAdd ctermfg=Green
+highlight GitGutterChange ctermfg=Yellow
+highlight GitGutterDelete ctermfg=Red
 highlight GitGutterChangeDelete ctermfg=Red
 
 let g:gitgutter_sign_added =                '✚' " ☑
