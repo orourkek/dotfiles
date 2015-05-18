@@ -2,20 +2,21 @@ class Color(DefaultColor):
 
     black = 0
     red = 1
-    green = 2
-    yellow = 3
-    blue = 4
+    red2 = 9 #orange
+    green = 10
+    yellow = 11
+    blue = 12
     magenta = 5
-    cyan = 6
+    magenta2 = 13 #sienna
+    cyan = 14
     white = 7
-    base01 = 8
-    red2 = 9
-    base02 = 10
-    base03 = 11
-    base04 = 12
-    magenta2 = 13
-    base05 = 14
     white2 = 15
+    
+    base01 = 8
+    base02 = 2
+    base03 = 3
+    base04 = 4
+    base05 = 6
 
     USERNAME_FG = white2
     USERNAME_BG = blue
