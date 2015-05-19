@@ -21,13 +21,13 @@ let g:airline#themes#base16_ocean_light#palette.normal_modified = {
       \ }
 
 
-let s:I1 = [ s:guibg, '#5fff00' , 15, 12 ]
+let s:I1 = [ s:guibg, '#5fff00' , 15, 10 ]
 let s:I2 = [ '#ff5f00' , s:guibg2, s:afg, s:abg ]
-let s:I3 = [ '#767676' , s:guibg, s:bfg, s:bbg ]
+let s:I3 = [ '#767676' , s:guibg, 15, 10 ]
 let g:airline#themes#base16_ocean_light#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
 let g:airline#themes#base16_ocean_light#palette.insert_modified = copy(g:airline#themes#base16_ocean_light#palette.normal_modified)
 let g:airline#themes#base16_ocean_light#palette.insert_paste = {
-      \ 'airline_a': [ s:I1[0]   , '#d78700' , s:I1[2] , 172     , ''     ] ,
+      \ 'airline_a': [ s:guibg, '#d78700', 15, 5, '' ] ,
       \ }
 
 
@@ -39,7 +39,7 @@ let g:airline#themes#base16_ocean_light#palette.replace_modified = copy(g:airlin
 
 let s:V1 = [ s:guibg, '#dfdf00' , 15, 9 ]
 let s:V2 = [ '#ff5f00' , s:guibg2, s:afg, s:abg ]
-let s:V3 = [ '#767676' , s:guibg, s:bfg, s:bbg ]
+let s:V3 = [ '#767676' , s:guibg, 15, 9 ]
 let g:airline#themes#base16_ocean_light#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
 let g:airline#themes#base16_ocean_light#palette.visual_modified = copy(g:airline#themes#base16_ocean_light#palette.normal_modified)
 
