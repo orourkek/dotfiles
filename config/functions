@@ -245,20 +245,25 @@ function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
 
-#function mezz() {
-#  echo 'mezz!';
-#  if ('config' -eq $1) {
-#    printf('\nMezzanine Config\n================\n\n')
-#    if [$2 -eq 'single']; then
-#      printf('Applying SINGLE screen configuration...\n')
-#      set -x
-#      sudo rm -f /etc/oblong/screen.protein
-#      sudo rm -f /etc/oblong/feld.protein
-#      sudo ln -s ~/etc/proteins/dell-u3011/feld-single.protein /etc/oblong/feld.protein
-#      sudo ln -s ~/etc/proteins/dell-u3011/screen-single.protein /etc/oblong/screen.protein
-#      set +x
-#      printf '\ndone!\n\n';
-#    }
-#  }
-#}
+function mezz() {
+  if [ "single" = "$1" ]; then
+    printf "Applying SINGLE screen configuration..."
+    sudo rm -f /etc/oblong/screen.protein
+    sudo rm -f /etc/oblong/feld.protein
+    sudo ln -s ~/etc/proteins/dell-u3011/feld-single.protein /etc/oblong/feld.protein
+    sudo ln -s ~/etc/proteins/dell-u3011/screen-single.protein /etc/oblong/screen.protein
+    printf "done\n"
+  elif [ "triptych" = "$1" ]; then
+    printf "Applying TRIPTYCH screen configuration..."
+    sudo rm -f /etc/oblong/screen.protein
+    sudo rm -f /etc/oblong/feld.protein
+    sudo ln -s ~/etc/proteins/dell-u3011/feld-triptych.protein /etc/oblong/feld.protein
+    sudo ln -s ~/etc/proteins/dell-u3011/screen-triptych.protein /etc/oblong/screen.protein
+    printf "done\n"
+  fi
+
+  printf "Starting Mezzanine...\n"
+  sudo service mezzanine restart
+  printf "\ndone!\n\n"
+}
 

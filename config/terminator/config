@@ -3,31 +3,71 @@
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   title_transmit_bg_color = "#d08770"
   handle_size = 0
-  title_inactive_bg_color = "#c0c5ce"
+  title_inactive_bg_color = "#65737e"
 [keybindings]
 [profiles]
   [[default]]
-    palette = "#2b303b:#bf616a:#4f5b66:#65737e:#a7adba:#b48ead:#c0c5ce:#dfe1e8:#343d46:#d08770:#a3be8c:#ebcb8b:#8fa1b3:#ab7967:#96b5b4:#eff1f5"
+    palette = "#2b303b:#cc5c66:#4f5b66:#65737e:#a7adba:#b479a9:#c0c5ce:#c5c8d1:#343d46:#d0775b:#86ab66:#ccaa66:#6b90b3:#ab6c55:#66aba8:#dfe1e8"
+    login_shell = True
+    background_darkness = 0.93
+    scrollback_lines = 2000
+    use_system_font = False
+    cursor_color = "#4f5b66"
+    foreground_color = "#4f5b66"
+    update_records = False
+    exit_action = hold
+    font = Liberation Mono for Powerline 11
+    background_color = "#dfe1e8"
+    cursor_blink = False
+  [[base16-ocean-dark]]
+    palette = "#2b303b:#bf616a:#a3be8c:#ebcb8b:#8fa1b3:#b48ead:#96b5b4:#c0c5ce:#65737e:#bf616a:#a3be8c:#ebcb8b:#8fa1b3:#b48ead:#96b5b4:#eff1f5"
     login_shell = True
     use_system_font = False
     cursor_color = "#4f5b66"
     foreground_color = "#4f5b66"
     update_records = False
-    font = Liberation Mono for Powerline 12
-    background_color = "#dfe1e8"
-  [[base16-ocean-dark]]
-    palette = "#2b303b:#bf616a:#a3be8c:#ebcb8b:#8fa1b3:#b48ead:#96b5b4:#c0c5ce:#65737e:#bf616a:#a3be8c:#ebcb8b:#8fa1b3:#b48ead:#96b5b4:#eff1f5"
-    use_system_font = False
-    cursor_color = "#4f5b66"
-    foreground_color = "#4f5b66"
+    exit_action = hold
     font = Liberation Mono for Powerline 12
     background_color = "#dfe1e8"
 [layouts]
   [[default]]
     [[[child1]]]
+      profile = base16-ocean-dark
       type = Terminal
       parent = window0
     [[[window0]]]
       type = Window
       parent = ""
+  [[Triptych]]
+    [[[child0]]]
+      position = 65:24
+      type = Window
+      order = 0
+      parent = ""
+      size = 1779, 1534
+    [[[child1]]]
+      position = 1087
+      type = HPaned
+      order = 0
+      parent = child0
+    [[[child3]]]
+      position = 767
+      type = VPaned
+      order = 1
+      parent = child1
+    [[[terminal2]]]
+      profile = base16-ocean-dark
+      type = Terminal
+      order = 0
+      parent = child1
+    [[[terminal5]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child3
+    [[[terminal4]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child3
 [plugins]

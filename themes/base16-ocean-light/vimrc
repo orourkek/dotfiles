@@ -20,7 +20,7 @@ hi GitGutterAdd           ctermfg=10  ctermbg=7
 hi GitGutterChange        ctermfg=11  ctermbg=7
 hi GitGutterDelete        ctermfg=1   ctermbg=7
 hi GitGutterChangeDelete  ctermfg=9   ctermbg=7
-
+hi MatchParen             ctermfg=15  ctermbg=14
 hi Comment                ctermfg=4
 hi String                 ctermfg=10
 hi ErrorMsg               ctermfg=7 ctermbg=1
@@ -30,3 +30,4 @@ hi javaScriptBraces       ctermfg=3
 hi javaScriptIdentifier   ctermfg=12              cterm=bold
 hi javaScriptFuncKeyword  ctermfg=1
 hi javaScriptConditional  ctermfg=1
+
