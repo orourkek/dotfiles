@@ -1,8 +1,9 @@
 [global_config]
-  title_receive_bg_color = "#b48ead"
-  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
-  title_transmit_bg_color = "#d08770"
   handle_size = 0
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  title_inactive_fg_color = "#c0c5ce"
+  title_receive_bg_color = "#b48ead"
+  title_transmit_bg_color = "#d0775b"
   title_inactive_bg_color = "#65737e"
 [keybindings]
 [profiles]
@@ -38,6 +39,39 @@
     [[[window0]]]
       type = Window
       parent = ""
+  [[work]]
+    [[[child0]]]
+      position = 77:24
+      type = Window
+      order = 0
+      parent = ""
+      size = 2125, 1552
+    [[[child1]]]
+      position = 1196
+      type = HPaned
+      order = 0
+      parent = child0
+    [[[child3]]]
+      position = 776
+      type = VPaned
+      order = 1
+      parent = child1
+    [[[terminal2]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child1
+    [[[terminal5]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child3
+    [[[terminal4]]]
+      profile = default
+      command = ls
+      type = Terminal
+      order = 0
+      parent = child3
   [[Triptych]]
     [[[child0]]]
       position = 65:24
@@ -65,9 +99,11 @@
       type = Terminal
       order = 1
       parent = child3
+      command = pwd && ls
     [[[terminal4]]]
       profile = default
       type = Terminal
       order = 0
       parent = child3
+      command = ls
 [plugins]

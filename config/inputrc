@@ -24,6 +24,13 @@ set completion-query-items 200
 # Show extra file information when completing, like `ls -F` does
 set visible-stats on
 
+# Colorize the suggestions
+set colored-stats on
+
+# This forces the completion suggestions to appear one per line
+set print-completions-horizontally off
+set completion-display-width 100
+
 # Be more intelligent when autocompleting by also looking at the text after
 # the cursor. For example, when the current line is "cd ~/src/mozil", and
 # the cursor is on the "z", pressing Tab will not autocomplete it to "cd
