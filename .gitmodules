@@ -61,3 +61,6 @@
 [submodule "config/vim/bundle/colorizer"]
 	path = config/vim/bundle/colorizer
 	url = https://github.com/chrisbra/Colorizer
+[submodule "config/vim/bundle/tern-for-vim"]
+	path = config/vim/bundle/tern-for-vim
+	url = https://github.com/marijnh/tern_for_vim
