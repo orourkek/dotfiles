@@ -21,7 +21,6 @@
     font = Liberation Mono for Powerline 11
     background_color = "#dfe1e8"
     cursor_blink = False
-  [[base16-ocean-dark]]
 [layouts]
   [[default]]
     [[[child1]]]
