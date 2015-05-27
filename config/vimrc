@@ -360,5 +360,5 @@ au FileType javascript let b:delimitMate_eol_marker = ";"
 
 nmap <leader>t :TagbarToggle<CR>
 
-autocmd FileType javascript,less,html nested :TagbarOpen
+"autocmd FileType javascript,less,html nested :TagbarOpen
 
