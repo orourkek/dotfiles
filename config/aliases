@@ -57,11 +57,11 @@ else # OS X `ls`
 fi
 
 # LS FLAGS:
-# -g  group directories before files
-# -h  with -l, print sizes in human readable format
-# -p  append / indicator to directories
-# -F  append indicator (one of */=>@|) to entries
-lsFlags="-Fghp ${colorflag} --time-style='+%Y-%m-%d %H:%M'"
+# --group-directories-first   group directories before files
+# -h                          with -l, print sizes in human readable format
+# -p                          append / indicator to directories
+# -F                          append indicator (one of */=>@|) to entries
+lsFlags="-Fhp --group-directories-first ${colorflag} --time-style='+%Y-%m-%d %H:%M'"
 ls="command ls ${lsFlags}"
 
 export LSCOLORS=ExCxFxDxDxegedabagacHb
