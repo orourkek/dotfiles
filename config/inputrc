@@ -1,8 +1,18 @@
 # Make Tab autocomplete regardless of filename case
 set completion-ignore-case on
 
+# This one is insanely useful when you have a folder with lots of similarly
+# named files and you are not sure how far the completion has gone when you
+# press TAB. The first part that has been completed will be replaced by "...",
+# and it is simple to see what you need to type to finish the completion.
+set completion-prefix-display-length 2
+
 # List all matches in case multiple possible completions are possible
 set show-all-if-ambiguous on
+set show-all-if-unmodified on
+
+# Match underscores as hyphens, and vice versa
+set completion-map-case on
 
 # Immediately add a trailing slash when autocompleting symlinks to directories
 set mark-symlinked-directories on
@@ -29,7 +39,7 @@ set colored-stats on
 
 # This forces the completion suggestions to appear one per line
 set print-completions-horizontally off
-set completion-display-width 100
+set completion-display-width 0
 
 # Be more intelligent when autocompleting by also looking at the text after
 # the cursor. For example, when the current line is "cd ~/src/mozil", and
@@ -45,3 +55,8 @@ set convert-meta off
 
 # Use Alt/Meta + Delete to delete the preceding word
 "\e[3;3~": kill-word
+
+# Use Ctrl-j and Ctrl-k to cycle through the available completions
+Control-j: menu-complete
+Control-k: menu-complete-backward
+

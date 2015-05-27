@@ -16,6 +16,9 @@ shopt -s histappend
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
 
+# https://twitter.com/liamosaur/status/506975850596536320/photo/1
+alias fuck='sudo $(history -p \!\!)' 
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
