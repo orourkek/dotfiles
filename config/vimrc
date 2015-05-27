@@ -39,12 +39,13 @@ function OpenUniteIfNoFile()
   endif
 endfunction
 
-augroup EnterVimNoFile
-  au VimEnter * call OpenUniteIfNoFile()
-augroup end
+" open unite if VIM is started with no file
+"augroup EnterVimNoFile
+"  au VimEnter * call OpenUniteIfNoFile()
+"augroup end
 
 "augroup CursorLineFix
-  "autocmd VimEnter,BufEnter,WinEnter * setlocal cursorline
+  "au VimEnter,BufEnter,WinEnter * setlocal cursorline
 "augroup end
 
 " alt + right arrow : go to end of line
@@ -59,6 +60,24 @@ inoremap <C-S-k> :m -2<CR>
 " move line down
 nnoremap <C-S-j> :m +1<CR>
 inoremap <C-S-j> :m +1<CR>
+
+" binds for scrolling/moving
+nnoremap <ScrollWheelUp> 8<C-Y>
+inoremap <ScrollWheelUp> <C-O>8<C-Y>
+nnoremap <ScrollWheelDown> 8<C-E>
+inoremap <ScrollWheelDown> <C-O>8<C-E>
+nnoremap <S-up>   {
+inoremap <S-up>   <C-O>{
+nnoremap <S-down> }
+inoremap <S-down> <C-O>}
+nnoremap <C-up>   <C-U>
+inoremap <C-up>   <C-O><C-U>
+nnoremap <C-down> <C-D>
+inoremap <C-down> <C-O><C-D>
+
+" activate mouse usage in every mode
+set mouse=a
+
 
 " --------------------------------
 " general display options
@@ -327,4 +346,17 @@ let delimitMate_expand_cr = 1
 " expand spaces
 let delimitMate_expand_space = 1
 
+" This option turns on/off the jumping over <CR> and <Space> expansions when
+" inserting closing matchpairs
+let delimitMate_jump_expansion = 1
+
+" in js files, automatically insert ";" when expanding a matchpair
+au FileType js let b:delimitMate_insert_eol_marker = 2
+au FileType js let b:delimitMate_eol_marker = ";"
+
+
+" TagBar
+" -------------------------------
+
+nmap <leader>t :TagbarToggle<CR>
 
