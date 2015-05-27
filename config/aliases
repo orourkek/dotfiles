@@ -38,8 +38,8 @@ alias mw="cd ~/src/mezzanine-web"
 
 # git aliases
 alias g="git"
-alias gl='git lga -42'
-alias gll='git lg -42'
+alias gl='git lga -36'
+alias gll='git lg -36'
 alias ga="git add"
 alias gb="git branch -v"
 alias gba="git branch -va"

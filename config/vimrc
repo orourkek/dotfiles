@@ -351,12 +351,14 @@ let delimitMate_expand_space = 1
 let delimitMate_jump_expansion = 1
 
 " in js files, automatically insert ";" when expanding a matchpair
-au FileType js let b:delimitMate_insert_eol_marker = 2
-au FileType js let b:delimitMate_eol_marker = ";"
+au FileType javascript let b:delimitMate_insert_eol_marker = 2
+au FileType javascript let b:delimitMate_eol_marker = ";"
 
 
 " TagBar
 " -------------------------------
 
 nmap <leader>t :TagbarToggle<CR>
+
+autocmd FileType javascript,less,html nested :TagbarOpen
 
