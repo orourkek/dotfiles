@@ -246,24 +246,34 @@ function tre() {
 }
 
 function mezz() {
+  etc="/etc/oblong"
+  prot="~/etc/proteins"
+
   if [ "single" = "$1" ]; then
     printf "Applying SINGLE screen configuration..."
-    sudo rm -f /etc/oblong/screen.protein
-    sudo rm -f /etc/oblong/feld.protein
-    sudo ln -s ~/etc/proteins/dell-u3011/feld-single.protein /etc/oblong/feld.protein
-    sudo ln -s ~/etc/proteins/dell-u3011/screen-single.protein /etc/oblong/screen.protein
+    sudo rm -f "${etc}"/screen.protein
+    sudo rm -f "${etc}"/feld.protein
+    sudo ln -s "${prot}"/dell-u3011/feld-single.protein "${etc}"/feld.protein
+    sudo ln -s "${prot}"/dell-u3011/screen-single.protein "${etc}"/screen.protein
     printf "done\n"
   elif [ "triptych" = "$1" ]; then
     printf "Applying TRIPTYCH screen configuration..."
-    sudo rm -f /etc/oblong/screen.protein
-    sudo rm -f /etc/oblong/feld.protein
-    sudo ln -s ~/etc/proteins/dell-u3011/feld-triptych.protein /etc/oblong/feld.protein
-    sudo ln -s ~/etc/proteins/dell-u3011/screen-triptych.protein /etc/oblong/screen.protein
+    sudo rm -f "${etc}"/screen.protein
+    sudo rm -f "${etc}"/feld.protein
+    sudo ln -s "${prot}"/dell-u3011/feld-triptych.protein "${etc}"/feld.protein
+    sudo ln -s "${prot}"/dell-u3011/screen-triptych.protein "${etc}"/screen.protein
     printf "done\n"
   fi
 
-  printf "Starting Mezzanine...\n"
-  sudo service mezzanine restart
-  printf "\ndone!\n\n"
+  printf "▸ Killing all Lightbox processes...\n"
+  sudo killall lightbox
+  printf "▸ Stopping Mezzanine service...\n"
+  sudo service mezzanine stop
+
+  printf "▸ Starting Mezzanine...\n"
+  sudo service mezzanine start
+  printf "▸ Starting Lightbox for corkboards...\n"
+  sudo OB_POOLS_DIR=/mnt/poolsramdisk/ nohup lightbox "${etc}"/cb-screen.protein "${etc}"/cb-feld.protein > /dev/null 2>&1 &
+  printf "\n▸ done!\n\n"
 }
 
