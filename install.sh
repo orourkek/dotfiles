@@ -40,12 +40,12 @@ SEGMENTS = [
   'virtual_env',
   #'username',
   #'hostname',
-  'datetime_mine',
+  'datetime',
   'ssh',
   #'cwd',
-  'cwd_mine',
+  'cwd-mine',
   'read_only',
-  'git_mine',
+  'git-mine',
   #'hg',
   #'svn',
   #'fossil',
@@ -81,11 +81,14 @@ for file in "${files[@]}"; do
 done
 
 rm -rf  "$HOME/.vim"
-ln -s   "$CONFIG_DIR/vim"                     "$HOME/.vim"
-ln -sf  "$CONFIG_DIR/vimrc"                   "$HOME/.vimrc-main"
-ln -sf  "$SCRIPT_DIR/themes/$THEME/vimrc"     "$HOME/.vimrc"
-ln -sf  "$POWERLINE_DIR/powerline-shell.py"   "$HOME/powerline-shell.py"
-ln -sf  "$CONFIG_DIR/terminator/config"       "$HOME/.config/terminator/config"
+ln -s   "$CONFIG_DIR/vim"                             "$HOME/.vim"
+ln -sf  "$CONFIG_DIR/vimrc"                           "$HOME/.vimrc-main"
+ln -sf  "$SCRIPT_DIR/themes/$THEME/vimrc"             "$HOME/.vimrc"
+ln -sf  "$POWERLINE_DIR/powerline-shell.py"           "$HOME/powerline-shell.py"
+ln -sf  "$CONFIG_DIR/terminator/config"               "$HOME/.config/terminator/config"
+ln -sf  "$CONFIG_DIR/powerline/segments/git.py"       "$POWERLINE_DIR/segments/git-mine.py"
+ln -sf  "$CONFIG_DIR/powerline/segments/cwd.py"       "$POWERLINE_DIROWERLINE_DIR/segments/cwd-mine.py"
+ln -sf  "$CONFIG_DIR/powerline/segments/datetime.py"  "$POWERLINE_DIR/segments/datetime.py"
 
 unset files
 unset file
