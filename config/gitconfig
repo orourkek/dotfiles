@@ -75,6 +75,22 @@
       git branch -D pr/$1 && \
       git commit --amend -m \"$(git log -1 --pretty=%B)\n\nCloses #$1.\"; \
     fi \
+    }; f"
+
+  proon = "!f() { \
+    printf \"\n \\033[45;1;37m DRY RUN \\033[0m (Use \\033[1;30m git proon go \\033[0m to be destructive)\n\n\"; \
+    git checkout master && \
+    git fetch -p && \
+    printf \"\n\\033[41;1;37m ✖ The following fully merged \\033[44;1;37m local \\033[41;1;37m branch(es) will be pruned:\\033[0m\n\n\" && \
+    git branch --merged master | grep -v 'master$' | xargs -L 1 echo && \
+    printf \"\n\\033[41;1;37m ✖ The following fully merged \\033[44;1;37m remote \\033[41;1;37m branch(es) will be pruned:\\033[0m\n\n\" && \
+    git branch -r --merged master | grep -v 'master$' | grep -v '^  gitlab/bfx-' | grep --color=never '^  gitlab/' | xargs -L 1 echo && \
+    if [ \"$1\" = \"go\" ]; then \
+      printf \"\n\\033[41;1;37m Pruning branches... \\033[0m\n\n\"; \
+      git branch --merged master | grep -v 'master$' | xargs -L 1 git branch -d && \
+      git branch -r --merged master | grep -v 'master$' | grep -v '^  gitlab/bfx-' | grep --color=never '^  gitlab/' | sed 's/gitlab\\///' | xargs -L 1 git push --delete gitlab ; \
+    fi; \
+    printf \"\n\"; \
   }; f"
 
 [apply]
