@@ -87,7 +87,7 @@ ln -sf  "$SCRIPT_DIR/themes/$THEME/vimrc"             "$HOME/.vimrc"
 ln -sf  "$POWERLINE_DIR/powerline-shell.py"           "$HOME/powerline-shell.py"
 ln -sf  "$CONFIG_DIR/terminator/config"               "$HOME/.config/terminator/config"
 ln -sf  "$CONFIG_DIR/powerline/segments/git.py"       "$POWERLINE_DIR/segments/git-mine.py"
-ln -sf  "$CONFIG_DIR/powerline/segments/cwd.py"       "$POWERLINE_DIROWERLINE_DIR/segments/cwd-mine.py"
+ln -sf  "$CONFIG_DIR/powerline/segments/cwd.py"       "$POWERLINE_DIR/segments/cwd-mine.py"
 ln -sf  "$CONFIG_DIR/powerline/segments/datetime.py"  "$POWERLINE_DIR/segments/datetime.py"
 
 unset files
