@@ -4,9 +4,9 @@
 
 [alias]
 
-  lg = log --graph --date=short --format=format:'%C(yellow)❪%C(auto)%h%C(yellow)❫ %C(yellow)▸ %<(42,mtrunc)%s %C(reset)%C(blue)✎ %an ⌚ %ar          %C(auto)%+D%C(reset)'
-  #lga = log --graph --date=short --format=format:'%C(cyan)%h %C(white)▸ %<(60,mtrunc)%s %C(blue bold)✎ %an %C(bold green)⌚ %ar          %C(auto)%+D%C(reset)' --all
-  lga = log --graph --date=short --format=format:'%C(yellow)❪%C(auto)%h%C(yellow)❫ %C(yellow)▸ %<(42,mtrunc)%s %C(reset)%C(blue)✎ %an ⌚ %ar          %C(auto)%+D%C(reset)' --all
+  lg = log --graph --format=format:'%C(magenta bold)%h%C(reset) ▪ %C(yellow bold)%ar %C(reset)▪ %C(blue)%an %C(reset)▪ %C(black)%<(42,mtrunc)%s %C(auto)%+D%C(reset)'
+  #lg = log --graph --date=short --format=format:'%C(yellow)❪%C(auto)%h%C(yellow)❫ %C(yellow)▸ %<(42,mtrunc)%s %C(reset)%C(blue)✎ %an ⌚ %ar          %C(auto)%+D%C(reset)'
+  lga = log --graph --all --format=format:'%C(magenta bold)%h%C(reset) ▪ %C(yellow bold)%ar %C(reset)▪ %C(blue)%an %C(reset)▪ %C(black)%<(42,mtrunc)%s %C(auto)%+D%C(reset)'
 
   # View abbreviated SHA, description, and history graph of the latest 20 commits
   l = log --pretty=oneline -n 20 --graph --abbrev-commit --decorate=short
