@@ -67,3 +67,6 @@
 [submodule "config/vim/bundle/vim-less"]
 	path = config/vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less
+[submodule "config/vim/bundle/ansi-esc"]
+	path = config/vim/bundle/ansi-esc
+	url = https://github.com/powerman/vim-plugin-AnsiEsc
