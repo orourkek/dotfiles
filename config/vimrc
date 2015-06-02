@@ -20,6 +20,24 @@
 " 14      3*      Yellow, LightYellow
 " 15      7*      White
 
+" func to run a command and show output in split buffer
+
+function! ExecuteInShell(command, ftype) " {{{
+    let command = join(map(split(a:command), 'expand(v:val)'))
+    let winnr = bufwinnr('^' . command . '$')
+    silent! execute  winnr < 0 ? 'new ' . shellescape(command) : winnr . 'wincmd w'
+    execute 'setlocal filetype=' . a:ftype . ' buftype=nowrite bufhidden=wipe nobuflisted noswapfile nowrap nonumber'
+    echo 'Execute ' . command . '...'
+    silent! execute 'silent %!'. command
+    silent! redraw
+    "silent! execute 'au BufUnload <buffer> execute bufwinnr(' . bufnr('#') . ') . ''wincmd w'''
+    "silent! execute 'nnoremap <silent> <buffer> <LocalLeader>r :call <SID>ExecuteInShell(''' . command . ''')<CR>:AnsiEsc<CR>'
+    silent! execute 'nnoremap <silent> <buffer> q :q<CR>'
+    silent! execute 'AnsiEsc'
+    echo 'Shell command executed: ' . command
+endfunction " }}}
+command! -complete=shellcmd -nargs=+ Shell call ExecuteInShell(<q-args>, 'shelloutput')
+
 
 " --------------------------------
 " Basic Configuration
@@ -47,6 +65,15 @@ endfunction
 "augroup CursorLineFix
   "au VimEnter,BufEnter,WinEnter * setlocal cursorline
 "augroup end
+
+function! s:simple_buffer_settings()
+  nnoremap <buffer> <q> :q<CR>
+  inoremap <buffer> <q> :q<CR>
+endfunction
+
+augroup EasyQuitForSimpleBuffers
+  autocmd FileType help call s:simple_buffer_settings()
+augroup end
 
 " alt + right arrow : go to end of line
 inoremap <A-right> <end>
@@ -77,6 +104,9 @@ inoremap <C-down> <C-O><C-D>
 
 " activate mouse usage in every mode
 set mouse=a
+
+" preview window height
+set previewheight=20
 
 
 " --------------------------------
@@ -369,7 +399,12 @@ nmap <leader>t :TagbarToggle<CR>
 nmap <leader>gs :Gstatus<CR>
 nmap <leader>ga :Git add %:p<CR><CR>
 nmap <leader>gc :Gcommit -v<CR>
-nmap <leader>gd :Gdiff<CR>
+nmap <leader>gd :call ExecuteInShell('git diff --color %:p', 'gitdiff')<CR>:set number<CR>:set nocursorline<CR>
+nmap <leader>gD :call ExecuteInShell('git diff --color', 'gitdiff')<CR>:set number<CR>:set nocursorline<CR>
+nmap <leader>gl :call ExecuteInShell('git lga -20', 'gitlog')<CR>
+nmap <leader>gL :call ExecuteInShell('git lga', 'gitlog')<CR>
+" no color version:
+"nmap <leader>gl :call ExecuteInShell('git log --pretty=oneline --graph --all --decorate --abbrev-commit', 'gitlog')<CR>
 
 "augroup FugitiveBinds
 "  autocmd FileType gitcommit call s:fugitive_binds()
