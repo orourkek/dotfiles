@@ -8,14 +8,6 @@
   title_inactive_bg_color = "#65737e"
 [keybindings]
 [profiles]
-  [[default]]
-    use_system_font = False
-    scrollback_lines = 2000
-    palette = "#2b303b:#bf616a:#a3be8c:#ebcb8b:#8fa1b3:#b48ead:#96b5b4:#c0c5ce:#65737e:#bf616a:#a3be8c:#ebcb8b:#8fa1b3:#b48ead:#96b5b4:#eff1f5"
-    foreground_color = "#b2b7bf"
-    font = Liberation Mono for Powerline 11
-    background_color = "#2b303b"
-    cursor_blink = False
   [[ocean-light]]
     palette = "#2b303b:#cc5c66:#4f5b66:#65737e:#a7adba:#b479a9:#c0c5ce:#c5c8d1:#343d46:#d0775b:#86ab66:#ccaa66:#6b90b3:#ab6c55:#66aba8:#dfe1e8"
     login_shell = True
@@ -28,6 +20,14 @@
     exit_action = hold
     font = Liberation Mono for Powerline 11
     background_color = "#dfe1e8"
+    cursor_blink = False
+  [[default]]
+    use_system_font = False
+    scrollback_lines = 2000
+    palette = "#242933:#bf616a:#a3be8c:#ebcb8b:#8fa1b3:#b48ead:#96b5b4:#c0c5ce:#65737e:#bf616a:#a3be8c:#ebcb8b:#8fa1b3:#b48ead:#96b5b4:#eff1f5"
+    foreground_color = "#b2b7bf"
+    font = Liberation Mono for Powerline 11
+    background_color = "#2b303b"
     cursor_blink = False
 [layouts]
   [[default]]

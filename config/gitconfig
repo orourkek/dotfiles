@@ -4,9 +4,9 @@
 
 [alias]
 
-  lg = log --graph --format=format:'%C(magenta bold)%h%C(reset) ▪ %C(yellow bold)%ar %C(reset)▪ %C(blue)%an %C(reset)▪ %C(black)%<(42,mtrunc)%s %C(auto)%+D%C(reset)'
+  lg = log --graph --format=format:'%C(yellow)%h%C(reset) ▪ %C(white dim)%ar %C(reset)▪ %C(white dim)%an %C(reset)▪ %C(blue)%<(42,mtrunc)%s %C(auto)%+D%C(reset)'
   #lg = log --graph --date=short --format=format:'%C(yellow)❪%C(auto)%h%C(yellow)❫ %C(yellow)▸ %<(42,mtrunc)%s %C(reset)%C(blue)✎ %an ⌚ %ar          %C(auto)%+D%C(reset)'
-  lga = log --graph --all --format=format:'%C(magenta bold)%h%C(reset) ▪ %C(yellow bold)%ar %C(reset)▪ %C(blue)%an %C(reset)▪ %C(black)%<(42,mtrunc)%s %C(auto)%+D%C(reset)'
+  lga = log --graph --all --format=format:'%C(yellow)%h%C(reset) ▪ %C(white dim)%ar %C(reset)▪ %C(white dim)%an %C(reset)▪ %C(white)%<(42,mtrunc)%s %C(auto)%+D%C(reset)'
 
   # View abbreviated SHA, description, and history graph of the latest 20 commits
   l = log --pretty=oneline -n 20 --graph --abbrev-commit --decorate=short
@@ -126,14 +126,14 @@
 [color "branch"]
 
   current = red bold
-  local = blue bold
-  remote = cyan bold
+  local = red
+  remote = cyan
 
 [color "decorate"]
 
-  branch = blue bold
-  tag = green bold
-  remoteBranch = cyan bold
+  branch = red bold
+  tag = green
+  remoteBranch = cyan
   HEAD = red
   stash = magenta bold
 
@@ -150,7 +150,7 @@
   added = green bold #files which are added but not committed
   updated = cyan bold #files which are added but not committed
   changed = yellow bold # files which are changed but not added in the index
-  untracked = bold #files which are not tracked by Git
+  untracked = magenta bold #files which are not tracked by Git
   #header = white #header text of status message
   branch = green bold #the current branch
   unmerged = magenta #files which have unmerged changes
