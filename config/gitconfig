@@ -78,7 +78,9 @@
     }; f"
 
   proon = "!f() { \
-    printf \"\n \\033[45;1;37m DRY RUN \\033[0m (Use \\033[1;30m git proon go \\033[0m to be destructive)\n\n\"; \
+    if [ \"$1\" != \"go\" ]; then \
+      printf \"\n \\033[45;1;37m DRY RUN \\033[0m (Use \\033[1;30m git proon go \\033[0m to be destructive)\n\n\"; \
+    fi; \
     git checkout master && \
     git fetch -p && \
     printf \"\n\\033[41;1;37m ✖ The following fully merged \\033[44;1;37m local \\033[41;1;37m branch(es) will be pruned:\\033[0m\n\n\" && \
