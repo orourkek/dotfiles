@@ -18,18 +18,18 @@ class Color(DefaultColor):
     base04 = 4
     base05 = 6
 
-    USERNAME_FG = black
-    USERNAME_BG = green
+    USERNAME_FG = white2
+    USERNAME_BG = grey
     USERNAME_ROOT_BG = red
 
     HOSTNAME_FG = black
     HOSTNAME_BG = cyan
 
     HOME_SPECIAL_DISPLAY = True
-    HOME_FG = white2
-    HOME_BG = grey
-    PATH_FG = white2
-    PATH_BG = grey
+    HOME_FG = white
+    HOME_BG = black
+    PATH_FG = white
+    PATH_BG = black
     CWD_FG = white
     SEPARATOR_FG = grey
 
