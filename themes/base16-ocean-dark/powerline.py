@@ -1,52 +1,53 @@
 class Color(DefaultColor):
 
-    SOLARIZED_0 = 8
-    SOLARIZED_1 = 0
-    GREEN = 2
-    BLUE = 4
-    RED = 1
-    CYAN = 6
-    PINK = 5
-    YELLOW = 3
-    WHITE = 7
-    GREY_0 = 10
-    GREY_1 = 11
-    GREY_2 = 12
-    GREY_3 = 14
-    ORANGE = 9
-    PURPLE = 13
-    WHITE_2 = 15
+    black = 0
+    red = 1
+    red2 = 9 #orange
+    green = 10
+    yellow = 11
+    blue = 12
+    magenta = 5
+    magenta2 = 13 #sienna
+    cyan = 14
+    white = 7
+    white2 = 15
+    grey = 8
 
-    USERNAME_FG = WHITE_2
-    USERNAME_BG = GREY_1
-    USERNAME_ROOT_BG = RED
+    base02 = 2
+    base03 = 3
+    base04 = 4
+    base05 = 6
 
-    HOSTNAME_FG = WHITE
-    HOSTNAME_BG = PURPLE
+    USERNAME_FG = black
+    USERNAME_BG = green
+    USERNAME_ROOT_BG = red
+
+    HOSTNAME_FG = black
+    HOSTNAME_BG = cyan
 
     HOME_SPECIAL_DISPLAY = True
-    HOME_FG = WHITE
-    HOME_BG = GREY_2
-    PATH_FG = WHITE
-    PATH_BG = GREY_3
-    CWD_FG = WHITE
-    SEPARATOR_FG = GREY_2
+    HOME_FG = white2
+    HOME_BG = grey
+    PATH_FG = white2
+    PATH_BG = grey
+    CWD_FG = white
+    SEPARATOR_FG = grey
 
-    READONLY_BG = RED
-    READONLY_FG = WHITE
+    READONLY_BG = red
+    READONLY_FG = white2
 
-    REPO_CLEAN_FG = GREEN
-    REPO_CLEAN_BG = WHITE
-    REPO_DIRTY_FG = YELLOW
-    REPO_DIRTY_BG = WHITE
+    REPO_CLEAN_FG = black
+    REPO_CLEAN_BG = green
+    REPO_DIRTY_FG = black
+    REPO_DIRTY_BG = yellow
 
     JOBS_FG = 4
     JOBS_BG = 8
 
-    CMD_PASSED_FG = GREY_3
-    CMD_PASSED_BG = WHITE
-    CMD_FAILED_FG = WHITE_2
-    CMD_FAILED_BG = RED
+    CMD_PASSED_FG = white
+    CMD_PASSED_BG = black
+    CMD_FAILED_FG = white2
+    CMD_FAILED_BG = red
 
     SVN_CHANGES_FG = REPO_DIRTY_FG
     SVN_CHANGES_BG = REPO_DIRTY_BG

@@ -14,7 +14,6 @@ if [ "$#" -eq 0 ]; then
   printf "  2. Solarized (light)\n"
   printf "  3. Base16: Ocean (dark)\n"
   printf "  4. Base16: Ocean (light)\n"
-  printf "  5. Base16: Flat (light)\n"
   read -p "> " -n 1;
 
   if [[ $REPLY == 1 ]]; then
@@ -25,8 +24,6 @@ if [ "$#" -eq 0 ]; then
     THEME="base16-ocean-dark"
   elif [[ $REPLY == 4 ]]; then
     THEME="base16-ocean-light"
-  elif [[ $REPLY == 5 ]]; then
-    THEME="base16-flat-light"
   fi
 else
   THEME=$1
@@ -38,9 +35,9 @@ CONFIG="
 SEGMENTS = [
   'set_term_title',
   'virtual_env',
-  #'username',
+  'username',
   #'hostname',
-  'datetime',
+  #'datetime',
   'ssh',
   #'cwd',
   'cwd-mine',
