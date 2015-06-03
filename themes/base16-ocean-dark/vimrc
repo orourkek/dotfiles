@@ -4,7 +4,7 @@ source ~/.vimrc-main
 set background=dark
 set t_Co=256
 "let base16colorspace=256
-colorscheme base16-ocean
+colorscheme base16-ocean   
 
 " highlight group for "nbsp", "tab", and "trail"
 hi SpecialKey ctermfg=DarkRed
@@ -15,10 +15,12 @@ hi NonText cterm=none ctermfg=15
 hi CursorLine ctermbg=8
 
 hi Normal                 ctermfg=7   ctermbg=0
+hi Visual                 ctermfg=15  ctermbg=8
+hi Cursor                 ctermfg=16  ctermbg=8
 hi Special                ctermfg=14
 hi ColorColumn                        ctermbg=234
-hi SpecialKey             ctermfg=6
-hi NonText                ctermfg=6               term=none
+hi SpecialKey             ctermfg=1
+hi NonText                ctermfg=8               term=none
 hi CursorLine                         ctermbg=234
 hi LineNr                 ctermfg=240 ctermbg=0   term=none
 hi GitGutterAdd           ctermfg=2   ctermbg=0
