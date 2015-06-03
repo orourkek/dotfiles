@@ -101,6 +101,8 @@ nnoremap <C-up>   <C-U>
 inoremap <C-up>   <C-O><C-U>
 nnoremap <C-down> <C-D>
 inoremap <C-down> <C-O><C-D>
+nnoremap <c-s> :w<CR>
+inoremap <c-s> <esc>:w<CR>
 
 " activate mouse usage in every mode
 set mouse=a
