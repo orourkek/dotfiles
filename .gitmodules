@@ -4,69 +4,69 @@
 [submodule "lib/dircolors-solarized"]
 	path = lib/dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized
-[submodule "config/vim/bundle/delimitMate"]
-	path = vim/bundle/delimitMate
+[submodule "vim/vim.symlink/bundle/delimitMate"]
+	path = vim/vim.symlink/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate
-[submodule "config/vim/bundle/supertab"]
-	path = vim/bundle/supertab
+[submodule "vim/vim.symlink/bundle/supertab"]
+	path = vim/vim.symlink/bundle/supertab
 	url = https://github.com/ervandew/supertab
-[submodule "config/vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
+[submodule "vim/vim.symlink/bundle/syntastic"]
+	path = vim/vim.symlink/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic
-[submodule "config/vim/bundle/tagbar"]
-	path = vim/bundle/tagbar
+[submodule "vim/vim.symlink/bundle/tagbar"]
+	path = vim/vim.symlink/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
-[submodule "config/vim/bundle/tlib-vim"]
-	path = vim/bundle/tlib-vim
+[submodule "vim/vim.symlink/bundle/tlib-vim"]
+	path = vim/vim.symlink/bundle/tlib-vim
 	url = https://github.com/tomtom/tlib_vim
-[submodule "config/vim/bundle/unite"]
-	path = vim/bundle/unite
+[submodule "vim/vim.symlink/bundle/unite"]
+	path = vim/vim.symlink/bundle/unite
 	url = https://github.com/Shougo/unite.vim
-[submodule "config/vim/bundle/vim-addon-mw-utils"]
-	path = vim/bundle/vim-addon-mw-utils
+[submodule "vim/vim.symlink/bundle/vim-addon-mw-utils"]
+	path = vim/vim.symlink/bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils
-[submodule "config/vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
+[submodule "vim/vim.symlink/bundle/vim-airline"]
+	path = vim/vim.symlink/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
-[submodule "config/vim/bundle/vim-colors-solarized"]
-	path = vim/bundle/vim-colors-solarized
+[submodule "vim/vim.symlink/bundle/vim-colors-solarized"]
+	path = vim/vim.symlink/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
-[submodule "config/vim/bundle/vim-fugitive"]
-	path = vim/bundle/vim-fugitive
+[submodule "vim/vim.symlink/bundle/vim-fugitive"]
+	path = vim/vim.symlink/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "config/vim/bundle/vim-gitgutter"]
-	path = vim/bundle/vim-gitgutter
+[submodule "vim/vim.symlink/bundle/vim-gitgutter"]
+	path = vim/vim.symlink/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
-[submodule "config/vim/bundle/vim-javascript-syntax"]
-	path = vim/bundle/vim-javascript-syntax
+[submodule "vim/vim.symlink/bundle/vim-javascript-syntax"]
+	path = vim/vim.symlink/bundle/vim-javascript-syntax
 	url = https://github.com/rylnd/vim-javascript-syntax
-[submodule "config/vim/bundle/L9"]
-	path = vim/bundle/L9
+[submodule "vim/vim.symlink/bundle/L9"]
+	path = vim/vim.symlink/bundle/L9
 	url = https://github.com/vim-scripts/L9
-[submodule "config/vim/bundle/vim-react-snippets"]
-	path = vim/bundle/vim-react-snippets
+[submodule "vim/vim.symlink/bundle/vim-react-snippets"]
+	path = vim/vim.symlink/bundle/vim-react-snippets
 	url = https://github.com/justinj/vim-react-snippets
-[submodule "config/vim/bundle/vim-snipmate"]
-	path = vim/bundle/vim-snipmate
+[submodule "vim/vim.symlink/bundle/vim-snipmate"]
+	path = vim/vim.symlink/bundle/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate
-[submodule "config/vim/bundle/vim-yankstack"]
-	path = vim/bundle/vim-yankstack
+[submodule "vim/vim.symlink/bundle/vim-yankstack"]
+	path = vim/vim.symlink/bundle/vim-yankstack
 	url = https://github.com/maxbrunsfeld/vim-yankstack
-[submodule "config/vim/bundle/vimproc.vim"]
-	path = vim/bundle/vimproc.vim
+[submodule "vim/vim.symlink/bundle/vimproc.vim"]
+	path = vim/vim.symlink/bundle/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim
-[submodule "config/vim/bundle/base16-vim"]
-	path = vim/bundle/base16-vim
+[submodule "vim/vim.symlink/bundle/base16-vim"]
+	path = vim/vim.symlink/bundle/base16-vim
 	url = https://github.com/chriskempson/base16-vim
-[submodule "config/vim/bundle/colorizer"]
-	path = vim/bundle/colorizer
+[submodule "vim/vim.symlink/bundle/colorizer"]
+	path = vim/vim.symlink/bundle/colorizer
 	url = https://github.com/chrisbra/Colorizer
-[submodule "config/vim/bundle/tern-for-vim"]
-	path = vim/bundle/tern-for-vim
+[submodule "vim/vim.symlink/bundle/tern-for-vim"]
+	path = vim/vim.symlink/bundle/tern-for-vim
 	url = https://github.com/marijnh/tern_for_vim
-[submodule "config/vim/bundle/vim-less"]
-	path = vim/bundle/vim-less
+[submodule "vim/vim.symlink/bundle/vim-less"]
+	path = vim/vim.symlink/bundle/vim-less
 	url = https://github.com/groenewege/vim-less
-[submodule "config/vim/bundle/ansi-esc"]
-	path = vim/bundle/ansi-esc
+[submodule "vim/vim.symlink/bundle/ansi-esc"]
+	path = vim/vim.symlink/bundle/ansi-esc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc

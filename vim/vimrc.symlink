@@ -416,3 +416,11 @@ nmap <leader>gL :call ExecuteInShell('git lga', 'gitlog')<CR>
 "function! s:fugitive_binds()
 "  nnoremap <buffer> <silent> + :<C-U>silent execute <SID>StageToggle(line('.'),line('.')+v:count1-1)<CR>
 "endfunction
+
+set background=dark
+
+if (&background == "dark")
+  source ~/.vimrc-dark
+else
+  source ~/.vimrc-light
+endif

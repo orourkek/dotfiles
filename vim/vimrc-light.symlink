@@ -1,9 +1,7 @@
 
-source ~/.vimrc-main
-
 let g:airline_theme='base16_ocean_light'
 
-set background=light
+"set background=light
 set t_Co=256
 "let base16colorspace=256
 colorscheme base16-ocean

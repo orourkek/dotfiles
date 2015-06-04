@@ -5,17 +5,22 @@
 
 DOTFILES_ROOT="`pwd`"
 POWERLINE_ROOT="$DOTFILES_ROOT/lib/powerline-shell"
+DOTFILES_THEME="dark"
+
+if [ $1 = "light" ]; then
+  DOTFILES_THEME="light"
+fi
 
 set -e
 
 echo ''
 
 info () {
-  printf "  [ \033[00;34m..\033[0m ] $1"
+  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
 }
 
 user () {
-  printf "\r  [ \033[0;33m?\033[0m ] $1 "
+  printf "\r  [ \033[0;33m?\033[0m ] $1 \n"
 }
 
 success () {
@@ -28,36 +33,26 @@ fail () {
   exit
 }
 
-link_files () {
+symlink () {
   ln -s $1 $2
-  success "linked $1 to $2"
+  success "symlinked $1 to $2"
+}
+
+symlink_force () {
+  ln -sf $1 $2
+  success "symlinked (-f) $1 to $2"
 }
 
 setup_powerline() {
-  # setup powerline-shell
-  CONFIG="
-  SEGMENTS = [
-    'set_term_title',
-    'virtual_env',
-    'username',
-    #'hostname',
-    #'datetime',
-    'ssh',
-    #'cwd',
-    'cwd-mine',
-    'read_only',
-    'git-mine',
-    #'hg',
-    #'svn',
-    #'fossil',
-    'jobs',
-    'root',
-  ]
-  THEME='../../powerline/theme-dark.py'"
+  info 'Setting up powerline...'
+  symlink_force "$DOTFILES_ROOT/powerline/segments/git.py"        "$POWERLINE_ROOT/segments/git-mine.py"
+  symlink_force "$DOTFILES_ROOT/powerline/segments/cwd.py"        "$POWERLINE_ROOT/segments/cwd-mine.py"
+  symlink_force "$DOTFILES_ROOT/powerline/segments/datetime.py"   "$POWERLINE_ROOT/segments/datetime.py"
+  symlink_force "$DOTFILES_ROOT/powerline/config.py"              "$POWERLINE_ROOT/config.py"
   cd $POWERLINE_ROOT
-  echo "$CONFIG" > config.py
-  python install.py > /dev/null
+  python "install.py" > /dev/null
   cd -
+  symlink_force  "$POWERLINE_ROOT/powerline-shell.py" "$HOME/powerline-shell.py"
 }
 
 install_dotfiles () {
@@ -71,7 +66,7 @@ install_dotfiles () {
   do
     dest="$HOME/.`basename \"${source%.*}\"`"
 
-    if [ -f $dest ] || [ -d $dest ]
+    if [ -f $dest ] || [ -d $dest ] || [ -h $dest ]
     then
 
       overwrite=false
@@ -115,13 +110,13 @@ install_dotfiles () {
 
       if [ "$skip" == "false" ] && [ "$skip_all" == "false" ]
       then
-        link_files $source $dest
+        symlink $source $dest
       else
         success "skipped $source"
       fi
 
     else
-      link_files $source $dest
+      symlink $source $dest
     fi
 
   done
@@ -130,48 +125,13 @@ install_dotfiles () {
 setup_powerline
 install_dotfiles
 
-declare -a files=(
-  "aliases"
-  "bash_logout"
-  "bash_profile"
-  "bash_prompt"
-  "bashrc"
-  "exports"
-  "functions"
-  "gitconfig"
-  "gitignore"
-  "gitmodules"
-  "git-completion"
-  "inputrc"
-  "path"
-  "profile"
-  "wgetrc"
-)
-
-for file in "${files[@]}"; do
-  ln -sf "$CONFIG_DIR/$file" "$HOME/.$file"
-done
-
-rm -rf  "$HOME/.vim"
-ln -s   "$CONFIG_DIR/vim"                             "$HOME/.vim"
-ln -sf  "$CONFIG_DIR/vimrc"                           "$HOME/.vimrc-main"
-ln -sf  "$SCRIPT_DIR/themes/$THEME/vimrc"             "$HOME/.vimrc"
-ln -sf  "$POWERLINE_DIR/powerline-shell.py"           "$HOME/powerline-shell.py"
-ln -sf  "$CONFIG_DIR/terminator/config"               "$HOME/.config/terminator/config"
-ln -sf  "$CONFIG_DIR/powerline/segments/git.py"       "$POWERLINE_DIR/segments/git-mine.py"
-ln -sf  "$CONFIG_DIR/powerline/segments/cwd.py"       "$POWERLINE_DIR/segments/cwd-mine.py"
-ln -sf  "$CONFIG_DIR/powerline/segments/datetime.py"  "$POWERLINE_DIR/segments/datetime.py"
-
-unset files
-unset file
-
+#symlink  "$DOTFILES_ROOT/terminator/config"               "$HOME/.config/terminator/config"
 # dircolors "$SCRIPT_DIR"/lib/dircolors-solarized/dircolors.ansi-dark
 
 source "$HOME/.bash_profile"
 
-unset SCRIPT_DIR
-unset POWERLINE_DIR
-unset THEME
+unset DOTFILES_ROOT 
+unset POWERLINE_ROOT
 
-printf "\n... done.\n"
+success "All done!"
 
