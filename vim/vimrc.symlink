@@ -49,7 +49,7 @@ set encoding=utf-8
 " activate pathogen
 execute pathogen#infect()
 
-function OpenUniteIfNoFile()
+function! OpenUniteIfNoFile()
   if argc() == 0
     :Unite file file_rec -no-split
   elseif isdirectory(argv(0))
@@ -103,6 +103,11 @@ nnoremap <C-down> <C-D>
 inoremap <C-down> <C-O><C-D>
 nnoremap <c-s> :w<CR>
 inoremap <c-s> <esc>:w<CR>
+
+" identify highlight group under cursor
+map <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " activate mouse usage in every mode
 set mouse=a

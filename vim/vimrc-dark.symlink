@@ -1,38 +1,44 @@
 
+let g:airline_theme='theme_dark'
+
 "set background=dark
 set t_Co=256
 "let base16colorspace=256
-colorscheme base16-ocean   
+colorscheme base16-ocean
 
-" highlight group for "nbsp", "tab", and "trail"
-hi SpecialKey ctermfg=DarkRed
-
-" highlight group for "eol", "extends", and "precedes"
-hi NonText cterm=none ctermfg=15
-
-hi CursorLine ctermbg=8
+hi airline_tab            ctermfg=11
 
 hi Normal                 ctermfg=7   ctermbg=0
-hi Visual                 ctermfg=15  ctermbg=8
-hi Cursor                 ctermfg=16  ctermbg=8
-hi Special                ctermfg=14
-hi ColorColumn                        ctermbg=234
+hi Visual                 ctermfg=8   ctermbg=3
+hi Cursor                 ctermfg=15  ctermbg=8
+hi Special                ctermfg=15
+hi CursorLine                         ctermbg=8
+hi ColorColumn                        ctermbg=8
 hi SpecialKey             ctermfg=1
 hi NonText                ctermfg=8               term=none
-hi CursorLine                         ctermbg=234
-hi LineNr                 ctermfg=240 ctermbg=0   term=none
-hi GitGutterAdd           ctermfg=2   ctermbg=0
-hi GitGutterChange        ctermfg=3   ctermbg=0
-hi GitGutterDelete        ctermfg=1   ctermbg=0
-hi GitGutterChangeDelete  ctermfg=9   ctermbg=0
-hi MatchParen             ctermfg=5
-hi Comment                ctermfg=8
-"hi String                 ctermfg=10
+hi Number                 ctermfg=75              cterm=bold
+
+hi LineNr                 ctermfg=9   ctermbg=8   term=none
+hi GitGutterAdd           ctermfg=2   ctermbg=8
+hi GitGutterChange        ctermfg=3   ctermbg=8
+hi GitGutterDelete        ctermfg=1   ctermbg=8
+hi GitGutterChangeDelete  ctermfg=9   ctermbg=8
+
+hi MatchParen             ctermfg=15   ctermbg=75
+hi Comment                ctermfg=9
 hi ErrorMsg               ctermfg=7 ctermbg=1
 hi Todo                   ctermfg=7 ctermbg=5
 hi Operator               ctermfg=3
-hi javaScriptBraces       ctermfg=3
-hi javaScriptIdentifier   ctermfg=12              cterm=bold
-hi javaScriptFuncKeyword  ctermfg=1
-hi javaScriptConditional  ctermfg=1
+
+hi javascriptBraces       ctermfg=4
+hi javascriptParens       ctermfg=4
+"hi javascriptFuncDef      ctermfg=4
+hi javascriptIdentifier   ctermfg=3
+hi javascriptFuncKeyword  ctermfg=1
+hi javascriptConditional  ctermfg=1
+hi javascriptNumber       ctermfg=75            cterm=bold
+hi javascriptPrototype    ctermfg=1
+"hi javascriptHtmlElemProperties ctermfg=10
+hi Null         ctermfg=173 cterm=bold
+hi Boolean   ctermfg=173 cterm=bold
 
