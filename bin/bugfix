@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+
+info () {
+  printf "\r  [\033[00;34m ➔ \033[0m] $1\n"
+}
+
+user () {
+  printf "\r  [\033[0;33m ?? \033[0m] $1 \n"
+}
+
+success () {
+  printf "\r\033[2K  [\033[00;32m ✔ \033[0m] $1\n"
+}
+
+error () {
+  printf "\r\033[2K  [\033[0;31m ✖ \033[0m] $1\n"
+}
+
+fail () {
+  echo ''
+  error "$1"
+  echo ''
+  exit
+}
+
+checkout_branch () {
+  git checkout -b $1
+}
+
+push_branch () {
+  branchName="$(git symbolic-ref --short -q HEAD)"
+  info "The following command will be run:"
+  info "  git push gitlab $branchName"
+  user "Do you want to continue? (y/n)"
+  read -n 1 input
+  if [[ "$input" =~ ^[yY]$ ]]; then
+    git push gitlab $1
+  fi
+}
+
+check_dirty () {
+  if ! [[ "$(git status)" =~ (working directory clean)$ ]]; then
+    info "Working directory is dirty. Do you want to continue anyways? (y/n)"
+    read -n 1 confirm
+    if ! [[ "$confirm" =~ ^[yY]$ ]]; then
+      fail "Alrighty then! Exiting..."
+    fi
+  fi
+}
+
+if [ "$(git rev-parse --is-inside-work-tree 2>&1)" != "true" ]; then
+  fail "FATAL: must be run from within a git repository."
+else
+
+  bug=""
+
+  if [ $# -eq 0 ]; then
+    while :
+    do
+      info "Please enter a branch name: "
+      read input
+
+      if [[ "$input" =~ ^[a-zA-Z0-9\-]+$ ]]; then
+        branchName="$input"
+        break;
+      fi
+      error "Invalid branch name. Please try again."
+    done
+
+    check_dirty
+
+    info "Branching to $branchName..."
+    checkout_branch "$branchName"
+  fi
+
+  if [ $1 -eq "close" ]; then
+    check_dirty
+    push_branch
+  fi
+fi
+
+info "done."
+exit 0
+

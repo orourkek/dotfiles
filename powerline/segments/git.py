@@ -41,18 +41,19 @@ def add_git_segment():
         branch = '(Detached)'
 
     if len(branch) > 16:
-      branch = branch[:13] + '...'
+      branch = branch[:13] + ' ' + u'\u2026'
 
     has_pending_commits, has_untracked_files, origin_position = get_git_status()
     branch += origin_position
     if has_untracked_files:
-        branch += ' +'
+        branch += ' ' + u'\u271A'
 
     bg = Color.REPO_CLEAN_BG
     fg = Color.REPO_CLEAN_FG
     if has_pending_commits:
         bg = Color.REPO_DIRTY_BG
         fg = Color.REPO_DIRTY_FG
+        branch += ' ' + u'\u2731'
 
     powerline.append(' %s ' % branch, fg, bg)
 

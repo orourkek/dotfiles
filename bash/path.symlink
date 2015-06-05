@@ -1,2 +1,2 @@
-# Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
+export PATH="$DOTFILE_ROOT/bin:$PATH";
