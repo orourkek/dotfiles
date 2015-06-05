@@ -6,7 +6,7 @@
 
   lg = log --graph --format=format:'%C(yellow)%h%C(reset) ▪ %C(white dim)%ar %C(reset)▪ %C(white dim)%an %C(reset)▪ %C(blue)%<(42,mtrunc)%s %C(auto)%+D%C(reset)'
   #lg = log --graph --date=short --format=format:'%C(yellow)❪%C(auto)%h%C(yellow)❫ %C(yellow)▸ %<(42,mtrunc)%s %C(reset)%C(blue)✎ %an ⌚ %ar          %C(auto)%+D%C(reset)'
-  lga = log --graph --all --format=format:'%C(yellow)%h%C(reset) ▪ %C(white dim)%ar %C(reset)▪ %C(white dim)%an %C(reset)▪ %C(white)%<(42,mtrunc)%s %C(auto)%+D%C(reset)'
+  lga = log --graph --all --format=format:'%C(215 bold)%h%C(reset) ▪ %C(11)%ar %C(reset)▪ %C(11)%an %C(reset)▪ %C(14)%<(42,mtrunc)%s %C(auto)%+D%C(reset)'
 
   # View abbreviated SHA, description, and history graph of the latest 20 commits
   l = log --pretty=oneline -n 20 --graph --abbrev-commit --decorate=short
@@ -125,34 +125,34 @@
 
 [color "branch"]
 
-  current = red bold
-  local = red
-  remote = cyan
+  current = 78 bold
+  local = 78
+  remote = 222
 
 [color "decorate"]
 
-  branch = red bold
-  tag = green
+  branch = 78
+  tag = 75 bold
   remoteBranch = cyan
-  HEAD = red
-  stash = magenta bold
+  HEAD = 78 bold
+  stash = 15
 
 [color "diff"]
 
-  meta = yellow bold
+  meta = yellow
   frag = magenta # line info
   old = red # deletions
-  new = green bold # additions
+  new = green # additions
   commit = blue
 
 [color "status"]
 
-  added = green bold #files which are added but not committed
-  updated = cyan bold #files which are added but not committed
-  changed = yellow bold # files which are changed but not added in the index
-  untracked = magenta bold #files which are not tracked by Git
+  added = 78 #(green) files which are added but not committed
+  updated = 75 #(blue) files which are added but not committed
+  changed = 222 #(yellow) files which are changed but not added in the index
+  untracked = 215 #(orange) files which are not tracked by Git
   #header = white #header text of status message
-  branch = green bold #the current branch
+  branch = 78 bold #(green) the current branch
   unmerged = magenta #files which have unmerged changes
 
 [diff]
