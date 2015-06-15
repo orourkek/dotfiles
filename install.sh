@@ -107,10 +107,7 @@ symlink_force () {
 
 setup_powerline() {
   info 'Setting up powerline...'
-  symlink_force "$DOTFILES_ROOT/powerline/segments/git.py"        "$POWERLINE_ROOT/segments/git-mine.py"
-  symlink_force "$DOTFILES_ROOT/powerline/segments/cwd.py"        "$POWERLINE_ROOT/segments/cwd-mine.py"
-  symlink_force "$DOTFILES_ROOT/powerline/segments/datetime.py"   "$POWERLINE_ROOT/segments/datetime.py"
-  symlink_force "$DOTFILES_ROOT/powerline/config.py"              "$POWERLINE_ROOT/config.py"
+  symlink_force "$DOTFILES_ROOT/powerline/config.py" "$POWERLINE_ROOT/config.py"
   cd $POWERLINE_ROOT
   python "install.py" > /dev/null
   cd -
