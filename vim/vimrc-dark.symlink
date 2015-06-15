@@ -4,7 +4,7 @@ let g:airline_theme='theme_dark'
 "set background=dark
 set t_Co=256
 "let base16colorspace=256
-colorscheme base16-ocean
+colorscheme theme-dark
 
 hi airline_tab            ctermfg=11
 
