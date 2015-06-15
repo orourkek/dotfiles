@@ -131,10 +131,10 @@
 
 [color "decorate"]
 
-  branch = 78
-  tag = 75 bold
+  branch = 2
+  tag = 4
   remoteBranch = cyan
-  HEAD = 78 bold
+  HEAD = 2
   stash = 15
 
 [color "diff"]
@@ -147,12 +147,12 @@
 
 [color "status"]
 
-  added = 78 #(green) files which are added but not committed
-  updated = 75 #(blue) files which are added but not committed
-  changed = 222 #(yellow) files which are changed but not added in the index
+  added = 2 #(green) files which are added but not committed
+  updated = 4 #(blue) files which are added but not committed
+  changed = 3 #(yellow) files which are changed but not added in the index
   untracked = 215 #(orange) files which are not tracked by Git
   #header = white #header text of status message
-  branch = 78 bold #(green) the current branch
+  branch = 2 #(green) the current branch
   unmerged = magenta #files which have unmerged changes
 
 [diff]

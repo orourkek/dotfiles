@@ -9,7 +9,7 @@
 [keybindings]
 [profiles]
   [[default]]
-    palette = "#343945:#bf616a:#9cbe7f:#ebcb8b:#728fab:#b48ead:#88b5b4:#c0c5ce:#3b414f:#4c5766:#65737e:#a7adba:#c0c5ce:#dfe1e8:#eff1f5:#f3f4f8"
+    palette = "#343945:#cc6670:#72be8b:#ebcd88:#619ed9:#b48ead:#88b5b4:#c0c5ce:#3b414f:#4c5766:#65737e:#a7adba:#c0c5ce:#dfe1e8:#eff1f5:#f3f4f8"
     scrollback_lines = 2000
     use_system_font = False
     cursor_color = "#65737e"

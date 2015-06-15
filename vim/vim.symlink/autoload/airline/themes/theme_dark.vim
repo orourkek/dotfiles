@@ -11,17 +11,17 @@ let s:gui_termbg2     = '#1C1C1C'
 let s:cterm_termfg2   = 11   " Foreground for middle block
 let s:gui_termfg2     = '#F5F5F5'
 
-let s:cterm_normalbg  = 75   " Background for normal mode and file position blocks
+let s:cterm_normalbg  = 4   " Background for normal mode and file position blocks
 let s:gui_normalbg    = '#5F87FF'
-let s:cterm_normalfg  = 8   " Foreground for normal mode and file position blocks
+let s:cterm_normalfg  = 15   " Foreground for normal mode and file position blocks
 let s:gui_normalfg    = '#FFFFFF'
 
-let s:cterm_insertbg  = 78   " Background for insert mode and file position blocks
+let s:cterm_insertbg  = 2   " Background for insert mode and file position blocks
 let s:gui_insertbg    = '#87AF5F'
-let s:cterm_insertfg  = 8   " Foreground for insert mode and file position blocks
+let s:cterm_insertfg  = 15   " Foreground for insert mode and file position blocks
 let s:gui_insertfg    = '#FFFFFF'
 
-let s:cterm_visualbg  = 215  " Background for visual mode and file position blocks
+let s:cterm_visualbg  = 3  " Background for visual mode and file position blocks
 let s:gui_visualbg    = '#ff8c00'
 let s:cterm_visualfg  = 8   " Foreground for visual mode and file position blocks
 let s:gui_visualfg    = '#FFFFFF'
@@ -31,7 +31,7 @@ let s:gui_replacebg   = '#870000'
 let s:cterm_replacefg = 15   " Foreground for replace mode and file position blocks
 let s:gui_replacefg   = '#FFFFFF'
 
-let s:cterm_alert     = 222   " Modified file alert color
+let s:cterm_alert     = 3   " Modified file alert color
 let s:gui_alert       = '#870000'
 
 let s:cterm_inactivebg = 10 " Background for inactive mode
@@ -80,3 +80,14 @@ let g:airline#themes#theme_dark#palette.ctrlp = airline#extensions#ctrlp#generat
       \ [s:gui_normalfg, s:gui_normalbg, s:cterm_normalfg, s:cterm_normalbg, ''],
       \ [s:gui_termfg, s:gui_termbg, s:cterm_termfg, s:cterm_termbg, ''],
       \ [s:gui_termfg2, s:gui_termbg2, s:cterm_termfg2, s:cterm_termbg2, ''])
+
+" Tabline colors
+ let g:airline#themes#theme_dark#palette.tabline = {
+        \ 'airline_tab':    ['#bcbcbc', '#005f00', 0, 10],
+        \ 'airline_tabsel': ['#404042', '#A6DB29', 15, 4],
+        \ 'airline_tabtype': s:V1,
+        \ 'airline_tabfill': s:N2,
+        \ 'airline_tabhid': ['#c5c5c5', '#404042', 3, 0],
+        \ 'airline_tabmod': s:V1,
+        \ 'airline_tabmod_unsel': s:V1
+        \ }
