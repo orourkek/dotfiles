@@ -71,7 +71,15 @@ fi
 # -h                          with -l, print sizes in human readable format
 # -p                          append / indicator to directories
 # -F                          append indicator (one of */=>@|) to entries
-lsFlags="-Fhp --group-directories-first ${colorflag} --time-style='+%Y-%m-%d %H:%M'"
+#
+# Need to add the following back into the flags string if we're on Linux
+#       (they don't exist on OSX)
+# --group-directories-first --time-style='+%Y-%m-%d %H:%M'"
+if [[ "$DOTFILES_OS" = "linux" ]]; then
+  lsFlags="-Fhp --group-directories-first ${colorflag} --time-style='+%Y-%m-%d %H:%M'"^
+elif [[ "$DOTFILES_OS" = "linux" ]]; then
+  lsFlags="-Fhp ${colorflag}"
+fi
 ls="command ls ${lsFlags}"
 
 export LSCOLORS=ExCxFxDxDxegedabagacHb

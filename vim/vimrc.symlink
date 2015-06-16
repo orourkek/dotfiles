@@ -155,7 +155,7 @@ set nowrap
 " --------------------------------
 
 "set listchars=eol:↵,tab:⇥,trail:~,extends:⤵,precedes:⤷,nbsp:․
-set listchars=eol:↵,tab:⇥\ ,extends:⤵,precedes:⤷,trail:⚫  " •
+set listchars=eol:↵,tab:⇥\ ,extends:⤵,precedes:⤷,trail:◦ " •
 set list
 
 " NOTE: relevant highlight groups are found
@@ -332,24 +332,14 @@ endif
 call unite#custom_source('file_rec,file_rec/async,file_rec/git,file_mru,file,buffer,grep',
       \ 'ignore_pattern', join([
       \ '\.git/',
-      \ 'git5/.*/review/',
-      \ 'google/obj/',
-      \ 'tmp/',
-      \ 'lib/Cake/',
       \ 'node_modules/',
       \ 'vendor/',
       \ 'Vendor/',
-      \ 'app_old/',
-      \ 'acf-laravel/',
-      \ 'plugins/',
-      \ 'bower_components/',
-      \ '.sass-cache',
-      \ 'web/wp',
       \ ], '\|'))
 
 " KEY BINDINGS
-nnoremap <leader>o :Unite file_rec/git<cr>
-nnoremap <leader>O :Unite file_rec/async<cr>
+nnoremap <leader>o :Unite file_rec<cr>
+nnoremap <leader>O :Unite file_rec/git<cr>
 nnoremap <leader>f :Unite grep:.<cr>
 nnoremap <C-p> :Unite history/yank<cr>
 nnoremap <leader>p :Unite history/yank<cr>

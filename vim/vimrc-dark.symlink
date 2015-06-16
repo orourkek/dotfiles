@@ -15,7 +15,7 @@ hi Special                ctermfg=15              cterm=bold
 hi Conditional            ctermfg=1
 hi CursorLine                         ctermbg=8
 hi ColorColumn                        ctermbg=8
-hi SpecialKey             ctermfg=15  ctermbg=1
+hi SpecialKey             ctermfg=202
 hi NonText                ctermfg=8               term=none
 hi String                 ctermfg=2
 hi Number                 ctermfg=4

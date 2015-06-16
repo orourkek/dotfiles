@@ -5,6 +5,11 @@ else
   export TERM='xterm-color'
 fi
 
+case $(uname) in
+  'Linux')   export DOTFILES_OS='linux' ;;
+  'Darwin')   export DOTFILES_OS='osx' ;;
+esac
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
