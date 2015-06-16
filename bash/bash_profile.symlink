@@ -18,6 +18,10 @@ for file in ~/.{aliases,bash_logout,bash_prompt,exports,functions,git-completion
 done;
 unset file;
 
+if which dircolors > /dev/null; then
+  eval $(dircolors ~/.dir_colors);
+fi
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
 

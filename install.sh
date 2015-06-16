@@ -138,8 +138,9 @@ setup_powerline
 install_dotfiles
 install_binaries
 
-#symlink  "$DOTFILES_ROOT/terminator/config"               "$HOME/.config/terminator/config"
-# dircolors "$SCRIPT_DIR"/lib/dircolors-solarized/dircolors.ansi-dark
+if which terminator > /dev/null; then
+  symlink_confirm "$DOTFILES_ROOT/terminator/config" "$HOME/.config/terminator/config"
+fi
 
 source "$HOME/.bash_profile"
 
