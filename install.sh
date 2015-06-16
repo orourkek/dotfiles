@@ -30,7 +30,7 @@ success () {
 fail () {
   printf "\r\033[2K  [\033[0;31m ✖ \033[0m] $1\n"
   echo ''
-  exit
+  exit 1
 }
 
 overwrite_all=false
@@ -127,7 +127,11 @@ install_dotfiles () {
 install_binaries () {
   info 'installing binaries'
 
-  for source in `find $DOTFILES_ROOT/bin -type f -executable`
+  if [[ ! -d "$HOME/bin" ]]; then
+    mkdir "$HOME/bin"
+  fi
+
+  for source in `find $DOTFILES_ROOT/bin -type f`
   do
     dest="$HOME/bin/`basename \"${source%}\"`"
     symlink_force $source $dest
@@ -148,4 +152,5 @@ unset DOTFILES_ROOT
 unset POWERLINE_ROOT
 
 success "All done!"
+exit 0
 
