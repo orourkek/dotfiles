@@ -149,6 +149,19 @@ set smartcase
 " don't soft wrap lines
 set nowrap
 
+" highlight group links
+hi link lessVariableValue       Normal
+hi link lessParametricMixin     Identifier
+hi link cssIdentifier           Identifier
+hi link cssTagName              Special
+hi link cssPseudoClass          Special
+hi link cssBoxProp              Normal
+hi link cssColorProp            Normal
+hi link cssRenderProp           Normal
+hi link cssGeneratedContentProp Normal
+hi link cssFontProp             Normal
+hi link cssTextProp             Normal
+hi link cssTextAttr             Normal
 
 " --------------------------------
 " whitespace characters
@@ -200,40 +213,12 @@ nnoremap <c-t>     :tabnew<CR>
 " always show tabs
 set showtabline=2
 
-" tabline colors
-hi TabLine      cterm=none       ctermfg=Black  ctermbg=Green
-hi TabLineFill  cterm=underline  ctermfg=Black  ctermbg=DarkGrey
-hi TabLineSel   cterm=bold       ctermfg=White  ctermbg=DarkCyan
-hi Title        cterm=none       ctermfg=Cyan   ctermbg=none
 
 " --------------------------------
 " --------------------------------
 " plugin config/options
 " --------------------------------
 " --------------------------------
-
-" NERDTree
-" --------------------------------
-
-" close vim if NERDTree is the only window left
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" bind key to open NERDTree
-"nmap <F5> :NERDTreeToggle<CR>
-
-" NERDTree-Tabs options:
-" Open NERDTree on console vim startup
-"let g:nerdtree_tabs_open_on_console_startup = 1
-
-" Do not open NERDTree if vim starts in diff mode
-"let g:nerdtree_tabs_no_startup_for_diff = 1
-
-" On startup, focus NERDTree if opening a directory, focus file if opening a
-" file. (When set to 2, always focus file window after startup)
-"let g:nerdtree_tabs_smart_startup_focus = 1
-
-" Automatically find and select currently opened file in NERDTree
-"let g:nerdtree_tabs_autofind = 1
 
 
 " vim-airline
@@ -273,9 +258,9 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " git-gutter
 " --------------------------------
 
-highlight GitGutterAdd ctermfg=Green
-highlight GitGutterChange ctermfg=Yellow
-highlight GitGutterDelete ctermfg=Red
+highlight GitGutterAdd          ctermfg=Green
+highlight GitGutterChange       ctermfg=Yellow
+highlight GitGutterDelete       ctermfg=Red
 highlight GitGutterChangeDelete ctermfg=Red
 
 let g:gitgutter_sign_added =                '✚' " ☑
@@ -283,16 +268,6 @@ let g:gitgutter_sign_modified =             '✱' " ⁕ ⁂ ✳ ⋇ ✸ ✱ ✰ 
 let g:gitgutter_sign_removed =              '✂' " ✖ ✘ ✗ ✕ ⚑ ⚊ ☒
 let g:gitgutter_sign_removed_first_line =   '▔'
 let g:gitgutter_sign_modified_removed =     '✱▁'
-
-
-" ctrl-p
-" -------------------------------
-
-"nmap <F6> :CtrlPMixed<CR>
-"let g:ctrlp_prompt_mappings = {
-"    \ 'AcceptSelection("e")': ['<c-t>'],
-"    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-"  \ }
 
 
 " unite
@@ -417,6 +392,9 @@ nmap <leader>gL :call ExecuteInShell('git lga', 'gitlog')<CR>
 "  nnoremap <buffer> <silent> + :<C-U>silent execute <SID>StageToggle(line('.'),line('.')+v:count1-1)<CR>
 "endfunction
 
+
+" TODO: figure out a way to automatically do this, without inversion like the
+" old 'vimrc-main' scheme...
 set background=dark
 
 if (&background == "dark")

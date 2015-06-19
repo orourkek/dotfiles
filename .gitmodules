@@ -66,7 +66,7 @@
 	url = https://github.com/marijnh/tern_for_vim
 [submodule "vim/vim.symlink/bundle/vim-less"]
 	path = vim/vim.symlink/bundle/vim-less
-	url = https://github.com/groenewege/vim-less
+	url = https://github.com/orourkek/vim-less
 [submodule "vim/vim.symlink/bundle/ansi-esc"]
 	path = vim/vim.symlink/bundle/ansi-esc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc
