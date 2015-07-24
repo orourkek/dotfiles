@@ -3,8 +3,7 @@
   name = Kevin O'Rourke
 
 [alias]
-
-  lg = log --graph --format=format:'%C(yellow)%h%C(reset) ▪ %C(white dim)%ar %C(reset)▪ %C(white dim)%an %C(reset)▪ %C(blue)%<(42,mtrunc)%s %C(auto)%+D%C(reset)'
+  lg = log --graph --format=format:'%C(215 bold)%h%C(reset) ▪ %C(11)%ar %C(reset)▪ %C(11)%an %C(reset)▪ %C(14)%<(42,mtrunc)%s %C(auto)%+D%C(reset)'
   #lg = log --graph --date=short --format=format:'%C(yellow)❪%C(auto)%h%C(yellow)❫ %C(yellow)▸ %<(42,mtrunc)%s %C(reset)%C(blue)✎ %an ⌚ %ar          %C(auto)%+D%C(reset)'
   lga = log --graph --all --format=format:'%C(215 bold)%h%C(reset) ▪ %C(11)%ar %C(reset)▪ %C(11)%an %C(reset)▪ %C(14)%<(42,mtrunc)%s %C(auto)%+D%C(reset)'
 
