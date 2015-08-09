@@ -4,7 +4,6 @@
 # https://github.com/dave-tucker/dotfiles
 
 DOTFILES_ROOT="`pwd`"
-POWERLINE_ROOT="$DOTFILES_ROOT/lib/powerline-shell"
 DOTFILES_THEME="dark"
 
 if [ $1 = "light" ]; then
@@ -105,13 +104,9 @@ symlink_force () {
   success "symlinked (-f) $1 to $2"
 }
 
-setup_powerline() {
-  info 'Setting up powerline...'
-  symlink_force "$DOTFILES_ROOT/powerline/config.py" "$POWERLINE_ROOT/config.py"
-  cd $POWERLINE_ROOT
-  python "install.py" > /dev/null
-  cd -
-  symlink_force  "$POWERLINE_ROOT/powerline-shell.py" "$HOME/powerline-shell.py"
+setup_liquidprompt() {
+  info 'Setting up liquidprompt...'
+  symlink_force "$DOTFILES_ROOT/lib/liquidprompt/liquidprompt" "$HOME/liquidprompt"
 }
 
 install_dotfiles () {
@@ -138,9 +133,11 @@ install_binaries () {
   done
 }
 
-setup_powerline
+setup_liquidprompt
 install_dotfiles
 install_binaries
+
+symlink_confirm "$HOME/.liquidpromptrc" "$HOME/.config/liquidpromptrc"
 
 if which terminator > /dev/null; then
   symlink_confirm "$DOTFILES_ROOT/terminator/config" "$HOME/.config/terminator/config"
@@ -153,4 +150,3 @@ unset POWERLINE_ROOT
 
 success "All done!"
 exit 0
-
