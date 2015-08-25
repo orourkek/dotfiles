@@ -273,7 +273,12 @@ function mezz() {
   printf "▸ Starting Mezzanine...\n"
   sudo service mezzanine start
   printf "▸ Starting Lightbox for corkboards...\n"
-  sudo OB_POOLS_DIR=/mnt/poolsramdisk/ nohup lightbox "${etc}"/cb-screen.protein "${etc}"/cb-feld.protein > /dev/null 2>&1 &
+  sudo OB_POOLS_DIR=/mnt/poolsramdisk/ nohup lightbox ~/etc/proteins/dell-u3011/cb-main-screen.protein ~/etc/proteins/dell-u3011/cb-main-feld.protein > /dev/null 2>&1 &
+  sudo OB_POOLS_DIR=/mnt/poolsramdisk/ nohup lightbox ~/etc/proteins/dell-u3011/cb-right-screen.protein ~/etc/proteins/dell-u3011/cb-right-feld.protein > /dev/null 2>&1 &
   printf "\n▸ done!\n\n"
 }
 
+function corks() {
+	sudo OB_POOLS_DIR=/mnt/poolsramdisk/ nohup lightbox ~/etc/proteins/dell-u3011/cb-main-screen.protein ~/etc/proteins/dell-u3011/cb-main-feld.protein &
+	sudo OB_POOLS_DIR=/mnt/poolsramdisk/ nohup lightbox ~/etc/proteins/dell-u3011/cb-right-screen.protein ~/etc/proteins/dell-u3011/cb-right-feld.protein &
+}
