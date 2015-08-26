@@ -313,8 +313,8 @@ call unite#custom_source('file_rec,file_rec/async,file_rec/git,file_mru,file,buf
       \ ], '\|'))
 
 " KEY BINDINGS
-nnoremap <leader>o :Unite file_rec<cr>
-nnoremap <leader>O :Unite file_rec/git<cr>
+nnoremap <leader>o :Unite file_rec/git<cr>
+nnoremap <leader>O :Unite file/async<cr>
 nnoremap <leader>f :Unite grep:.<cr>
 nnoremap <C-p> :Unite history/yank<cr>
 nnoremap <leader>p :Unite history/yank<cr>
