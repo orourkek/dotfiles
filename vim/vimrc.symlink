@@ -115,6 +115,9 @@ set mouse=a
 " preview window height
 set previewheight=20
 
+" code folding
+set foldmethod=indent
+set foldlevel=99
 
 " --------------------------------
 " general display options
@@ -219,6 +222,30 @@ set showtabline=2
 " plugin config/options
 " --------------------------------
 " --------------------------------
+
+
+" NERDTree
+" --------------------------------
+
+" close vim if NERDTree is the only window left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" bind key to open NERDTree
+nnoremap <leader><leader> :NERDTreeToggle<CR>
+
+" NERDTree-Tabs options:
+" Open NERDTree on console vim startup
+let g:nerdtree_tabs_open_on_console_startup = 1
+
+" Do not open NERDTree if vim starts in diff mode
+let g:nerdtree_tabs_no_startup_for_diff = 1
+
+" On startup, focus NERDTree if opening a directory, focus file if opening a
+" file. (When set to 2, always focus file window after startup)
+let g:nerdtree_tabs_smart_startup_focus = 1
+
+" Automatically find and select currently opened file in NERDTree
+let g:nerdtree_tabs_autofind = 1
 
 
 " vim-airline
