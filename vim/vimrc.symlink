@@ -316,14 +316,14 @@ autocmd vimenter * call StartupNERDTree() | wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " bind key to open NERDTree
-nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>' :NERDTreeToggle<CR>
 
 " always show hidden files
 let NERDTreeShowHidden = 1
 
 let NERDTreeMouseMode = 2
 let NERDTreeShowBookmarks = 1
-let NERDTreeWinSize = 32
+let NERDTreeWinSize = 28
 "let NERDTreeMinimalUI = 1
 
 
