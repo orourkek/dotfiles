@@ -158,6 +158,7 @@
 
   # Detect copies as well as renames
   renames = copies
+	algorithm = patience
 
 [help]
 
