@@ -39,15 +39,19 @@ endfunction " }}}
 command! -complete=shellcmd -nargs=+ Shell call ExecuteInShell(<q-args>, 'shelloutput')
 
 
+" http://stackoverflow.com/questions/6696079/vimrc-causes-error-e10-should-be-followed-by-or
+set nocompatible
+
+" activate pathogen
+execute pathogen#infect()
+
+
 " --------------------------------
 " Basic Configuration
 " --------------------------------
 
 " obviously...
 set encoding=utf-8
-
-" activate pathogen
-execute pathogen#infect()
 
 function! OpenUniteIfNoFile()
   if argc() == 0
