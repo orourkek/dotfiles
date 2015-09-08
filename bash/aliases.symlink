@@ -17,7 +17,7 @@ shopt -s histappend
 shopt -s cdspell
 
 # https://twitter.com/liamosaur/status/506975850596536320/photo/1
-alias fuck='sudo $(history -p \!\!)' 
+alias fuck='sudo $(history -p \!\!)'
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
@@ -39,13 +39,11 @@ alias mw="cd ~/src/mezzanine-web"
 # git aliases
 alias g="git"
 alias gl='git lg -15'
-alias gla='git lga -15'
-alias gll='git lg -30'
-alias glla='git lga -30'
-alias glll='git lg -45'
-alias gllll='git lga'
-alias glllll='git lga' # just in case...
-alias gllllll='git lga' # just in case...
+alias glv='git lgv -15'
+alias gla='git lg --all -15'
+alias glav='git lgv --all -15'
+alias gll='git lgv'
+alias glla='git lgv --all'
 alias ga="git add"
 alias gb="git branch -v"
 alias gba="git branch -va"

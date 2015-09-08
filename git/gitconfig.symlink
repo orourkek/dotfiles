@@ -3,9 +3,9 @@
   name = Kevin O'Rourke
 
 [alias]
-  lg = log --graph --format=format:'%C(215 bold)%h%C(reset) ▪ %C(11)%ar %C(reset)▪ %C(11)%an %C(reset)▪ %C(14)%<(42,mtrunc)%s %C(auto)%+D%C(reset)'
-  #lg = log --graph --date=short --format=format:'%C(yellow)❪%C(auto)%h%C(yellow)❫ %C(yellow)▸ %<(42,mtrunc)%s %C(reset)%C(blue)✎ %an ⌚ %ar          %C(auto)%+D%C(reset)'
-  lga = log --graph --all --format=format:'%C(215 bold)%h%C(reset) ▪ %C(11)%ar %C(reset)▪ %C(11)%an %C(reset)▪ %C(14)%<(42,mtrunc)%s %C(auto)%+D%C(reset)'
+  lg = log --graph --format=format:'%C(215 bold)%h%C(reset) %C(11)%an %C(reset)%C(14)%<(80,mtrunc)%s %C(auto)%+D%C(reset)'
+  lgv = log --graph --format=format:'%C(215 bold)%h%C(reset) %C(11)%ar %C(reset)%C(11)(%an) %C(reset)%C(14)%<(60,mtrunc)%s %C(auto)%+D%C(reset)'
+  #lgv = log --graph --format=format:'%C(215 bold)%h%C(reset) %C(11)%ar %C(reset)%C(11)(%an) %C(reset)%C(14)%s %C(auto)%+D%C(reset)'
 
   # View abbreviated SHA, description, and history graph of the latest 20 commits
   l = log --pretty=oneline -n 20 --graph --abbrev-commit --decorate=short
@@ -114,7 +114,7 @@
   # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
   trustctime = false
 
-  pager = less --chop-long-lines --quit-if-one-screen --no-init --raw-control-chars
+  pager = less -S --quit-if-one-screen --no-init --raw-control-chars
 
 [color]
 
@@ -175,7 +175,7 @@
   # Use the Git 1.x.x default to avoid errors on machines with old Git
   # installations. To use `simple` instead, add this to your `~/.extra` file:
   # `git config --global push.default simple`. See http://git.io/mMah-w.
-  default = simple
+  default = current
 
 # URL shorthands
 
