@@ -14,7 +14,7 @@
     use_system_font = False
     cursor_color = "#65737e"
     foreground_color = "#b2b7bf"
-    font = Liberation Mono for Powerline 11
+    font = Droid Sans Mono for Powerline 10
     background_color = "#333945"
     cursor_blink = False
   [[ocean-light]]
