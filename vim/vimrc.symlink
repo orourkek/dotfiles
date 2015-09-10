@@ -125,6 +125,10 @@ set previewheight=20
 set foldmethod=indent
 set foldlevel=99
 
+" hide unsaved buffers instead of asking to save them
+set hidden
+
+
 " --------------------------------
 " general display options
 " --------------------------------
