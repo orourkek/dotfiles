@@ -155,6 +155,9 @@ set smartcase
 " soft wrapping
 set wrap
 
+" buffer screen updates to help with large files and/or fast scrolling
+set lazyredraw
+
 " highlight group links
 hi link lessVariableValue       Normal
 hi link lessParametricMixin     Identifier
@@ -463,15 +466,7 @@ call unite#custom#profile('default', 'context', {
 let delimitMate_expand_cr = 1
 
 " expand spaces
-let delimitMate_expand_space = 1
-
-" This option turns on/off the jumping over <CR> and <Space> expansions when
-" inserting closing matchpairs
-let delimitMate_jump_expansion = 1
-
-" in js files, automatically insert ";" when expanding a matchpair
-au FileType javascript let b:delimitMate_insert_eol_marker = 2
-au FileType javascript let b:delimitMate_eol_marker = ";"
+let delimitMate_expand_space = 0
 
 
 " TagBar
@@ -490,8 +485,8 @@ nmap <leader>ga :Git add %:p<CR><CR>
 nmap <leader>gc :Gcommit -v<CR>
 nmap <leader>gd :call ExecuteInShell('git diff --color %:p', 'gitdiff')<CR>:set number<CR>:set nocursorline<CR>
 nmap <leader>gD :call ExecuteInShell('git diff --color', 'gitdiff')<CR>:set number<CR>:set nocursorline<CR>
-nmap <leader>gl :call ExecuteInShell('git lga -20', 'gitlog')<CR>
-nmap <leader>gL :call ExecuteInShell('git lga', 'gitlog')<CR>
+nmap <leader>gl :call ExecuteInShell('git lg -20', 'gitlog')<CR>
+nmap <leader>gL :call ExecuteInShell('git lg', 'gitlog')<CR>
 " no color version:
 "nmap <leader>gl :call ExecuteInShell('git log --pretty=oneline --graph --all --decorate --abbrev-commit', 'gitlog')<CR>
 
