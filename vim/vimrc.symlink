@@ -507,8 +507,16 @@ nmap <leader>gL :call ExecuteInShell('git lg', 'gitlog')<CR>
 " old 'vimrc-main' scheme...
 set background=dark
 
-if (&background == "dark")
-  source ~/.vimrc-dark
-else
-  source ~/.vimrc-light
-endif
+"if (&background == "dark")
+"  source ~/.vimrc-dark
+"else
+"  source ~/.vimrc-light
+"endif
+
+
+set t_Co=256
+
+let g:airline_theme='seoul256'
+
+"let g:seoul256_background = 236
+colorscheme seoul256
