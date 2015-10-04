@@ -10,13 +10,14 @@
 [profiles]
   [[default]]
     palette = "#343945:#bf5f6f:#72be8b:#ebcd88:#6ca4d9:#bf7cb4:#7ccbd7:#c0c5ce:#3b414f:#4c5766:#65737e:#a7adba:#c0c5ce:#dfe1e8:#eff1f5:#f3f4f8"
+    background_darkness = 0.93
     scrollback_lines = 2000
+    background_type = transparent
     use_system_font = False
-    cursor_color = "#65737e"
+    cursor_color = "#a3aaaf"
     foreground_color = "#b2b7bf"
-    font = Droid Sans Mono for Powerline 10
-    background_color = "#333945"
-    cursor_blink = False
+    font = Source Code Pro for Powerline Medium 9
+    background_color = "#212126"
   [[ocean-light]]
     palette = "#2b303b:#cc5c66:#4f5b66:#65737e:#a7adba:#b479a9:#c0c5ce:#c5c8d1:#343d46:#d0775b:#86ab66:#ccaa66:#6b90b3:#ab6c55:#66aba8:#dfe1e8"
     login_shell = True
