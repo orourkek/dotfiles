@@ -516,7 +516,7 @@ set background=dark
 
 set t_Co=256
 
-let g:airline_theme='solarized'
+let g:airline_theme='theme_dark'
 
 "let g:seoul256_background = 236
 colorscheme solarized
