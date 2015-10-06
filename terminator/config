@@ -46,6 +46,16 @@
     background_color = "#eee8d5"
     cursor_color = "#002b36"
     foreground_color = "#002b36"
+  [[ocean-dark]]
+    palette = "#343945:#bf5f6f:#72be8b:#ebcd88:#6ca4d9:#bf7cb4:#7ccbd7:#c0c5ce:#3b414f:#4c5766:#65737e:#a7adba:#c0c5ce:#dfe1e8:#eff1f5:#f3f4f8"
+    background_darkness = 0.89
+    scrollback_lines = 2000
+    background_type = transparent
+    use_system_font = False
+    cursor_color = "#65737e"
+    foreground_color = "#b2b7bf"
+    font = Source Code Pro for Powerline Medium 9
+    background_color = "#333945"
 [layouts]
   [[default]]
     [[[child1]]]

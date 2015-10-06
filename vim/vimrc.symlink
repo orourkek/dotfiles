@@ -514,9 +514,11 @@ set background=dark
 "endif
 
 
-set t_Co=256
+"set t_Co=256
 
 let g:airline_theme='theme_dark'
 
 "let g:seoul256_background = 236
-colorscheme solarized
+"colorscheme solarized
+
+source ~/.vimrc-dark
