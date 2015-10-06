@@ -18,6 +18,15 @@
     foreground_color = "#b2b7bf"
     font = Ubuntu Mono 10
     background_color = "#212126"
+  [[solarized-dark]]
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    background_darkness = 0.94
+    background_type = transparent
+    use_system_font = False
+    cursor_color = "#eee8d5"
+    foreground_color = "#d9d6cc"
+    font = Ubuntu Mono 10
+    background_color = "#002b36"
   [[ocean-light]]
     palette = "#2b303b:#cc5c66:#4f5b66:#65737e:#a7adba:#b479a9:#c0c5ce:#c5c8d1:#343d46:#d0775b:#86ab66:#ccaa66:#6b90b3:#ab6c55:#66aba8:#dfe1e8"
     login_shell = True
@@ -28,9 +37,15 @@
     foreground_color = "#4f5b66"
     update_records = False
     exit_action = hold
-    font = Liberation Mono for Powerline 11
+    font = Ubuntu Mono 10
     background_color = "#dfe1e8"
     cursor_blink = False
+  [[solarized-light]]
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    font = Ubuntu Mono 10
+    background_color = "#eee8d5"
+    cursor_color = "#002b36"
+    foreground_color = "#002b36"
 [layouts]
   [[default]]
     [[[child1]]]
