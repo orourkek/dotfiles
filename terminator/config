@@ -14,9 +14,9 @@
     scrollback_lines = 2000
     background_type = transparent
     use_system_font = False
-    cursor_color = "#a3aaaf"
+    cursor_color = "#ffffff"
     foreground_color = "#b2b7bf"
-    font = Source Code Pro for Powerline Medium 9
+    font = Ubuntu Mono 10
     background_color = "#212126"
   [[ocean-light]]
     palette = "#2b303b:#cc5c66:#4f5b66:#65737e:#a7adba:#b479a9:#c0c5ce:#c5c8d1:#343d46:#d0775b:#86ab66:#ccaa66:#6b90b3:#ab6c55:#66aba8:#dfe1e8"
