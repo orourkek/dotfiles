@@ -73,9 +73,6 @@
 [submodule "vim/vim.symlink/bundle/nerdtree-git-plugin"]
 	path = vim/vim.symlink/bundle/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin
-[submodule "vim/vim.symlink/bundle/you-complete-me"]
-	path = vim/vim.symlink/bundle/you-complete-me
-	url = https://github.com/Valloric/YouCompleteMe
 [submodule "bash/bash.symlink/git-aware-prompt"]
 	path = bash/bash.symlink/git-aware-prompt
 	url = https://github.com/jimeh/git-aware-prompt.git
