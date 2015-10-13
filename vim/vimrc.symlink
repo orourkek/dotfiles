@@ -97,14 +97,23 @@ nnoremap <ScrollWheelUp> 8<C-Y>
 inoremap <ScrollWheelUp> <C-O>8<C-Y>
 nnoremap <ScrollWheelDown> 8<C-E>
 inoremap <ScrollWheelDown> <C-O>8<C-E>
-nnoremap <S-up>   {
-inoremap <S-up>   <C-O>{
-nnoremap <S-down> }
-inoremap <S-down> <C-O>}
-nnoremap <C-up>   <C-U>
-inoremap <C-up>   <C-O><C-U>
-nnoremap <C-down> <C-D>
-inoremap <C-down> <C-O><C-D>
+nnoremap <S-k>   {
+inoremap <S-k>   <C-O>{
+nnoremap <S-j> }
+inoremap <S-j> <C-O>}
+nnoremap <C-j>   <C-U>
+inoremap <C-j>   <C-O><C-U>
+nnoremap <C-k> <C-D>
+inoremap <C-k> <C-O><C-D>
+
+" DISABLE ARROW KEYS
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
+
+" Press i to enter insert mode, and ii to exit.
+imap ii <Esc>
 
 " save
 nnoremap <c-s> :w<CR>
@@ -161,6 +170,9 @@ set wrap
 
 " buffer screen updates to help with large files and/or fast scrolling
 set lazyredraw
+
+set incsearch
+set hlsearch
 
 " highlight group links
 hi link lessVariableValue       Normal
