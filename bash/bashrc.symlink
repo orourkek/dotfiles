@@ -40,8 +40,9 @@ fi;
 
 # disable software flow control (XON/XOFF) to free up <Ctrl><s>
 # http://unix.stackexchange.com/questions/72086/ctrl-s-hang-terminal-emulator
-stty -ixon
-
+if tty > /dev/null && hash stty 2>/dev/null; then
+  stty -ixon
+fi
 # open up X access control for mezzanine
 if which xhost > /dev/null; then
   xhost + > /dev/null
@@ -62,4 +63,3 @@ function greeting() {
   echo -e "  $message\n" | sed ':a;N;$!ba;s/\n/\n  /g'
 }
 
-greeting
