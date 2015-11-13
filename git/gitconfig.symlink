@@ -3,8 +3,8 @@
   name = Kevin O'Rourke
 
 [alias]
-  lg = log --graph --format=format:'%C(215 bold)%h%C(reset) %C(11)%an %C(reset)%C(14)%<(80,mtrunc)%s %C(auto)%+D%C(reset)'
-  lgv = log --graph --format=format:'%C(215 bold)%h%C(reset) %C(11)%ar %C(reset)%C(11)(%an) %C(reset)%C(14)%<(60,mtrunc)%s %C(auto)%+D%C(reset)'
+  lg = log --graph --format=format:'%C(215 bold)%h%C(reset) %C(11)%an %C(reset)%C(14)%<(80,mtrunc)%s %n%C(auto)%d%C(reset)'
+  lgv = log --graph --format=format:'%C(215 bold)%h%C(reset) %C(11)%ar %C(reset)%C(11)(%an) %C(reset)%C(14)%<(60,mtrunc)%s %n%C(auto)%d%C(reset)'
   #lgv = log --graph --format=format:'%C(215 bold)%h%C(reset) %C(11)%ar %C(reset)%C(11)(%an) %C(reset)%C(14)%s %C(auto)%+D%C(reset)'
 
   # View abbreviated SHA, description, and history graph of the latest 20 commits
