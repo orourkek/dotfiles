@@ -76,3 +76,6 @@
 [submodule "bash/bash.symlink/git-aware-prompt"]
 	path = bash/bash.symlink/git-aware-prompt
 	url = https://github.com/jimeh/git-aware-prompt.git
+[submodule "vim/vim.symlink/bundle/limelight"]
+	path = vim/vim.symlink/bundle/limelight
+	url = https://github.com/junegunn/limelight.vim

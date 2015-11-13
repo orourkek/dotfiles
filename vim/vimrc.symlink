@@ -493,6 +493,14 @@ nmap <leader>t :TagbarToggle<CR>
 "autocmd FileType javascript,less,html nested :TagbarOpen
 
 
+" Limelight 
+" -------------------------------
+
+let g:limelight_conceal_ctermfg = 10
+
+nmap <Leader>l <Plug>(Limelight)
+
+
 " Fugitive (Git wrapper)
 " -------------------------------
 
