@@ -495,9 +495,12 @@ nmap <leader>t :TagbarToggle<CR>
 " -------------------------------
 
 let g:limelight_conceal_ctermfg = 10
+"let g:limelight_paragraph_span = 1
+let g:limelight_default_coefficient = 0.9
 
-nmap <Leader>l <Plug>(Limelight)
+nmap <Leader>l :Limelight<CR>
 
+autocmd vimenter * Limelight
 
 " Fugitive (Git wrapper)
 " -------------------------------
