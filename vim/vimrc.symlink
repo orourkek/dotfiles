@@ -98,9 +98,7 @@ inoremap <ScrollWheelUp> <C-O>8<C-Y>
 nnoremap <ScrollWheelDown> 8<C-E>
 inoremap <ScrollWheelDown> <C-O>8<C-E>
 nnoremap <S-k>   {
-inoremap <S-k>   <C-O>{
 nnoremap <S-j> }
-inoremap <S-j> <C-O>}
 nnoremap <C-j>   <C-U>
 inoremap <C-j>   <C-O><C-U>
 nnoremap <C-k> <C-D>
@@ -536,7 +534,8 @@ set background=dark
 
 set t_Co=256
 
-let g:airline_theme='theme_dark'
+"let g:airline_theme='theme_dark'
+let g:airline_theme='solarized'
 
 "let g:seoul256_background = 236
 colorscheme solarized
