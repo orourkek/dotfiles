@@ -500,7 +500,7 @@ let g:limelight_default_coefficient = 0.9
 
 nmap <Leader>l :Limelight<CR>
 
-autocmd vimenter * Limelight
+"autocmd vimenter * Limelight
 
 " Fugitive (Git wrapper)
 " -------------------------------
