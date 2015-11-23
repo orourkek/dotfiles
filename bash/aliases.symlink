@@ -76,7 +76,7 @@ fi
 #       (they don't exist on OSX)
 # --group-directories-first --time-style='+%Y-%m-%d %H:%M'"
 if [[ "$DOTFILES_OS" = "linux" ]]; then
-  lsFlags="-Fhp --group-directories-first ${colorflag} --time-style='+%Y-%m-%d %H:%M'"^
+  lsFlags="-Fhp ${colorflag} --time-style='+%Y-%m-%d %H:%M'"^
 elif [[ "$DOTFILES_OS" = "linux" ]]; then
   lsFlags="-Fhp ${colorflag}"
 fi
