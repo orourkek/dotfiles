@@ -508,7 +508,7 @@ nmap <Leader>l :Limelight<CR>
 nmap <leader>gs :Gstatus<CR>
 nmap <leader>ga :Git add %:p<CR><CR>
 nmap <leader>gc :Gcommit -v<CR>
-nmap <leader>gd :call ExecuteInShell('git diff --color %:p', 'gitdiff')<CR>:set number<CR>:set nocursorline<CR>
+nmap <leader>gd :Gvdiff<CR>
 nmap <leader>gD :call ExecuteInShell('git diff --color', 'gitdiff')<CR>:set number<CR>:set nocursorline<CR>
 nmap <leader>gl :call ExecuteInShell('git lg -20', 'gitlog')<CR>
 nmap <leader>gL :call ExecuteInShell('git lg', 'gitlog')<CR>
