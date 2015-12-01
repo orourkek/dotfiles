@@ -174,10 +174,17 @@ set hlsearch
 
 " highlight group links
 hi link lessVariableValue       Normal
-hi link lessParametricMixin     Identifier
+hi link lessVariable            Type
+hi link lessParametricMixin     cssClassName
+hi link lessClass               cssClassName
+hi link lessDefinition          cssClassName
 hi link cssIdentifier           Identifier
 hi link cssTagName              Special
-hi link cssPseudoClass          Special
+hi link cssPseudoClass          cssFunctionName
+hi link cssPseudoClassId        cssPseudoClass
+"hi link cssPseudoClassFn        cssPseudoClass
+hi link cssClassName            Special
+hi link cssProp                 Normal
 hi link cssBoxProp              Normal
 hi link cssColorProp            Normal
 hi link cssRenderProp           Normal
@@ -185,6 +192,10 @@ hi link cssGeneratedContentProp Normal
 hi link cssFontProp             Normal
 hi link cssTextProp             Normal
 hi link cssTextAttr             Normal
+hi link cssUiAttr               Normal
+hi link cssBraces               Normal
+
+hi link jsThis                  Special
 
 " --------------------------------
 " whitespace characters
@@ -544,3 +555,7 @@ let g:airline_theme='serene'
 colorscheme solarized
 
 "source ~/.vimrc-dark
+hi Special ctermfg=10 cterm=none
+hi specialkey ctermfg=10 cterm=none
+hi nontext ctermfg=10 cterm=none
+
