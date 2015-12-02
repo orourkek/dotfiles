@@ -1,11 +1,12 @@
 [global_config]
   handle_size = 5
-  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
-  geometry_hinting = False
+  title_hide_sizetext = True
   title_inactive_fg_color = "#c0c5ce"
+  enabled_plugins = CustomCommandsMenu, InactivityWatch, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   title_receive_bg_color = "#b48ead"
-  title_transmit_bg_color = "#cc7e66"
-  title_inactive_bg_color = "#65737e"
+  title_transmit_bg_color = "#6ca4d9"
+  inactive_color_offset = 1.0
+  title_inactive_bg_color = "#1c1f26"
 [keybindings]
 [profiles]
   [[solarized-dark]]
@@ -78,39 +79,8 @@
     [[[window0]]]
       type = Window
       parent = ""
-  [[work]]
-    [[[child0]]]
-      position = 77:24
-      type = Window
-      order = 0
-      parent = ""
-      size = 2125, 1552
-    [[[child1]]]
-      position = 1196
-      type = HPaned
-      order = 0
-      parent = child0
-    [[[child3]]]
-      position = 776
-      type = VPaned
-      order = 1
-      parent = child1
-    [[[terminal2]]]
-      profile = default
-      type = Terminal
-      order = 0
-      parent = child1
-    [[[terminal5]]]
-      profile = default
-      type = Terminal
-      order = 1
-      parent = child3
-    [[[terminal4]]]
-      profile = default
-      command = ls
-      type = Terminal
-      order = 0
-      parent = child3
+      size = 1250, 1250
+      position = 100:50
   [[Triptych]]
     [[[child0]]]
       position = 65:24
