@@ -453,7 +453,7 @@ call unite#custom_source('file_rec,file_rec/async,file_rec/git,file_mru,file,buf
 
 " KEY BINDINGS
 nnoremap <leader>o :Unite file_rec/git<cr>
-nnoremap <leader>O :Unite file/async<cr>
+nnoremap <leader>O :Unite file_rec/async<cr>
 nnoremap <leader>f :Unite grep:.<cr>
 nnoremap <C-p> :Unite history/yank<cr>
 nnoremap <leader>p :Unite history/yank<cr>
@@ -471,6 +471,10 @@ function! s:unite_settings()
   nmap <buffer><expr> <c-right> unite#do_action('right')
   imap <buffer><expr> <c-left> unite#do_action('left')
   nmap <buffer><expr> <c-left> unite#do_action('left')
+  imap <buffer><expr> <c-up> unite#do_action('above')
+  nmap <buffer><expr> <c-up> unite#do_action('above')
+  imap <buffer><expr> <c-down> unite#do_action('below')
+  nmap <buffer><expr> <c-down> unite#do_action('below')
 endfunction
 
 call unite#custom#profile('default', 'context', {
