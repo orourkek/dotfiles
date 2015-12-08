@@ -465,8 +465,8 @@ augroup UniteSettings
 augroup end
 
 function! s:unite_settings()
-  imap <buffer><expr> <tab> unite#do_action('tabopen')
-  nmap <buffer><expr> <tab> unite#do_action('tabopen')
+  imap <buffer><expr> <tab> unite#do_action('persist_open')
+  nmap <buffer><expr> <tab> unite#do_action('persist_open')
   "nmap <buffer> <ESC> <Plug>(unite_exit)
   imap <buffer><expr> <c-right> unite#do_action('right')
   nmap <buffer><expr> <c-right> unite#do_action('right')
