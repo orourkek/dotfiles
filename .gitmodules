@@ -7,9 +7,6 @@
 [submodule "vim/vim.symlink/bundle/syntastic"]
 	path = vim/vim.symlink/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic
-[submodule "vim/vim.symlink/bundle/tagbar"]
-	path = vim/vim.symlink/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar
 [submodule "vim/vim.symlink/bundle/tlib-vim"]
 	path = vim/vim.symlink/bundle/tlib-vim
 	url = https://github.com/tomtom/tlib_vim
@@ -43,9 +40,6 @@
 [submodule "vim/vim.symlink/bundle/vim-snipmate"]
 	path = vim/vim.symlink/bundle/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate
-[submodule "vim/vim.symlink/bundle/vim-yankstack"]
-	path = vim/vim.symlink/bundle/vim-yankstack
-	url = https://github.com/maxbrunsfeld/vim-yankstack
 [submodule "vim/vim.symlink/bundle/vimproc.vim"]
 	path = vim/vim.symlink/bundle/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim
