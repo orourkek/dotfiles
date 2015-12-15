@@ -560,6 +560,11 @@ let g:airline_theme='serene'
 colorscheme solarized
 
 "source ~/.vimrc-dark
+hi Normal ctermbg=0
+hi LineNr ctermbg=8
+hi CursorLine ctermbg=8
+hi CursorLineNr ctermbg=10 ctermfg=15
+hi CursorColumn ctermbg=8
 hi Special ctermfg=10 cterm=none
 hi specialkey ctermfg=10 cterm=none
 hi nontext ctermfg=10 cterm=none
