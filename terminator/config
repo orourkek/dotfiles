@@ -63,6 +63,9 @@
     foreground_color = "#b2b7bf"
     font = Source Code Pro for Powerline Medium 11
     background_color = "#333945"
+  [[Ambience]]
+    background_color = "#300a24"
+    foreground_color = "#ffffff"
 [layouts]
   [[default]]
     [[[child1]]]
