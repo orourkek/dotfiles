@@ -1,9 +1,6 @@
 [submodule "lib/dircolors-solarized"]
 	path = lib/dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized
-[submodule "vim/vim.symlink/bundle/delimitMate"]
-	path = vim/vim.symlink/bundle/delimitMate
-	url = https://github.com/Raimondi/delimitMate
 [submodule "vim/vim.symlink/bundle/syntastic"]
 	path = vim/vim.symlink/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic
@@ -61,12 +58,6 @@
 [submodule "lib/liquidprompt"]
 	path = lib/liquidprompt
 	url = https://github.com/nojhan/liquidprompt.git
-[submodule "vim/vim.symlink/bundle/nerdtree"]
-	path = vim/vim.symlink/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/vim.symlink/bundle/nerdtree-git-plugin"]
-	path = vim/vim.symlink/bundle/nerdtree-git-plugin
-	url = https://github.com/Xuyuanp/nerdtree-git-plugin
 [submodule "bash/bash.symlink/git-aware-prompt"]
 	path = bash/bash.symlink/git-aware-prompt
 	url = https://github.com/jimeh/git-aware-prompt.git

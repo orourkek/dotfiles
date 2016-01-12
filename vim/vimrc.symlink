@@ -325,40 +325,6 @@ nnoremap <leader>w :Bclose<CR>
 " --------------------------------
 " --------------------------------
 
-
-" NERDTree
-" --------------------------------
-
-function! StartupNERDTree()
-  if 0 == argc()
-    NERDTree
-  elseif argv(0) != '.'
-    NERDTreeFind
-  endif
-endfunction
-
-" open NERDTree automatically
-"autocmd vimenter * NERDTreeFind | wincmd p
-"autocmd vimenter * call StartupNERDTree() | wincmd p
-
-" highlight currently open file in NERDTree
-"autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
-
-" close vim if NERDTree is the only window left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" bind key to open NERDTree
-nnoremap <leader>' :NERDTreeToggle<CR>
-
-" always show hidden files
-let NERDTreeShowHidden = 1
-
-let NERDTreeMouseMode = 2
-let NERDTreeShowBookmarks = 1
-let NERDTreeWinSize = 28
-"let NERDTreeMinimalUI = 1
-
-
 " vim-airline
 " --------------------------------
 
@@ -488,35 +454,6 @@ call unite#custom#profile('default', 'context', {
   \ 'short_source_names': 1,
   \ })
 
-
-" delimitMate
-" -------------------------------
-
-" expand CR
-let delimitMate_expand_cr = 1
-
-" expand spaces
-let delimitMate_expand_space = 0
-
-
-" TagBar
-" -------------------------------
-
-nmap <leader>t :TagbarToggle<CR>
-
-"autocmd FileType javascript,less,html nested :TagbarOpen
-
-
-" Limelight 
-" -------------------------------
-
-let g:limelight_conceal_ctermfg = 10
-"let g:limelight_paragraph_span = 1
-let g:limelight_default_coefficient = 0.9
-
-nmap <Leader>l :Limelight<CR>
-
-"autocmd vimenter * Limelight
 
 " Fugitive (Git wrapper)
 " -------------------------------
