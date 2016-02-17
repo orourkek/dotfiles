@@ -44,6 +44,7 @@ alias gla='git lg --all -15'
 alias glav='git lgv --all -15'
 alias gll='git lgv'
 alias glla='git lgv --all'
+alias glt='git lt'
 alias ga="git add"
 alias gb="git branch -v"
 alias gba="git branch -va"
