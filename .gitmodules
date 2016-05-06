@@ -55,12 +55,12 @@
 [submodule "vim/vim.symlink/bundle/vim-javascript"]
 	path = vim/vim.symlink/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
-[submodule "lib/liquidprompt"]
-	path = lib/liquidprompt
-	url = https://github.com/nojhan/liquidprompt.git
 [submodule "bash/bash.symlink/git-aware-prompt"]
 	path = bash/bash.symlink/git-aware-prompt
 	url = https://github.com/jimeh/git-aware-prompt.git
 [submodule "vim/vim.symlink/bundle/limelight"]
 	path = vim/vim.symlink/bundle/limelight
 	url = https://github.com/junegunn/limelight.vim
+[submodule "lib/sexy-bash-prompt"]
+	path = lib/sexy-bash-prompt
+	url = git@github.com:twolfson/sexy-bash-prompt.git

@@ -4,6 +4,7 @@
 # https://github.com/dave-tucker/dotfiles
 
 DOTFILES_ROOT="`pwd`"
+SEXY_BASH_PROMPT_ROOT="`pwd`/lib/sexy-bash-prompt"
 DOTFILES_THEME="dark"
 
 if [ $1 = "light" ]; then
@@ -104,9 +105,9 @@ symlink_force () {
   success "symlinked (-f) $1 to $2"
 }
 
-setup_liquidprompt() {
-  info 'Setting up liquidprompt...'
-  symlink_force "$DOTFILES_ROOT/lib/liquidprompt/liquidprompt" "$HOME/liquidprompt"
+setup_bash_prompt() {
+  info 'Setting up bash prompt...'
+  cd "$SEXY_BASH_PROMPT_ROOT" && make install && cd "$DOTFILES_ROOT"
 }
 
 install_dotfiles () {
@@ -133,20 +134,18 @@ install_binaries () {
   done
 }
 
-setup_liquidprompt
+setup_bash_prompt
 install_dotfiles
 install_binaries
-
-symlink_confirm "$HOME/.liquidpromptrc" "$HOME/.config/liquidpromptrc"
 
 if which terminator > /dev/null; then
   symlink_confirm "$DOTFILES_ROOT/terminator/config" "$HOME/.config/terminator/config"
 fi
 
 source "$HOME/.bash_profile"
+source "$HOME/.bash_prompt"
 
 unset DOTFILES_ROOT
-unset POWERLINE_ROOT
 
 success "All done!"
 exit 0
