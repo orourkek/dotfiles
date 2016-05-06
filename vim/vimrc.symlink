@@ -389,6 +389,8 @@ let g:unite_cursor_line_highlight = 'CursorLine'
 " set up coolguy arrow prompt
 let g:unite_prompt = '➜ '
 
+let g:unite_source_rec_max_cache_files = 0
+
 " use the fuzzy matcher for everything
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
@@ -410,7 +412,7 @@ if executable('ack-grep')
 endif
 
 " set up some custom ignores
-call unite#custom_source('file_rec,file_rec/async,file_rec/git,file_mru,file,buffer,grep',
+call unite#custom#source('file_rec,file_rec/async,file_rec/git,file_mru,file,buffer,grep',
       \ 'ignore_pattern', join([
       \ '\.git/',
       \ 'node_modules/',

@@ -6,7 +6,7 @@
   title_receive_bg_color = "#b48ead"
   title_transmit_bg_color = "#6ca4d9"
   inactive_color_offset = 1.0
-  title_inactive_bg_color = "#1c1f26"
+  title_inactive_bg_color = "#3b414f"
 [keybindings]
 [profiles]
   [[solarized-dark]]
@@ -42,6 +42,7 @@
     foreground_color = "#b2b7bf"
     font = Ubuntu Mono 12
     background_color = "#333945"
+    scrollback_infinite = True
   [[ocean-light]]
     palette = "#2b303b:#cc5c66:#4f5b66:#65737e:#a7adba:#b479a9:#c0c5ce:#c5c8d1:#343d46:#d0775b:#86ab66:#ccaa66:#6b90b3:#ab6c55:#66aba8:#dfe1e8"
     login_shell = True
@@ -64,6 +65,7 @@
     font = Source Code Pro for Powerline Medium 11
     background_color = "#333945"
   [[Ambience]]
+    background_image = None
     background_color = "#300a24"
     foreground_color = "#ffffff"
 [layouts]
