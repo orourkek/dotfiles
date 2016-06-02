@@ -66,3 +66,6 @@ function greeting() {
   echo -e "  $message\n" | sed ':a;N;$!ba;s/\n/\n  /g'
 }
 
+eval "$(rbenv init -)"
+
+
