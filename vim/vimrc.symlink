@@ -212,6 +212,9 @@ hi link cssBraces               Normal
 
 hi link jsThis                  Special
 
+" Fix issue with atom-dark-256 where some highlight groups were wrong
+hi CursorLine ctermbg=237 ctermfg=none
+hi ColorColumn ctermbg=237 ctermfg=none
 "hi Special ctermfg=10 cterm=none
 "hi specialkey ctermfg=10 cterm=none
 "hi nontext ctermfg=10 cterm=none
