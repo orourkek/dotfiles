@@ -311,6 +311,10 @@ nnoremap <leader>w :Bclose<CR>
 " always show vim-airline
 set laststatus=2
 
+let g:airline_theme='simple'
+let g:airline_left_sep='▸'
+let g:airline_right_sep='◂'
+
 let g:airline_powerline_fonts = 0
 let g:airline_detect_modified=1
 let g:airline_detect_paste=1
@@ -457,4 +461,3 @@ nmap <leader>gL :call ExecuteInShell('git lg', 'gitlog')<CR>
 "function! s:fugitive_binds()
 "  nnoremap <buffer> <silent> + :<C-U>silent execute <SID>StageToggle(line('.'),line('.')+v:count1-1)<CR>
 "endfunction
-
