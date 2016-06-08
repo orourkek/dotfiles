@@ -38,6 +38,9 @@ function! ExecuteInShell(command, ftype) " {{{
 endfunction " }}}
 command! -complete=shellcmd -nargs=+ Shell call ExecuteInShell(<q-args>, 'shelloutput')
 
+" activate pathogen
+execute pathogen#infect()
+
 
 " --------------------------------
 " Basic Configuration
@@ -57,7 +60,6 @@ set number
 
 " highlight current line
 set cursorline
-"hi CursorLine ctermbg=Black
 nnoremap <kPlus> :set cursorline<cr>
 inoremap <kPlus> :set cursorline<cr>
 
@@ -181,19 +183,9 @@ inoremap <leader>] <esc> :bnext<CR>
 
 set background=dark
 
-"if (&background == "dark")
-"  source ~/.vimrc-dark
-"else
-"  source ~/.vimrc-light
-"endif
-
 set t_Co=256
 
-"let g:airline_theme='theme_dark'
-let g:airline_theme='serene'
-
-"let g:seoul256_background = 236
-colorscheme solarized
+colorscheme atom-dark-256
 
 " highlight group links
 hi link lessVariableValue       Normal
@@ -220,14 +212,9 @@ hi link cssBraces               Normal
 
 hi link jsThis                  Special
 
-hi Normal ctermbg=0
-hi LineNr ctermbg=8
-hi CursorLine ctermbg=8
-hi CursorLineNr ctermbg=10 ctermfg=15
-hi CursorColumn ctermbg=8
-hi Special ctermfg=10 cterm=none
-hi specialkey ctermfg=10 cterm=none
-hi nontext ctermfg=10 cterm=none
+"hi Special ctermfg=10 cterm=none
+"hi specialkey ctermfg=10 cterm=none
+"hi nontext ctermfg=10 cterm=none
 
 
 " --------------------------------
@@ -467,3 +454,4 @@ nmap <leader>gL :call ExecuteInShell('git lg', 'gitlog')<CR>
 "function! s:fugitive_binds()
 "  nnoremap <buffer> <silent> + :<C-U>silent execute <SID>StageToggle(line('.'),line('.')+v:count1-1)<CR>
 "endfunction
+
