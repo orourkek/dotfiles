@@ -49,6 +49,11 @@ execute pathogen#infect()
 " http://stackoverflow.com/questions/6696079/vimrc-causes-error-e10-should-be-followed-by-or
 set nocompatible
 
+" disable swap files and backup files
+set noswapfile
+set nobackup
+set nowb
+
 " obviously...
 set encoding=utf-8
 
