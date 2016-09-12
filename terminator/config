@@ -1,117 +1,119 @@
 [global_config]
-  handle_size = 5
-  title_hide_sizetext = True
-  title_inactive_fg_color = "#c0c5ce"
   enabled_plugins = CustomCommandsMenu, InactivityWatch, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  handle_size = 5
+  inactive_color_offset = 1.0
+  title_hide_sizetext = True
+  title_inactive_bg_color = "#3b414f"
+  title_inactive_fg_color = "#c0c5ce"
   title_receive_bg_color = "#b48ead"
   title_transmit_bg_color = "#6ca4d9"
-  inactive_color_offset = 1.0
-  title_inactive_bg_color = "#3b414f"
 [keybindings]
-[profiles]
-  [[solarized-dark]]
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-    background_darkness = 0.94
-    background_image = None
-    cursor_color = "#eee8d5"
-    foreground_color = "#d9d6cc"
-    font = Source Code Pro for Powerline Medium 11
-    background_color = "#002b36"
-  [[solarized-light]]
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-    background_image = None
-    cursor_color = "#002b36"
-    foreground_color = "#002b36"
-    font = Source Code Pro for Powerline Medium 11
-    background_color = "#eee8d5"
-  [[custom-dark]]
-    palette = "#343945:#bf5f6f:#72be8b:#ebcd88:#6ca4d9:#bf7cb4:#7ccbd7:#c0c5ce:#3b414f:#4c5766:#65737e:#a7adba:#c0c5ce:#dfe1e8:#eff1f5:#f3f4f8"
-    background_darkness = 0.93
-    scrollback_lines = 2000
-    background_image = None
-    cursor_color = "#73737a"
-    foreground_color = "#b2b7bf"
-    font = Source Code Pro for Powerline Medium 11
-    background_color = "#212126"
-  [[default]]
-    palette = "#343945:#bf5f6f:#72be8b:#ebcd88:#6ca4d9:#bf7cb4:#7ccbd7:#c0c5ce:#3b414f:#4c5766:#65737e:#a7adba:#c0c5ce:#dfe1e8:#eff1f5:#f3f4f8"
-    background_darkness = 0.92
-    scrollback_lines = 2000
-    background_image = None
-    cursor_color = "#65737e"
-    foreground_color = "#b2b7bf"
-    font = Ubuntu Mono 12
-    background_color = "#333945"
-    scrollback_infinite = True
-  [[ocean-light]]
-    palette = "#2b303b:#cc5c66:#4f5b66:#65737e:#a7adba:#b479a9:#c0c5ce:#c5c8d1:#343d46:#d0775b:#86ab66:#ccaa66:#6b90b3:#ab6c55:#66aba8:#dfe1e8"
-    login_shell = True
-    background_darkness = 0.93
-    scrollback_lines = 2000
-    background_image = None
-    cursor_color = "#4f5b66"
-    foreground_color = "#4f5b66"
-    update_records = False
-    exit_action = hold
-    font = Source Code Pro for Powerline Medium 11
-    background_color = "#dfe1e8"
-  [[ocean-dark]]
-    palette = "#343945:#bf5f6f:#72be8b:#ebcd88:#6ca4d9:#bf7cb4:#7ccbd7:#c0c5ce:#3b414f:#4c5766:#65737e:#a7adba:#c0c5ce:#dfe1e8:#eff1f5:#f3f4f8"
-    background_darkness = 0.92
-    scrollback_lines = 2000
-    background_image = None
-    cursor_color = "#65737e"
-    foreground_color = "#b2b7bf"
-    font = Source Code Pro for Powerline Medium 11
-    background_color = "#333945"
-  [[Ambience]]
-    background_image = None
-    background_color = "#300a24"
-    foreground_color = "#ffffff"
 [layouts]
   [[default]]
     [[[child1]]]
+      parent = window0
       profile = base16-ocean-dark
       type = Terminal
-      parent = window0
     [[[window0]]]
-      type = Window
       parent = ""
-      size = 1250, 1250
       position = 100:50
+      size = 1250, 1250
+      type = Window
   [[Triptych]]
     [[[child0]]]
-      position = 65:24
-      type = Window
       order = 0
       parent = ""
+      position = 65:24
       size = 1779, 1534
+      type = Window
     [[[child1]]]
-      position = 1087
-      type = HPaned
       order = 0
       parent = child0
+      position = 1087
+      type = HPaned
     [[[child3]]]
+      order = 1
+      parent = child1
       position = 767
       type = VPaned
-      order = 1
-      parent = child1
     [[[terminal2]]]
-      profile = default
-      type = Terminal
+      command = ""
       order = 0
       parent = child1
-      command = ""
-    [[[terminal5]]]
       profile = default
       type = Terminal
-      order = 1
-      parent = child3
-      command = "cd /var/log/oblong/mezzanine && tail -f siemcy.log "
     [[[terminal4]]]
-      profile = default
-      type = Terminal
+      command = ""
       order = 0
       parent = child3
-      command = ""
+      profile = default
+      type = Terminal
+    [[[terminal5]]]
+      command = "cd /var/log/oblong/mezzanine && tail -f siemcy.log "
+      order = 1
+      parent = child3
+      profile = default
+      type = Terminal
 [plugins]
+[profiles]
+  [[default]]
+    background_color = "#1e2127"
+    background_image = None
+    cursor_color = "#5c6370"
+    font = Hack 10
+    foreground_color = "#abb2bf"
+    palette = "#1e2127:#e06c75:#98c379:#d19a66:#61afef:#c678dd:#56b6c2:#abb2bf:#5c6370:#e06c75:#98c379:#d19a66:#61afef:#c678dd:#56b6c2:#ffffff"
+    use_system_font = False
+  [[Ocean Dark]]
+    background_color = "#333945"
+    background_darkness = 0.92
+    background_image = None
+    cursor_color = "#65737e"
+    font = Hack 10
+    foreground_color = "#b2b7bf"
+    palette = "#343945:#bf5f6f:#72be8b:#ebcd88:#6ca4d9:#bf7cb4:#7ccbd7:#c0c5ce:#3b414f:#4c5766:#65737e:#a7adba:#c0c5ce:#dfe1e8:#eff1f5:#f3f4f8"
+    scrollback_infinite = True
+    scrollback_lines = 2000
+    use_system_font = False
+  [[Ambience]]
+    font = Hack 10
+    background_color = "#300a24"
+    background_image = None
+    foreground_color = "#ffffff"
+  [[One Dark]]
+    background_color = "#1e2127"
+    background_image = None
+    cursor_color = "#5c6370"
+    font = Hack 10
+    foreground_color = "#abb2bf"
+    palette = "#1e2127:#e06c75:#98c379:#d19a66:#61afef:#c678dd:#56b6c2:#abb2bf:#5c6370:#e06c75:#98c379:#d19a66:#61afef:#c678dd:#56b6c2:#ffffff"
+    use_system_font = False
+  [[Tango]]
+    background_image = None
+    cursor_color = "#888888"
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    scrollback_lines = 2000
+  [[custom-dark]]
+    background_color = "#212126"
+    background_darkness = 0.93
+    background_image = None
+    cursor_color = "#73737a"
+    font = Hack 10
+    foreground_color = "#b2b7bf"
+    palette = "#343945:#bf5f6f:#72be8b:#ebcd88:#6ca4d9:#bf7cb4:#7ccbd7:#c0c5ce:#3b414f:#4c5766:#65737e:#a7adba:#c0c5ce:#dfe1e8:#eff1f5:#f3f4f8"
+    scrollback_lines = 2000
+  [[solarized-dark]]
+    background_color = "#002b36"
+    background_darkness = 0.94
+    background_image = None
+    cursor_color = "#eee8d5"
+    font = Hack 10
+    foreground_color = "#d9d6cc"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+  [[solarized-light]]
+    background_color = "#eee8d5"
+    background_image = None
+    cursor_color = "#002b36"
+    font = Hack 10
+    foreground_color = "#002b36"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
