@@ -1,12 +1,15 @@
 [global_config]
   enabled_plugins = CustomCommandsMenu, InactivityWatch, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  geometry_hinting = False
   handle_size = 5
   inactive_color_offset = 1.0
   title_hide_sizetext = True
-  title_inactive_bg_color = "#3b414f"
-  title_inactive_fg_color = "#c0c5ce"
-  title_receive_bg_color = "#b48ead"
-  title_transmit_bg_color = "#6ca4d9"
+  title_inactive_bg_color = "#4C566A"
+  title_inactive_fg_color = "#D8DEE9"
+  title_receive_bg_color = "#8FBCBB"
+  title_receive_fg_color = "#2E3440"
+  title_transmit_bg_color = "#88C0D0"
+  title_transmit_fg_color = "#2E3440"
 [keybindings]
 [layouts]
   [[default]]
@@ -57,13 +60,18 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#1e2127"
+    background_color = "#2E3440"
     background_image = None
-    cursor_color = "#5c6370"
-    font = Hack 10
-    foreground_color = "#abb2bf"
-    palette = "#1e2127:#e06c75:#98c379:#d19a66:#61afef:#c678dd:#56b6c2:#abb2bf:#5c6370:#e06c75:#98c379:#d19a66:#61afef:#c678dd:#56b6c2:#ffffff"
+    cursor_color = "#D8DEE9"
+    font = Hack 12
+    foreground_color = "#D8DEE9"
+    palette = "#3B4252:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#88C0D0:#E5E9F0:#4C566A:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#8FBCBB:#ECEFF4"
     use_system_font = False
+  [[Ambience]]
+    background_color = "#300a24"
+    background_image = None
+    font = Hack 10
+    foreground_color = "#ffffff"
   [[Ocean Dark]]
     background_color = "#333945"
     background_darkness = 0.92
@@ -75,11 +83,6 @@
     scrollback_infinite = True
     scrollback_lines = 2000
     use_system_font = False
-  [[Ambience]]
-    font = Hack 10
-    background_color = "#300a24"
-    background_image = None
-    foreground_color = "#ffffff"
   [[One Dark]]
     background_color = "#1e2127"
     background_image = None
@@ -102,6 +105,14 @@
     foreground_color = "#b2b7bf"
     palette = "#343945:#bf5f6f:#72be8b:#ebcd88:#6ca4d9:#bf7cb4:#7ccbd7:#c0c5ce:#3b414f:#4c5766:#65737e:#a7adba:#c0c5ce:#dfe1e8:#eff1f5:#f3f4f8"
     scrollback_lines = 2000
+  [[nord]]
+    background_color = "#2E3440"
+    background_image = None
+    cursor_color = "#D8DEE9"
+    font = Hack 12
+    foreground_color = "#D8DEE9"
+    palette = "#3B4252:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#88C0D0:#E5E9F0:#4C566A:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#8FBCBB:#ECEFF4"
+    use_system_font = False
   [[solarized-dark]]
     background_color = "#002b36"
     background_darkness = 0.94

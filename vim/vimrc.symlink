@@ -39,6 +39,7 @@ command! -complete=shellcmd -nargs=+ Shell call ExecuteInShell(<q-args>, 'shello
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
@@ -196,7 +197,7 @@ set background=dark
 
 set t_Co=256
 
-colorscheme atom-dark-256
+colorscheme nord
 
 " highlight group links
 hi link lessVariableValue       Normal
@@ -224,8 +225,8 @@ hi link cssBraces               Normal
 hi link jsThis                  Special
 
 " Fix issue with atom-dark-256 where some highlight groups were wrong
-hi CursorLine ctermbg=237 ctermfg=none
-hi ColorColumn ctermbg=237 ctermfg=none
+"hi CursorLine ctermbg=237 ctermfg=none
+"hi ColorColumn ctermbg=237 ctermfg=none
 "hi Special ctermfg=10 cterm=none
 "hi specialkey ctermfg=10 cterm=none
 "hi nontext ctermfg=10 cterm=none
@@ -322,7 +323,8 @@ nnoremap <leader>w :Bclose<CR>
 " always show vim-airline
 set laststatus=2
 
-let g:airline_theme='simple'
+"let g:airline_theme='simple'
+let g:airline_theme='nord'
 let g:airline_left_sep='▸'
 let g:airline_right_sep='◂'
 
@@ -390,13 +392,13 @@ nmap <leader>gL :call ExecuteInShell('git lg', 'gitlog')<CR>
 "  nnoremap <buffer> <silent> + :<C-U>silent execute <SID>StageToggle(line('.'),line('.')+v:count1-1)<CR>
 "endfunction
 
-" FZF 
+" FZF
 " -------------------------------
 
 nmap <leader>o :call fzf#run({'sink': 'e', 'down': '33%'})<CR>
 nmap <leader>O :call fzf#run({'source': 'git ls-files', 'sink': 'e', 'down': '33%'})<CR>
 
-" NERDTree 
+" NERDTree
 " -------------------------------
 nmap <leader>' :NERDTreeToggle<CR>
 
