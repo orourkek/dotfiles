@@ -22,6 +22,8 @@ unset file;
 
 if which dircolors > /dev/null; then
   eval $(dircolors ~/.dir_colors);
+else
+  export CLICOLOR=YES
 fi
 
 # Case-insensitive globbing (used in pathname expansion)
