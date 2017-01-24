@@ -19,6 +19,10 @@ shopt -s cdspell
 # https://twitter.com/liamosaur/status/506975850596536320/photo/1
 alias fuck='sudo $(history -p \!\!)'
 
+# Tree view of file/directory structure
+# https://coderwall.com/p/qw2eoq
+alias lls='find `pwd` -print | grep -v "/.git/" | sed -e "s;`pwd`;\.;g;s;[^/]*\/;|__;g;s;__|; |;g"'
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
