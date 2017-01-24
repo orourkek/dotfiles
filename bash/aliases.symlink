@@ -24,16 +24,9 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
-alias -- -="cd -"
 
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
-alias dl="cd ~/Downloads && ll"
-alias dt="cd ~/Desktop && ll"
 alias src="cd ~/src && ls"
-alias h="history"
-alias j="jobs"
 alias mw="cd ~/src/mezzanine-web"
 
 # git aliases
@@ -45,20 +38,12 @@ alias glav='git lgv --all -15'
 alias gll='git lgv'
 alias glla='git lgv --all'
 alias glt='git lt'
-alias ga="git add"
-alias gb="git branch -v"
-alias gba="git branch -va"
-alias gg="git status"
-alias st="git status"
 alias s="git status"
 alias status="git status"
 alias commit="git commit -a"
 alias pull="git pull"
 alias push="git push"
 alias fetch="git fetch --all"
-alias chk="git checkout"
-alias chkb="git checkout -b"
-alias gf="git fetch --all"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
