@@ -395,8 +395,8 @@ nmap <leader>gL :call ExecuteInShell('git lg', 'gitlog')<CR>
 " FZF
 " -------------------------------
 
-nmap <leader>o :call fzf#run({'sink': 'e', 'down': '33%'})<CR>
-nmap <leader>O :call fzf#run({'source': 'git ls-files', 'sink': 'e', 'down': '33%'})<CR>
+nmap <leader>O :call fzf#run({'sink': 'e', 'down': '33%'})<CR>
+nmap <leader>o :call fzf#run({'source': 'git ls-files', 'sink': 'e', 'down': '33%'})<CR>
 
 " NERDTree
 " -------------------------------
