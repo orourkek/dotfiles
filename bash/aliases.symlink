@@ -35,11 +35,9 @@ alias mw="cd ~/src/mezzanine-web"
 
 # git aliases
 alias g="git"
-alias gl='git lg -15'
-alias glv='git lgv -15'
-alias gla='git lg --all -15'
-alias glav='git lgv --all -15'
-alias gll='git lgv'
+alias gl='git lgv --all -8'
+alias gla='git lgv --all -8'
+alias gll='git lgv --all'
 alias glla='git lgv --all'
 alias glt='git lt'
 alias s="git status"
