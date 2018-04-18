@@ -35,14 +35,12 @@ alias mw="cd ~/src/mezzanine-web"
 
 # git aliases
 alias g="git"
-alias gl='git lgv --all -8'
-alias gla='git lgv --all -8'
-alias gll='git lgv --all'
-alias glla='git lgv --all'
-alias glt='git lt'
+alias gl="git log --all -12 --graph --format=format:'%C(215 bold)%h%C(reset) %C(11)%ar %C(reset)%C(14)%<(60,mtrunc)%s %n%C(auto)%d%C(reset)'"
+alias gll="git log --all --graph --format=format:'%C(215 bold)%h%C(reset) %C(11)%ar %C(reset)%C(11)(%ae) %C(reset)%C(14)%<(80,mtrunc)%s %n%C(auto)%d%C(reset)'"
+alias glt="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) [%(color:green)%(committerdate:relative)%(color:reset)] %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname)'"
 alias s="git status"
 alias status="git status"
-alias commit="git commit -a"
+alias commit="git commit"
 alias pull="git pull"
 alias push="git push"
 alias fetch="git fetch --all"
