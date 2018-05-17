@@ -1,0 +1,13 @@
+# remap prefix from 'C-b'
+unbind C-b
+set-option -g prefix `
+bind ` send-prefix
+
+# split panes using | and -
+bind | split-window -h
+bind - split-window -v
+unbind '"'
+unbind %
+
+# allow mouse scrolling
+setw -g mouse on
