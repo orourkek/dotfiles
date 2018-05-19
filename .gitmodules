@@ -1,6 +1,3 @@
-[submodule "lib/dircolors-solarized"]
-	path = lib/dircolors-solarized
-	url = https://github.com/seebi/dircolors-solarized
 [submodule "vim/vim.symlink/bundle/vim-colors-solarized"]
 	path = vim/vim.symlink/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
@@ -13,9 +10,3 @@
 [submodule "vim/vim.symlink/bundle/colorizer"]
 	path = vim/vim.symlink/bundle/colorizer
 	url = https://github.com/chrisbra/Colorizer
-[submodule "bash/bash.symlink/git-aware-prompt"]
-	path = bash/bash.symlink/git-aware-prompt
-	url = https://github.com/jimeh/git-aware-prompt.git
-[submodule "lib/sexy-bash-prompt"]
-	path = lib/sexy-bash-prompt
-	url = git@github.com:twolfson/sexy-bash-prompt.git

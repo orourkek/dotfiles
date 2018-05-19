@@ -7,24 +7,13 @@ else
   export TERM='xterm-color'
 fi
 
-case $(uname) in
-  'Linux')   export DOTFILES_OS='linux' ;;
-  'Darwin')   export DOTFILES_OS='osx' ;;
-esac
-
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{aliases,bash_logout,bash_prompt,exports,functions,git-completion,path}; do
+for file in ~/.{aliases,bash_prompt,exports,path}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
-
-if which dircolors > /dev/null; then
-  eval $(dircolors ~/.dir_colors);
-else
-  export CLICOLOR=YES
-fi
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
@@ -34,28 +23,6 @@ shopt -s histappend;
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
-
-# Enable tab completion for `g` by marking it as an alias for `git`
-if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-  complete -o default -o nospace -F _git g;
-fi;
-
-# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh;
-
-# disable software flow control (XON/XOFF) to free up <Ctrl><s>
-# http://unix.stackexchange.com/questions/72086/ctrl-s-hang-terminal-emulator
-if tty > /dev/null && hash stty 2>/dev/null; then
-  stty -ixon
-fi
-# open up X access control for mezzanine
-if which xhost > /dev/null; then
-  xhost + > /dev/null
-fi
-
-if which rbenv > /dev/null; then
-  eval "$(rbenv init -)"
-fi
 
 # colorized man pages
 # https://news.ycombinator.com/item?id=12296000
@@ -70,6 +37,5 @@ man() {
     LESS_TERMCAP_us=$(printf "\e[1;32m") \
       man "$@"
 }
-
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

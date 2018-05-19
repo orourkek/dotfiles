@@ -1,20 +1,8 @@
-# iTerm2 window/tab color commands
-#   Requires iTerm2 >= Build 1.0.0.20110804
-#   http://code.google.com/p/iterm2/wiki/ProprietaryEscapeCodes
-tab-color() {
-    echo -ne "\033]6;1;bg;red;brightness;$1\a"
-    echo -ne "\033]6;1;bg;green;brightness;$2\a"
-    echo -ne "\033]6;1;bg;blue;brightness;$3\a"
-}
-tab-reset() {
-    echo -ne "\033]6;1;bg;*;default\a"
-}
-
-# Append to the Bash history file, rather than overwriting it
-shopt -s histappend
-
-# Autocorrect typos in path names when using `cd`
-shopt -s cdspell
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
 # https://twitter.com/liamosaur/status/506975850596536320/photo/1
 alias fuck='sudo $(history -p \!\!)'
@@ -23,15 +11,8 @@ alias fuck='sudo $(history -p \!\!)'
 # https://coderwall.com/p/qw2eoq
 alias lls='find `pwd` -print | grep -v "/.git/" | sed -e "s;`pwd`;\.;g;s;[^/]*\/;|__;g;s;__|; |;g"'
 
-# Easier navigation: .., ..., ...., ....., ~ and -
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-
 # Shortcuts
 alias src="cd ~/src && ls"
-alias mw="cd ~/src/mezzanine-web"
 
 # git aliases
 alias g="git"
@@ -73,19 +54,11 @@ export LSCOLORS=ExCxFxDxDxegedabagacHb
 # one line ls
 alias l="${ls} -lx"
 
-# one line la
-alias ll="${ls} -lAx"
-
 # default ls
 alias ls="${ls} -o"
 
 # default la
 alias la="${ls} -lA"
-
-# sorted by time
-alias lt="${ls} -ot"
-alias lat="${ls} -lAt"
-alias lta="${ls} -lAt"
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '

@@ -55,8 +55,3 @@ set convert-meta off
 
 # Use Alt/Meta + Delete to delete the preceding word
 "\e[3;3~": kill-word
-
-# Use Ctrl-j and Ctrl-k to cycle through the available completions
-Control-j: menu-complete
-Control-k: menu-complete-backward
-

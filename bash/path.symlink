@@ -1,3 +1,2 @@
 export PATH="$HOME/bin:$PATH";
 export PATH="$DOTFILE_ROOT/bin:$PATH";
-export PATH="$HOME/.rbenv/bin:$PATH";
