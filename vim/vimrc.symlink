@@ -37,15 +37,93 @@ function! ExecuteInShell(command, ftype) " {{{
 endfunction " }}}
 command! -complete=shellcmd -nargs=+ Shell call ExecuteInShell(<q-args>, 'shelloutput')
 
+
+" --------------------------------
+" Plugins
+" --------------------------------
+
 call plug#begin('~/.vim/plugged')
 
-Plug 'arcticicestudio/nord-vim'
+" vim-colorschemes
+" --------------------------------
+Plug 'flazz/vim-colorschemes'
+
+" vim-surround
+" --------------------------------
+Plug 'tpope/vim-surround'
+
+" vim-airline
+" --------------------------------
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+set laststatus=2 " always show airline
+let g:airline_theme='simple'
+let g:airline_left_sep='▸'
+let g:airline_right_sep='◂'
+let g:airline_powerline_fonts = 0
+let g:airline_detect_modified=1
+let g:airline_detect_paste=1
+let g:airline_detect_iminsert=0
+let g:airline_exclude_preview = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_type = 1
+let g:airline#extensions#tabline#show_close_button = 0
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 0
+"let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" git-gutter
+" --------------------------------
 Plug 'airblade/vim-gitgutter'
-Plug 'othree/yajs.vim'
+highlight GitGutterAdd          ctermfg=Green
+highlight GitGutterChange       ctermfg=Yellow
+highlight GitGutterDelete       ctermfg=Red
+highlight GitGutterChangeDelete ctermfg=Red
+let g:gitgutter_sign_added =                '✚' " ☑
+let g:gitgutter_sign_modified =             '✱' " ⁕ ⁂ ✳ ⋇ ✸ ✱ ✰ ✪ ❋ ❊ ⚫
+let g:gitgutter_sign_removed =              '✂' " ✖ ✘ ✗ ✕ ⚑ ⚊ ☒
+let g:gitgutter_sign_removed_first_line =   '▔'
+let g:gitgutter_sign_modified_removed =     '✱▁'
+
+" Fugitive (Git wrapper)
+" -------------------------------
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>ga :Git add %:p<CR><CR>
+nmap <leader>gc :Gcommit -v<CR>
+nmap <leader>gd :Gvdiff<CR>
+nmap <leader>gD :call ExecuteInShell('git diff --color', 'gitdiff')<CR>:set number<CR>:set nocursorline<CR>
+nmap <leader>gl :call ExecuteInShell('git lg -20', 'gitlog')<CR>
+nmap <leader>gL :call ExecuteInShell('git lg', 'gitlog')<CR>
+
+" vim-trailing-whitespace
+" --------------------------------
+Plug 'bronson/vim-trailing-whitespace'
+
+" syntastic
+" --------------------------------
+Plug 'scrooloose/syntastic'
+
+" FZF
+" -------------------------------
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+nmap <leader>O :call fzf#run({'sink': 'e', 'down': '33%'})<CR>
+nmap <leader>o :call fzf#run({'source': 'git ls-files', 'sink': 'e', 'down': '33%'})<CR>
+
+" NERDTree
+" -------------------------------
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+nmap <leader>' :NERDTreeToggle<CR>
+
+" OLD PLUGINS
+" --------------------------------
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+" Plug 'airblade/vim-gitgutter'
+" Plug 'othree/yajs.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 call plug#end()
 
@@ -78,9 +156,8 @@ inoremap <kPlus> :set cursorline<cr>
 " show column highlight @ 80
 set colorcolumn=80
 
-" this is required after I compiled vim 7.4 from source, otherwise the
-" backspace key doesn't work
-set backspace=2
+" backspace over everything in insert mode
+set backspace=indent,eol,start
 
 " ignore case in searches excepted if an uppercase letter is used
 set ignorecase
@@ -92,11 +169,14 @@ set wrap
 " buffer screen updates to help with large files and/or fast scrolling
 set lazyredraw
 
+" show search results while typing
 set incsearch
+
+" highlight ALL search results
 set hlsearch
 
 " activate mouse usage in every mode
-set mouse=a
+" set mouse=a
 
 " preview window height
 set previewheight=20
@@ -140,17 +220,10 @@ augroup EasyQuitForSimpleBuffers
   autocmd FileType help call s:simple_buffer_settings()
 augroup end
 
-
 " --------------------------------
 " Key Mappings
 " --------------------------------
 
-" alt + right arrow : go to end of line
-inoremap <A-right> <end>
-nnoremap <A-right> <end>
-" alt + left arrow : go to start of line
-inoremap <A-left> <home>
-nnoremap <A-left> <home>
 " move line up
 nnoremap <C-S-k> :m -2<CR>
 inoremap <C-S-k> :m -2<CR>
@@ -176,18 +249,11 @@ inoremap <C-k> <C-O><C-D>
 "noremap   <Left>   <NOP>
 "noremap   <Right>  <NOP>
 
-" identify highlight group under cursor
-map <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
-
 " tab navigation
 nnoremap [ :bprevious<CR>
 nnoremap ] :bnext<CR>
 inoremap <leader>[ <esc> :bprevious<CR>
 inoremap <leader>] <esc> :bnext<CR>
-
 
 " --------------------------------
 " Display Options
@@ -198,39 +264,6 @@ set background=dark
 set t_Co=256
 
 colorscheme nord
-
-" highlight group links
-hi link lessVariableValue       Normal
-hi link lessVariable            Type
-hi link lessParametricMixin     cssClassName
-hi link lessClass               cssClassName
-hi link lessDefinition          cssClassName
-hi link cssIdentifier           Identifier
-hi link cssTagName              Special
-hi link cssPseudoClass          cssFunctionName
-hi link cssPseudoClassId        cssPseudoClass
-"hi link cssPseudoClassFn        cssPseudoClass
-hi link cssClassName            Special
-hi link cssProp                 Normal
-hi link cssBoxProp              Normal
-hi link cssColorProp            Normal
-hi link cssRenderProp           Normal
-hi link cssGeneratedContentProp Normal
-hi link cssFontProp             Normal
-hi link cssTextProp             Normal
-hi link cssTextAttr             Normal
-hi link cssUiAttr               Normal
-hi link cssBraces               Normal
-
-hi link jsThis                  Special
-
-" Fix issue with atom-dark-256 where some highlight groups were wrong
-"hi CursorLine ctermbg=237 ctermfg=none
-"hi ColorColumn ctermbg=237 ctermfg=none
-"hi Special ctermfg=10 cterm=none
-"hi specialkey ctermfg=10 cterm=none
-"hi nontext ctermfg=10 cterm=none
-
 
 " --------------------------------
 " Misc
@@ -309,96 +342,3 @@ function! s:Bclose(bang, buffer)
 command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose('<bang>', '<args>')
 
 nnoremap <leader>w :Bclose<CR>
-
-
-" --------------------------------
-" --------------------------------
-" plugin config/options
-" --------------------------------
-" --------------------------------
-
-" vim-airline
-" --------------------------------
-
-" always show vim-airline
-set laststatus=2
-
-"let g:airline_theme='simple'
-let g:airline_theme='nord'
-let g:airline_left_sep='▸'
-let g:airline_right_sep='◂'
-
-let g:airline_powerline_fonts = 0
-let g:airline_detect_modified=1
-let g:airline_detect_paste=1
-let g:airline_detect_iminsert=0
-let g:airline_exclude_preview = 0
-" enable airline's tabline
-let g:airline#extensions#tabline#enabled = 1
-" disable showing tab type (far right)
-let g:airline#extensions#tabline#show_tab_type = 1
-" configure whether close button should be shown
-let g:airline#extensions#tabline#show_close_button = 0
-
-" configure truncating non-active buffer names to specified length
-"let g:airline#extensions#tabline#fnametruncate = 12
-
-" configure collapsing parent directories in buffer name
-"let g:airline#extensions#tabline#fnamecollapse = 0
-
-" configure whether buffer numbers should be shown
-let g:airline#extensions#tabline#buffer_nr_show = 1
-
-" enable/disable displaying index of the buffer
-let g:airline#extensions#tabline#buffer_idx_mode = 0
-
-"let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#tabline#fnamemod = ':t'
-
-
-" git-gutter
-" --------------------------------
-
-highlight GitGutterAdd          ctermfg=Green
-highlight GitGutterChange       ctermfg=Yellow
-highlight GitGutterDelete       ctermfg=Red
-highlight GitGutterChangeDelete ctermfg=Red
-
-let g:gitgutter_sign_added =                '✚' " ☑
-let g:gitgutter_sign_modified =             '✱' " ⁕ ⁂ ✳ ⋇ ✸ ✱ ✰ ✪ ❋ ❊ ⚫
-let g:gitgutter_sign_removed =              '✂' " ✖ ✘ ✗ ✕ ⚑ ⚊ ☒
-let g:gitgutter_sign_removed_first_line =   '▔'
-let g:gitgutter_sign_modified_removed =     '✱▁'
-
-
-" Fugitive (Git wrapper)
-" -------------------------------
-
-nmap <leader>gs :Gstatus<CR>
-nmap <leader>ga :Git add %:p<CR><CR>
-nmap <leader>gc :Gcommit -v<CR>
-nmap <leader>gd :Gvdiff<CR>
-nmap <leader>gD :call ExecuteInShell('git diff --color', 'gitdiff')<CR>:set number<CR>:set nocursorline<CR>
-nmap <leader>gl :call ExecuteInShell('git lg -20', 'gitlog')<CR>
-nmap <leader>gL :call ExecuteInShell('git lg', 'gitlog')<CR>
-" no color version:
-"nmap <leader>gl :call ExecuteInShell('git log --pretty=oneline --graph --all --decorate --abbrev-commit', 'gitlog')<CR>
-
-"augroup FugitiveBinds
-"  autocmd FileType gitcommit call s:fugitive_binds()
-"augroup end
-
-"function! s:fugitive_binds()
-"  nnoremap <buffer> <silent> + :<C-U>silent execute <SID>StageToggle(line('.'),line('.')+v:count1-1)<CR>
-"endfunction
-
-" FZF
-" -------------------------------
-
-nmap <leader>O :call fzf#run({'sink': 'e', 'down': '33%'})<CR>
-nmap <leader>o :call fzf#run({'source': 'git ls-files', 'sink': 'e', 'down': '33%'})<CR>
-
-" NERDTree
-" -------------------------------
-nmap <leader>' :NERDTreeToggle<CR>
-
