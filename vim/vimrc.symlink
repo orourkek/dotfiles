@@ -44,9 +44,9 @@ command! -complete=shellcmd -nargs=+ Shell call ExecuteInShell(<q-args>, 'shello
 
 call plug#begin('~/.vim/plugged')
 
-" vim-colorschemes
+" vimcolors
 " --------------------------------
-Plug 'flazz/vim-colorschemes'
+Plug 'KurtPreston/vimcolors'
 
 " vim-surround
 " --------------------------------
@@ -58,8 +58,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 set laststatus=2 " always show airline
 let g:airline_theme='simple'
-let g:airline_left_sep='▸'
-let g:airline_right_sep='◂'
+"let g:airline_left_sep='▸'
+"let g:airline_right_sep='◂'
 let g:airline_powerline_fonts = 0
 let g:airline_detect_modified=1
 let g:airline_detect_paste=1
@@ -130,6 +130,10 @@ call plug#end()
 " --------------------------------
 " Basic Configuration
 " --------------------------------
+
+set background=dark
+set t_Co=256
+colorscheme paramount
 
 " http://stackoverflow.com/questions/6696079/vimrc-causes-error-e10-should-be-followed-by-or
 set nocompatible
@@ -254,16 +258,6 @@ nnoremap [ :bprevious<CR>
 nnoremap ] :bnext<CR>
 inoremap <leader>[ <esc> :bprevious<CR>
 inoremap <leader>] <esc> :bnext<CR>
-
-" --------------------------------
-" Display Options
-" --------------------------------
-
-set background=dark
-
-set t_Co=256
-
-colorscheme nord
 
 " --------------------------------
 " Misc
