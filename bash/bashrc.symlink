@@ -39,3 +39,5 @@ man() {
 }
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+[ -f ~/.git-completion ] && source ~/.git-completion
