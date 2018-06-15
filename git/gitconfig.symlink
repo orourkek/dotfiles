@@ -3,12 +3,6 @@
   name = Kevin O'Rourke
 
 [alias]
-  lg = log --graph --format=format:'%C(215 bold)%h%C(reset) %C(11)%an %C(reset)%C(14)%<(80,mtrunc)%s %n%C(auto)%d%C(reset)'
-  lgv = log --graph --format=format:'%C(215 bold)%h%C(reset) %C(11)%ar %C(reset)%C(11)(%an) %C(reset)%C(14)%<(60,mtrunc)%s %n%C(auto)%d%C(reset)'
-  #lgv = log --graph --format=format:'%C(215 bold)%h%C(reset) %C(11)%ar %C(reset)%C(11)(%an) %C(reset)%C(14)%s %C(auto)%+D%C(reset)'
-  #lt = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
-  lt = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) [%(color:green)%(committerdate:relative)%(color:reset)] %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname)'
-
   # View abbreviated SHA, description, and history graph of the latest 20 commits
   l = log --pretty=oneline -n 20 --graph --abbrev-commit --decorate=short
 
