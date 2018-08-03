@@ -16,8 +16,8 @@ alias src="cd ~/src && ls"
 
 # git aliases
 alias g="git"
-alias gl="git log --all -21 --graph --format=format:'%C(yellow)%h%C(reset) (%ar) %C(white)%<(60,trunc)%s%C(auto)%+D%C(reset)'"
-alias gll="git log --all --graph --format=format:'%C(yellow)%h%C(reset) (%ar) %C(white)%<(60,trunc)%s%C(auto)%+D%C(reset)'"
+alias gl="git l -20"
+alias gll="git l --all --graph"
 alias glll="git log --all --graph --abbrev-commit --decorate --format=format:'%C(reset)Commit: %C(yellow)%h (%H)%C(reset)%nAuthor: %an <%ae>%nDate: %ci (%ar)%C(auto)%+D%C(reset)%n%n%w(80,3,3)%B'"
 alias glt="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) [%(color:green)%(committerdate:relative)%(color:reset)] %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname)'"
 alias s="git status"
