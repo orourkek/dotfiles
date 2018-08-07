@@ -4,11 +4,16 @@
 
 [alias]
   fa = fetch --all
+  fu = fetch upstream
+  fo = fetch origin
   ff = merge --ff-only
   faff = !git fa && git ff
 
   # View abbreviated SHA, description, and history graph of the latest 20 commits
-  l = log --format=format:'%C(yellow)%h%C(reset)%>(12)%ar %C(blue)%<(12,trunc)%ae%C(reset) %<|(80,trunc)%s%C(auto)%+D%C(reset)'
+  l = log --format=format:'%C(yellow)%h%C(reset) %ar %C(blue)%<(12,trunc)%ae%C(reset) %<|(80,trunc)%s%C(auto)%+D%C(reset)'
+
+  # Graph view of branch tips:
+  bl = log --graph --branches --decorate --simplify-by-decoration --format=format:'%C(yellow)%h%C(reset) %ar %C(blue)%<(12,trunc)%ae%C(reset) %<|(80,trunc)%s%C(auto)%+D%C(reset)'
 
   # View the current working tree status using the short format
   s = status -s
