@@ -41,3 +41,10 @@ man() {
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 [ -f ~/.git-completion ] && source ~/.git-completion
+
+if which dircolors > /dev/null; then
+  eval $(dircolors ~/.dircolors);
+else
+  export CLICOLOR=YES
+fi
+
