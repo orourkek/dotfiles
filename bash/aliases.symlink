@@ -27,39 +27,22 @@ alias pull="git pull"
 alias push="git push"
 alias fetch="git fetch --all"
 
+lsFlags="-Fhx"
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
-else # OS X `ls`
-	colorflag="-G"
+	lsFlags="${lsFlags} --color"
+else
+	lsFlags="${lsFlags} -G"
 fi
 
-# LS FLAGS:
-# --group-directories-first   group directories before files
-# -h                          with -l, print sizes in human readable format
-# -p                          append / indicator to directories
-# -F                          append indicator (one of */=>@|) to entries
-#
-# Need to add the following back into the flags string if we're on Linux
-#       (they don't exist on OSX)
-# --group-directories-first --time-style='+%Y-%m-%d %H:%M'"
-if [[ "$DOTFILES_OS" = "linux" ]]; then
-  lsFlags="-Fhp ${colorflag} --time-style='+%Y-%m-%d %H:%M'"^
-elif [[ "$DOTFILES_OS" = "linux" ]]; then
-  lsFlags="-Fhp ${colorflag}"
-fi
-ls="command ls ${lsFlags}"
+# if [[ "$DOTFILES_OS" = "linux" ]]; then
+#  lsFlags="${lsFlags} --time-style='+%Y-%m-%d %H:%M:%S'"
+# fi
 
-export LSCOLORS=ExCxFxDxDxegedabagacHb
-
-# one line ls
-alias l="${ls} -lx"
-
-# default ls
-alias ls="${ls} -o"
-
-# default la
-alias la="${ls} -lA"
+alias ls="command ls ${lsFlags}"
+alias la="command ls ${lsFlags} -lA"
+alias l="command ls ${lsFlags} -1A" # one per line
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
