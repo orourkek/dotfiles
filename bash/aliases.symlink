@@ -27,22 +27,22 @@ alias pull="git pull"
 alias push="git push"
 alias fetch="git fetch --all"
 
-lsFlags="-Fhx"
+lsFlags="--classify --human-readable"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
 	lsFlags="${lsFlags} --color"
 else
-	lsFlags="${lsFlags} -G"
+	lsFlags="${lsFlags} --no-group"
 fi
 
 # if [[ "$DOTFILES_OS" = "linux" ]]; then
 #  lsFlags="${lsFlags} --time-style='+%Y-%m-%d %H:%M:%S'"
 # fi
 
-alias ls="command ls ${lsFlags}"
+alias ls="command ls ${lsFlags} -x --width=80 --group-directories-first"
 alias la="command ls ${lsFlags} -lA"
-alias l="command ls ${lsFlags} -1A" # one per line
+alias l="command ls ${lsFlags} -1A --group-directories-first"
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
