@@ -26,6 +26,9 @@ alias commit="git commit"
 alias pull="git pull"
 alias push="git push"
 alias fetch="git fetch --all"
+alias yoloamend="git commit --amend --no-edit --no-verify"
+alias yolopush="git push -f"
+alias yolo="yoloamend && yolopush"
 
 lsFlags="--classify --human-readable"
 
