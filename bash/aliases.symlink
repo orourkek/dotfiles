@@ -30,22 +30,11 @@ alias yoloamend="git commit --amend --no-edit --no-verify"
 alias yolopush="git push -f"
 alias yolo="yoloamend && yolopush"
 
-lsFlags="--classify --human-readable"
+lsFlags="-h -G -p"
 
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-	lsFlags="${lsFlags} --color"
-else
-	lsFlags="${lsFlags} --no-group"
-fi
-
-# if [[ "$DOTFILES_OS" = "linux" ]]; then
-#  lsFlags="${lsFlags} --time-style='+%Y-%m-%d %H:%M:%S'"
-# fi
-
-alias ls="command ls ${lsFlags} -x --width=80 --group-directories-first"
-alias la="command ls ${lsFlags} -lA"
-alias l="command ls ${lsFlags} -1A --group-directories-first"
+alias l="command ls ${lsFlags} -m"
+alias ls="command ls ${lsFlags} -1"
+alias la="command ls ${lsFlags} -oA"
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
