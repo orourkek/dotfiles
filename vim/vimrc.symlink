@@ -133,7 +133,11 @@ call plug#end()
 
 set background=dark
 set t_Co=256
-colorscheme paramount
+" https://github.com/dracula/vim/issues/96
+set termguicolors
+let g:dracula_colorterm = 0
+let g:dracula_italic = 0
+colorscheme dracula
 
 " http://stackoverflow.com/questions/6696079/vimrc-causes-error-e10-should-be-followed-by-or
 set nocompatible
