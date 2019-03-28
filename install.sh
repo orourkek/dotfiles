@@ -1,33 +1,39 @@
 #!/usr/bin/env bash
-#
-# Install script from:
-# https://github.com/dave-tucker/dotfiles
 
-DOTFILES_ROOT="`pwd`"
-DOTFILES_THEME="dark"
-
-if [ $1 = "light" ]; then
-  DOTFILES_THEME="light"
+# use colors if connected to a terminal that supports it
+if which tput >/dev/null 2>&1; then
+    ncolors=$(tput colors)
+fi
+if [ -t 1 ] && [ -n "$ncolors" ] && [ "$ncolors" -ge 8 ]; then
+  RED="$(tput setaf 1)"
+  GREEN="$(tput setaf 2)"
+  YELLOW="$(tput setaf 3)"
+  BLUE="$(tput setaf 4)"
+  BOLD="$(tput bold)"
+  NORMAL="$(tput sgr0)"
+else
+  RED=""
+  GREEN=""
+  YELLOW=""
+  BLUE=""
+  BOLD=""
+  NORMAL=""
 fi
 
-set -e
-
-echo ''
-
-info () {
-  printf "\r  [\033[00;34m ➔ \033[0m] $1\n"
+log () {
+  printf "  [${BLUE} ➔ ${NORMAL}] $1\n"
 }
 
-user () {
-  printf "\r  [\033[0;33m ❖ \033[0m] $1 \n"
+warn () {
+  printf "  [${YELLOW} ❖ ${NORMAL}] $1 \n"
 }
 
 success () {
-  printf "\r\033[2K  [\033[00;32m ✔ \033[0m] $1\n"
+  printf "  [${GREEN} ✔ ${NORMAL}] $1\n"
 }
 
 fail () {
-  printf "\r\033[2K  [\033[0;31m ✖ \033[0m] $1\n"
+  printf "  [${RED} ✖ ${NORMAL}] $1\n"
   echo ''
   exit 1
 }
@@ -49,7 +55,7 @@ symlink_confirm () {
 
     if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]
     then
-      user "File already exists: `basename $source`, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
+      warn "File already exists: `basename $source`, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
       read -n 1 action
 
       case "$action" in
@@ -104,18 +110,19 @@ symlink_force () {
   success "symlinked (-f) $1 to $2"
 }
 
-install_dotfiles () {
-  info 'installing dotfiles'
+main() {
+  set -e
+  DOTFILES_ROOT="`pwd`"
+
+  log 'symlinking dotfiles...'
 
   for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink`
   do
     dest="$HOME/.`basename \"${source%.*}\"`"
     symlink_confirm $source $dest
   done
-}
 
-install_binaries () {
-  info 'installing binaries'
+  log 'installing binaries...'
 
   if [[ ! -d "$HOME/bin" ]]; then
     mkdir "$HOME/bin"
@@ -126,14 +133,8 @@ install_binaries () {
     dest="$HOME/bin/`basename \"${source%}\"`"
     symlink_force $source $dest
   done
+
+  success "All done!"
 }
 
-install_dotfiles
-install_binaries
-
-source "$HOME/.bash_profile"
-
-unset DOTFILES_ROOT
-
-success "All done!"
-exit 0
+main

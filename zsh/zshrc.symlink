@@ -1,8 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/korourke/.oh-my-zsh"
+  export ZSH="$HOME/.oh-my-zsh"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -76,6 +79,11 @@ export LANG=en_US.UTF-8
 
 export EDITOR='vim'
 
+# fix git completion
+# https://stackoverflow.com/a/26479426
+autoload -U compinit && compinit
+zmodload -i zsh/complist
+
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
@@ -121,9 +129,9 @@ alias yolopush="git push -f"
 alias yolo="yoloamend && yolopush"
 
 lsFlags="-h -G -p"
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-   lsFlags="${lsFlags} --color"
-fi
 alias l="command ls ${lsFlags} -m"
 alias ls="command ls ${lsFlags} -1"
 alias la="command ls ${lsFlags} -oA"
+
+
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
