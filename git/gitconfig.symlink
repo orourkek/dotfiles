@@ -9,8 +9,13 @@
   ff = merge --ff-only
   faff = !git fa && git ff
 
-  # View abbreviated SHA, description, and history graph of the latest 20 commits
-  l = log --format=format:'%C(yellow)%h%C(reset) %ar %C(blue)%<(12,trunc)%ae%C(reset) %<|(80,trunc)%s%C(auto)%+D%C(reset)'
+  prettylog80col = log --format=format:'%C(blue)%h%C(reset) %ar %C(dim)%<(10,trunc)%ae%C(reset) %<|(80,trunc)%s%C(auto)%n%w(80)%-D%C(reset)'
+  prettylog120col = log --format=format:'%C(blue)%h%C(reset) %ar %C(dim)%ae%C(reset) %<|(120,trunc)%s%C(auto)%n%w(120)%-D%C(reset)'
+
+  # unused?:
+  graph = log --graph --format=format:'%C(72)%h%C(auto) %<|(65,trunc)%s %C(244)%>|(80,trunc)%ar%C(auto)%w(80)%+D'
+  graph-long = log --graph --format=format:'%C(reset)%C(dim)%C(yellow nodim)%h %C(dim)(%H)%n%C(dim)├╴%C(nodim)%aE%C(dim) (🗹 %cE)%n%C(dim)└╴%C(nodim)%ar%C(dim) (%ci)%C(auto)%+D%C(reset)%n%n%w(80,3,3)%B'
+  # graph-long = log --graph --format=format:'%C(reset)%C(yellow)%h%C(reset) %C(dim)by <%C(nodim)%aE%C(dim)> (%ar)%C(auto)%w(80,0,0)%+D%w()%C(reset)%n%w(80,2,2)%s%C(reset)%w()%n%n%w(80,2,2)%-b%w()%C(reset)%n'
 
   # Graph view of branch tips:
   bl = log --graph --branches --decorate --simplify-by-decoration --format=format:'%C(yellow)%h%C(reset) %ar %C(blue)%<(12,trunc)%ae%C(reset) %<|(80,trunc)%s%C(auto)%+D%C(reset)'
