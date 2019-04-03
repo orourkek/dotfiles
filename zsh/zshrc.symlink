@@ -108,7 +108,7 @@ alias gla="git prettylog80col -8 --all --graph"
 
 # gll -- more "comfortable" (120col)
 alias gll="git prettylog120col -21"
-alias glla="git prettylog120col -21 --all --graph"
+alias glla="git prettylog120col --all --graph"
 
 # glt -- recent branches magic
 alias glt="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) [%(color:green)%(committerdate:relative)%(color:reset)] %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname)'"
