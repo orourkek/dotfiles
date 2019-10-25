@@ -1,6 +1,6 @@
 [user]
-  email = korourke@oblong.com
-  name = Kevin O'Rourke
+	email = orourke.kevin@gmail.com
+	name = Kevin O'Rourke
 
 [alias]
   fa = fetch --all
