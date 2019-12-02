@@ -122,6 +122,18 @@ main() {
     symlink_confirm $source $dest
   done
 
+  log 'installing binaries...'
+
+  if [[ ! -d "$HOME/bin" ]]; then
+    mkdir "$HOME/bin"
+  fi
+
+  for source in `find $DOTFILES_ROOT/bin -type f`
+  do
+    dest="$HOME/bin/`basename \"${source%}\"`"
+    symlink_force $source $dest
+  done
+
   success "All done!"
 }
 
