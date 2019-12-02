@@ -102,13 +102,10 @@ alias lls='find `pwd` -print | grep -v "/.git/" | sed -e "s;`pwd`;\.;g;s;[^/]*\/
 # Shortcuts
 alias src="cd ~/src && ls"
 
-# gl -- quick & compact (80col)
-alias gl="git prettylog80col -8"
-alias gla="git prettylog80col -8 --all --graph"
-
-# gll -- more "comfortable" (120col)
-alias gll="git prettylog120col -21"
-alias glla="git prettylog120col --all --graph"
+# gl -- pretty graph logging
+alias gl="git graph-short"
+alias gll="git graph"
+alias glla="git graph-full"
 
 # glt -- recent branches magic
 alias glt="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) [%(color:green)%(committerdate:relative)%(color:reset)] %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname)'"
