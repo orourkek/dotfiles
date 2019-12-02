@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+
+function error {
+  echo "ERROR: ${1}"
+}
+
+function usage {
+  echo
+  echo "Usage: ${0} <mfa_token> [<profile_name>]"
+}
+
+if [ $# -lt 1 ]; then
+  usage
+  exit 1
+fi
+
+MFA_TOKEN=$1
+PROFILE=${2:-default}
+
+if [ ${#MFA_TOKEN} -gt 6 ] || [ ${#MFA_TOKEN} -lt 6 ]; then
+  error "invalid token format"
+  usage
+  exit 1
+fi
+
+AWS_USER_NAME=$(aws sts get-caller-identity --query 'Arn' --output text | sed -E 's/arn:aws:iam::[0-9]+:user\///')
+
+if [[ -z $AWS_USER_NAME ]]; then
+  error "failed to get user name"
+  exit 2
+fi
+
+MFA_SERIAL_NUMBER=$(aws iam list-mfa-devices --profile ${PROFILE} --user-name ${AWS_USER_NAME} --query 'MFADevices[].SerialNumber' --output text)
+
+if [[ -z $MFA_SERIAL_NUMBER ]]; then
+  error "failed to get mfa device info"
+  exit 3
+fi
+
+SESSION_INFO=$(aws sts get-session-token --profile ${PROFILE} --serial-number ${MFA_SERIAL_NUMBER} --output json --token-code $MFA_TOKEN)
+
+if [[ $? -gt 0 ]]; then
+  exit $?
+fi
+
+AWS_ACCESS_KEY_ID=`echo ${SESSION_INFO} | sed -n 's/.* "AccessKeyId": "\([^"]*\).*/\1/p'`
+AWS_SECRET_ACCESS_KEY=`echo ${SESSION_INFO} | sed -n 's/.*"SecretAccessKey": "\([^"]*\).*/\1/p'`
+AWS_SESSION_TOKEN=`echo ${SESSION_INFO} | sed -n 's/.*"SessionToken": "\([^"]*\).*/\1/p'`
+
+# echo "# raw session response:"
+# echo "${SESSION_INFO}"
+# echo
+# echo "# .env file:"
+echo "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}"
+echo "AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}"
+echo "AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}"
+# echo
+# echo "# credentials file:"
+# echo "aws_access_key_id=${AWS_ACCESS_KEY_ID}"
+# echo "aws_secret_access_key=${AWS_SECRET_ACCESS_KEY}"
+# echo "aws_session_token=${AWS_SESSION_TOKEN}"
+# echo
+
+exit 0
+
+# function set-keys {
+#   aws configure set aws_access_key_id ${2} --profile=${1}
+#   aws configure set aws_secret_access_key  ${3} --profile=${1}
+#   aws configure set aws_session_token  ${4} --profile=${1}
+# }
+
+# set -x
+
+# set-keys "mfa" $GET_SESSION_TOKEN_RESULT
