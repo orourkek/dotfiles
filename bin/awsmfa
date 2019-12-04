@@ -1,45 +1,25 @@
 #!/usr/bin/env bash
 
-# This script attempts to automate some of the pain around using temporary
-# credentials with the aws cli.
+# Uses the supplied profile to fetch temporary aws session credentials and
+# assigns them to the profile [default] in ~/.aws/credentials
 #
-# It will automatically fetch the mfa arn associated with your account, then
-# fetch temporary credentials via `aws sts get-session-token`.
-#
-# REQUIREMENTS:
-# Only that you have the aws cli already configured with a profile; Unless
-# one is supplied in arguments this script will use the `default` profile.
+#       THE [default] PROFILE WILL BE OVERWRITTEN BY THIS SCRIPT
 
-function error {
-  echo "ERROR: ${1}"
-}
-
-function usage {
-  echo
-  echo "Usage: ${0} <mfa_token> [<profile_name>]"
-}
-
-if [ $# -lt 1 ]; then
-  usage
+if [ $# -lt 2 ]; then
+  echo "Usage: ${0} <profile_name> <mfa_token>"
   exit 1
 fi
 
-MFA_TOKEN=$1
-PROFILE=${2:-default}
-
-if [ ${#MFA_TOKEN} -gt 6 ] || [ ${#MFA_TOKEN} -lt 6 ]; then
-  error "invalid token format"
-  usage
-  exit 1
-fi
+PROFILE=${1}
+MFA_TOKEN=${2}
 
 AWS_USER_NAME=$( \
-  aws sts get-caller-identity --query 'Arn' --output text \
+  aws sts get-caller-identity --profile ${PROFILE} --query 'Arn' --output text \
   | sed -E 's/arn:aws:iam::[0-9]+:user\///' \
 )
 
 if [[ -z $AWS_USER_NAME ]]; then
-  error "failed to get user name"
+  echo "ERROR: failed to get user name"
   exit 2
 fi
 
@@ -52,7 +32,7 @@ MFA_SERIAL_NUMBER=$( \
 )
 
 if [[ -z $MFA_SERIAL_NUMBER ]]; then
-  error "failed to get mfa device info"
+  echo "ERROR: failed to get mfa device info"
   exit 3
 fi
 
@@ -78,8 +58,9 @@ AWS_SESSION_TOKEN=$( \
   echo ${SESSION_INFO} | sed -n 's/.*"SessionToken": "\([^"]*\).*/\1/p' \
 )
 
-echo "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}"
-echo "AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}"
-echo "AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}"
+aws configure set aws_access_key_id ${AWS_ACCESS_KEY_ID}
+aws configure set aws_secret_access_key  ${AWS_SECRET_ACCESS_KEY}
+aws configure set aws_session_token  ${AWS_SESSION_TOKEN}
 
+echo "success: default profile updated"
 exit 0
