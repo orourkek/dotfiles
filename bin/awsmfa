@@ -1,24 +1,20 @@
 #!/usr/bin/env bash
 
-# Uses the supplied profile to fetch temporary aws session credentials and
-# assigns them to the profile [default] in ~/.aws/credentials
-#
-#       THE [default] PROFILE WILL BE OVERWRITTEN BY THIS SCRIPT
+# Uses the supplied profile to fetch temporary aws session credentials
+# and outputs them to a .env file in the current working directory
 
-if [[ $# -lt 2 ]]; then
-  echo "Usage: ${0} [--env] <profile_name> <mfa_token>"
+if [[ $# == 1 ]]; then
+  PROFILE="default"
+  MFA_TOKEN=${1}
+elif [[ $# == 2 ]]; then
+  PROFILE=${1}
+  MFA_TOKEN=${2}
+else
+  echo "Usage: ${0} [<profile_name>] <mfa_token>"
   exit 1
 fi
 
-if [[ ${1} == "--env" ]]; then
-  PROFILE=${2}
-  MFA_TOKEN=${3}
-  CREATE_ENV=yes
-else
-  PROFILE=${1}
-  MFA_TOKEN=${2}
-  CREATE_ENV=
-fi
+echo "Fetching temp credentials with profile [${PROFILE}]..."
 
 AWS_USER_NAME=$( \
   aws sts get-caller-identity --profile ${PROFILE} --query 'Arn' --output text \
@@ -65,18 +61,11 @@ AWS_SESSION_TOKEN=$( \
   echo ${SESSION_INFO} | sed -n 's/.*"SessionToken": "\([^"]*\).*/\1/p' \
 )
 
-if [[ -z $CREATE_ENV ]]; then
-  aws configure set aws_access_key_id ${AWS_ACCESS_KEY_ID}
-  aws configure set aws_secret_access_key  ${AWS_SECRET_ACCESS_KEY}
-  aws configure set aws_session_token  ${AWS_SESSION_TOKEN}
-  echo "success: default profile updated"
-  exit 0
-fi
-
-echo "# this file was auto-generate by ${0}
+echo "\
 AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
 AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}" > .env
+AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}\
+" > .env
 
-echo "success: .env file updated"
+echo "Success: .env file updated"
 exit 0
