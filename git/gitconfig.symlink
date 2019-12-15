@@ -10,7 +10,7 @@
   faff = !git fa && git ff
 
   # basic pretty log (w/ time & author):
-  log-pretty = log --format=tformat:'%C(auto)%h %ar %C(dim)%aN%C(auto) %s%+D%C(reset)'
+  log-pretty = log --format=tformat:'%C(auto)%h %C(dim)%ar %C(cyan)%<(18,mtrunc)%aE%C(auto) %s%+D%C(reset)'
 
   # limited to 80 col (no author):
   log-pretty-short = log --format=tformat:'%C(auto)%h %C(dim)%ar %C(auto)%<|(80,trunc)%s%w(75)%+D%C(reset)'
