@@ -102,6 +102,10 @@ alias lls='find `pwd` -print | grep -v "/.git/" | sed -e "s;`pwd`;\.;g;s;[^/]*\/
 # Shortcuts
 alias src="cd ~/src && ls"
 
+# prevent need to escape "^" for git commands
+# https://www.reddit.com/r/zsh/comments/73yxr1/when_do_i_need_to_escape/doj2xy2
+alias git="noglob git"
+
 # gl -- pretty graph logging
 alias gl="git graph-short"
 alias gll="git graph"
