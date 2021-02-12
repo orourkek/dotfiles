@@ -109,7 +109,8 @@ alias git="noglob git"
 # gl -- pretty graph logging
 alias gl="git graph-short"
 alias gll="git graph"
-alias glla="git graph-full"
+alias gllx="git log-pretty --graph --exclude='refs/origin/feature*' --all"
+alias glll="git graph-full"
 
 # glt -- recent branches magic
 alias glt="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) [%(color:green)%(committerdate:relative)%(color:reset)] %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname)'"
