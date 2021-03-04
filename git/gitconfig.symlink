@@ -15,9 +15,9 @@
   # limited to 80 col (no author):
   log-pretty-short = log --format=tformat:'%C(auto)%h %C(dim)%ar %C(auto)%<|(80,trunc)%s%w(75)%+D%C(reset)'
 
-  graph = log-pretty --graph --all
-  graph-short = log-pretty-short --graph --all
-  graph-full = log --graph --all --format=tformat:'%C(yellow nodim)%h %C(dim)(%H)%n%C(dim)├╴%C(nodim)%aE%C(dim) (%cE)%n%C(dim)└╴%C(nodim)%ar%C(dim) (%ci)%C(auto)%+D%n%n%w(80,3,3)%B%-C()%n'
+  graph = log-pretty --graph
+  graph-short = log-pretty-short --graph
+  graph-full = log --graph --format=tformat:'%C(yellow nodim)%h %C(dim)(%H)%n%C(dim)├╴%C(nodim)%aE%C(dim) (%cE)%n%C(dim)└╴%C(nodim)%ar%C(dim) (%ci)%C(auto)%+D%n%n%w(80,3,3)%B%-C()%n'
   # ^ magic at end of the format string thanks to: https://stackoverflow.com/questions/58016135
 
   # Graph view of branch tips:
