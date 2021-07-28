@@ -23,6 +23,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FROM_BRANCH: master
           TO_BRANCH: development
-          # PULL_REQUEST_TITLE: 'Sync: {FROM_BRANCH} to {TO_BRANCH}'
-          # PULL_REQUEST_BODY: 'New code has just landed in {fromBranch} so let's bring {toBranch} up to speed!'
-          # PULL_REQUEST_IS_DRAFT: false
+          PULL_REQUEST_TITLE: 'Mergeback: {FROM_BRANCH} to {TO_BRANCH}'
+          PULL_REQUEST_BODY: 'This is a mergeback PR to sync the latest changes from {FROM_BRANCH} back to {TO_BRANCH}'
