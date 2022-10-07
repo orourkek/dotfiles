@@ -94,9 +94,11 @@ install_plugin () {
 
 main
 
+install_plugin "https://github.com/joshskidmore/zsh-fzf-history-search"
 install_plugin "https://github.com/zsh-users/zsh-autosuggestions"
 install_plugin "https://github.com/zsh-users/zsh-syntax-highlighting"
 
-env npm install --global pure-prompt
+mkdir -p "$HOME/.zsh"
+git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 
 env zsh -l

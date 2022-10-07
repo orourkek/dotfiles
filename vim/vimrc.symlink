@@ -194,7 +194,7 @@ set foldlevel=99
 set hidden
 
 " whitespace characters
-set listchars=eol:↵,tab:⇥\ ,extends:⤵,precedes:⤷,trail:◦ " •
+set listchars=eol:↵,tab:⇥\ ,extends:>,precedes:<,trail:◦ " •
 set list
 
 " enable file type detection for auto-indent
