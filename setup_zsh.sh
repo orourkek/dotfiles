@@ -94,6 +94,7 @@ install_plugin () {
 
 main
 
+install_plugin "https://github.com/joshskidmore/zsh-fzf-history-search"
 install_plugin "https://github.com/zsh-users/zsh-autosuggestions"
 install_plugin "https://github.com/zsh-users/zsh-syntax-highlighting"
 
